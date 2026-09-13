@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.Z2x4WzWL.js","assets":"assets.B-TeBG35.js","comments":"comments.bcDtmHz-.js","db":"db.CZqN5n8-.js","downloads":"downloads.By20cRKz.js","embed":"embed.swQslL0W.js","endpoints":"endpoints.LitwTvTv.js","mcp":"mcp.DNIsJHuR.js","network":"network.B5UA9Su4.js","permissions":"permissions.BQy3BjmI.js","room":"room.DZE7zT7V.js","sample":"sample.BEk0MOOy.js","self":"artifact.Z2x4WzWL.js","user":"user.DLeycE5q.js"},"transforms":"_transforms.CNapGGha.js","comments":"_comments.CoT-GWno.js","translate":"_translate.DqxC5ek1.js","ldx":"_ldx.CMCg6PeI.js"}                                                                                                                                                                                                                                                                                             </script><script>(function(){"use strict";var dn=3e5;function Ut(t,e){try{const n=t("navigation")[0],o=[n.responseStart,n.redirectEnd-n.redirectStart,n.domContentLoadedEventStart,e()];for(let a=0;a<o.length;a++){if(!(o[a]>=0&&o[a]<=3e5))return;o[a]=o[a]|0}return o}catch{return}}var zt=["light","dark","system"],Kt=/^[A-Za-z0-9_-]{1,64}$/,ut=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,$t=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function Wt(t){const e=t.toLowerCase();return e.startsWith("data-")||e.startsWith("aria-")||$t.has(e)}var ft="data-ldx-props";function Vt(t,e){if(e.toLowerCase()===ft)return!0;const n=t.getAttribute(ft);if(n===null)return!1;try{const o=JSON.parse(n);if(o===null||typeof o!="object"||Array.isArray(o))return!0;const a=e.toLowerCase();return Object.keys(o).some(l=>l.toLowerCase()===a)}catch{return!0}}var hn="http://www.w3.org/1999/xhtml",Xt="http://www.w3.org/2000/svg",Gt=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),Yt=new Set(["script","style"]);function Jt(t){const e=t.localName.toLowerCase();return t.namespaceURI==="http://www.w3.org/1999/xhtml"?!Gt.has(e):t.namespaceURI===Xt?!Yt.has(e):!1}function qe(t,e){return t===e||(t===160||t===32)&&(e===160||e===32)}function Zt(t,e){const n=t.length,o=e.length;let a=0;for(;a<n&&a<o&&qe(t.charCodeAt(a),e.charCodeAt(a));)a++;let l=0;for(;l<n-a&&l<o-a&&qe(t.charCodeAt(n-1-l),e.charCodeAt(o-1-l));)l++;return{p:a,s:l}}function Qt(t,e){const n=t.firstChild;if(t.childNodes.length!==1||n===null||n.nodeType!==Node.TEXT_NODE){t.textContent=e;return}const o=n.data,a=o.length,l=e.length,{p:i,s:f}=Zt(o,e);i===a&&f===0&&a===l||n.replaceData(i,a-i-f,e.slice(i,l-f));const T=n.data,w=t.ownerDocument.getSelection?.()??null,O=w!==null&&w.rangeCount>0&&(w.anchorNode===n||w.focusNode===n)?{anchor:w.anchorNode,anchorOffset:w.anchorOffset,focus:w.focusNode,focusOffset:w.focusOffset}:null;let _=-1,R=-1;for(let h=0;h<T.length&&h<e.length;h++){const M=T.charCodeAt(h),K=e.charCodeAt(h);M!==K&&qe(M,K)&&(_<0&&(_=h),R=h)}const m=_>=0;if(m&&n.replaceData(_,R-_+1,e.slice(_,R+1)),m&&O!==null&&O.anchor!==null&&O.focus!==null)try{w.setBaseAndExtent(O.anchor,O.anchorOffset,O.focus,O.focusOffset)}catch{}}var er=new Set(["html","head","body","frameset"]);function tr(t){return t.namespaceURI==="http://www.w3.org/1999/xhtml"&&er.has(t.localName)}function rr(t){if(t===null||typeof t!="object")return!1;const e=t;if(typeof e.target!="string"||!Kt.test(e.target)||e.text!==void 0&&typeof e.text!="string")return!1;if(e.attrsSet!==void 0){if(e.attrsSet===null||typeof e.attrsSet!="object")return!1;for(const[n,o]of Object.entries(e.attrsSet))if(!ut.test(n)||typeof o!="string")return!1}if(e.attrsRemoved!==void 0){if(!Array.isArray(e.attrsRemoved))return!1;for(const n of e.attrsRemoved)if(typeof n!="string"||!ut.test(n))return!1}return!0}function nr(t,e){if(t===null||typeof t!="object")return!1;const{seq:n,elements:o}=t;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(o)||o.length===0||o.length>64)return!1;for(let a=0;a<o.length;a++)if(!e(o[a]))return!1;return!0}function or(t){return t===null||typeof t!="object"?!1:nr(t.__frame_patch,rr)}function ar(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_init;return e!==null&&typeof e=="object"}function lr(t){return t!==null&&typeof t=="object"&&t.__frame_size_poke===!0}function sr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_host_visible;return e!==null&&typeof e=="object"&&typeof e.visible=="boolean"}function ir(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_theme;if(e===null||typeof e!="object")return!1;const n=e.theme;return typeof n=="string"&&zt.includes(n)}var cr=["ok","empty","snapshot_error","snapshot_timeout","unclonable","oversize","unavailable","restore_error","withheld"],ur=["TypeError","RangeError","ReferenceError","SyntaxError","DataCloneError","QuotaExceededError","AbortError","TimeoutError","SecurityError","Error","other"];function fr(t){return typeof t=="string"&&ur.includes(t)?t:"other"}var dr=Object.freeze({until:null,now:!1}),hr="__claude_hot",pr="__claude_hot_in",mr=/^__claude_hot(?:_in)?(?::|$)/,dt=/^[0-9a-z]{1,32}$/,Be=t=>t===void 0?hr:"__claude_hot:"+t,de=t=>t===void 0?pr:"__claude_hot_in:"+t;function _r(t,e){const n=[];for(let o=0;o<t.length;o++){const a=t.key(o);a!==null&&a!==e&&mr.test(a)&&n.push(a)}for(const o of n)t.removeItem(o)}function vr(t){let e=null;try{e=z(JSON.parse(t)?.hot)}catch{return null}return e===null||typeof e.k!="string"||!dt.test(e.k)?null:he(e.g)?{k:e.k,g:e.g}:{k:e.k}}var pn=262144,yr=3e3,ht=/^[a-z0-9._:-]{1,64}$/,gr=["none","hot-restart","hard-reload"],wr=["asset","doc","added","removed"],br=1500,Er=/^[0-9a-f]{64}$/;function z(t){return t!==null&&typeof t=="object"?t:null}function he(t){return typeof t=="number"&&Number.isInteger(t)&&t>=0&&t<2**31}function pt(t){return t===void 0||typeof t=="number"&&Number.isFinite(t)}function Sr(t){return t===void 0||typeof t=="string"&&ht.test(t)}function mt(t){const e=z(t);return e!==null&&(e.until===null||typeof e.until=="number"&&Number.isFinite(e.until))&&typeof e.now=="boolean"}function Ue(t){const e=z(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&pt(e.seq)&&typeof e.handoff=="string"&&cr.includes(e.handoff)&&Sr(e.note)}function Ar(t){const e=z(t);return e!==null&&he(e.gen)&&(e.phase==="final"||e.phase==="pending")&&(e.from===null||Ue(e.from))}function kr(t){const e=z(t);return e!==null&&e.kv===1&&he(e.gen)&&Ue(e.from)&&Object.hasOwn(e,"data")}function Rr(t){const e=z(t);return e!==null&&e.__frame_hot_snapshot===!0&&he(e.gen)&&typeof e.timeoutMs=="number"&&e.timeoutMs>=0&&e.timeoutMs<=6e4&&(e.handoff===void 0||typeof e.handoff=="boolean")&&(e.deadline===void 0||mt(e.deadline))&&pt(e.seq)&&(e.note===void 0||typeof e.note=="string")&&(e.key===void 0||typeof e.key=="string")}function Tr(t){const e=z(t);return e!==null&&e.__frame_hot_start===!0&&he(e.gen)&&Ue(e.from)}function _t(t){const e=z(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Number.isFinite(e.seq)}function vt(t){if(t==null||typeof t=="string")return!0;const e=z(t);return e!==null&&typeof e.doc=="string"&&typeof e.profile=="string"}function Or(t){const e=z(t);return e!==null&&typeof e.path=="string"&&wr.includes(e.kind)&&vt(e.from)&&vt(e.to)}function Lr(t){return t===null?null:Object.freeze(t.filter(Or))}function Pr(t){const e=z(t);return e!==null&&e.__frame_hot_update===!0&&Number.isFinite(e.id)&&_t(e.from)&&_t(e.to)&&(e.changed===null||Array.isArray(e.changed))&&gr.includes(e.required)&&mt(e.deadline)&&typeof e.verdictTimeoutMs=="number"&&e.verdictTimeoutMs>=0&&e.verdictTimeoutMs<=6e4&&(e.preflight===void 0||typeof e.preflight=="string"&&Er.test(e.preflight))}var oe=/^[\w.-]+\.js$/;function Mr(t,e,n){return n?"inert":typeof e=="string"&&oe.test(e)?t?[e]:"inert":t?"inert":"framed"}var yt=Object.freeze({[Symbol("claude.hot.restart")]:!0});function gt(t,e){let n;try{n=t??sessionStorage}catch{return null}const o=Be(e?.k),a=de(e?.k);let l=null;try{l=n.getItem(o)}catch{}try{n.removeItem(o)}catch{}try{_r(n,a)}catch{}let i=null;if(l!==null&&!(e!==null&&e.g===void 0))try{const f=JSON.parse(l);kr(f)&&(e===null||f.gen===e.g)&&(i=f)}catch{}if(i===null)try{n.removeItem(a)}catch{}return i}function Nr(){const t=/^\/_f\/([^/]{1,128})\//.exec(location.pathname);return t?t[1]:""}var Cr=/^[^/\\?#]{1,128}$/,wt=t=>Cr.test(t)&&t!=="."&&t!=="..";function bt(t,e,n){const o=new URL(t),a="/_f/"+e+"/";if(!e||!o.pathname.startsWith(a)||!wt(n))return null;const l=o.search.slice(1).split("&").filter(i=>!/^__frame_t(?:=|$)/.test(i)).join("&");return o.origin+"/_f/"+n+"/"+o.pathname.slice(a.length)+(l?"?"+l:"")+o.hash}var Ae="{}";function pe(t){if(!t)return null;const e={ver:t.ver,handoff:t.handoff};return t.seq!==void 0&&(e.seq=t.seq),t.note!==void 0&&(e.note=t.note),e}function Et(t,e){return t!==null&&t.note===void 0&&e?.note!==void 0?{...t,note:e.note}:t}function St(t){const e=t?.k;return e!==null&&typeof e=="object"?e:void 0}function jr(t,e,n,o=null){const a=setTimeout,l=clearTimeout,i=queueMicrotask,f=performance.now.bind(performance),T=new TextEncoder;let w=null,O=null;try{w=history,O=w.replaceState.bind(w)}catch{}const _=(...r)=>{try{console.warn(...r)}catch{}};let R=Nr(),m=null;try{m=sessionStorage}catch{}const h={storage:m,fetch:typeof fetch=="function"?fetch.bind(globalThis):null,entry:location.origin+location.pathname+location.search,ver:R,key:o?.k};let M=o?.k;const K=typeof requestAnimationFrame=="function"?requestAnimationFrame:r=>a(()=>r(f()),16);let v=e?.data??{},L=pe(e?.from),S=e?.gen??0,N=e!==null,$=!1,J=!1,W=null,_e=!1;const ve=new AbortController;let ye=null,C=null,ge=null,we=!1,s=()=>{};const p=new Promise(r=>{s=r});let b=!1,j=!1,I=!1,B,A=null,U=!1,le=!1;const se=r=>{for(const c of[Be(r),de(r)])try{m?.removeItem(c)}catch{}},D=(r,c)=>{try{c!==null&&n.post(r,c)}catch{}},Z=()=>{const r={__frame_hot:!0,ready:C!==null,accept:ge!==null};b&&(r.readData=!0),I&&(r.threw=!0),A?.assess&&(r.preflight=!0),D(r,W)};let be=!1,d=!1,H=!1,X=!1;const G=()=>{be||!_e||H||(be=!0,D({__frame_reveal_hold:!0},"*"))},re=()=>new Promise(r=>{let c,u=0;const y=P=>{if(c===void 0)c=P;else if(P!==c||++u>=8){r();return}try{K(y)}catch{r()}};try{K(y)}catch{r()}}),te=()=>{H=!0,D({__frame_reveal_ready:!0},"*")},Ee=r=>{d||(d=!0,r.then(c=>{if(c===!1)return;let u=null;try{u=A?.settle?.()??null}catch{}return(u===null?re():new Promise(y=>{a(y,50),Promise.resolve(u).then(y,y)}).then(re)).then(te)}))},rn=()=>{if(X||!H)return;X=!0;const r=()=>{try{A?.afterReveal?.()}catch{}};r(),re().then(()=>{r(),te()})},Ne=(r=!1)=>{if(we||C===null||!N||!J)return;we=!0;const c=C,u=v;i(()=>{let y;try{y=c(u)}catch(x){throw s(!1),x}let P=!1;try{P=typeof y?.then=="function"}catch{}if(!P){s(!0);return}Promise.resolve(y).then(()=>s(!0),x=>{s(!1),i(()=>{throw x})})}),Ee(r?p:n.dcl.then(()=>p))},Ce=r=>typeof r=="string"&&ht.test(r)?r:void 0,Qe=r=>{const c={__frame_hot_restart:!0},u=Ce(r?.note);u!==void 0&&(c.note=u),r?.required==="hard-reload"&&(c.required="hard-reload"),D(c,W)},It=Object.freeze({get data(){return J||(j=!0),!N&&!b&&(b=!0,J&&Z()),v},get from(){return L},get gen(){return S},signal:ve.signal,snapshot(r){typeof r=="function"&&(ye=r)},ready(r){typeof r!="function"||C!==null||(C=r,G(),Z(),$&&D({__frame_hot_ready:!0,gen:S},W),Ne())},accept(r){typeof r=="function"&&(ge=r,Z())},restart(r){const c={note:r?.note,required:r?.required};if(J){Qe(c);return}const u=B;B={note:Ce(u?.note)??c.note,required:u?.required==="hard-reload"||c.required==="hard-reload"?"hard-reload":void 0}}});let je=null,xt=()=>{};const nn=new Promise(r=>{xt=r});let on=null;const Ft=()=>on??=n.dcl.then(()=>{let r=!1;try{r=je!==null&&je.expect()}catch{}if(!r)return;const c=je.maxMs;return new Promise(u=>{nn.then(u),a(u,c)})}),Dt=()=>{if(!U||le||A===null)return;le=!0;const r=A;Ft().then(()=>{try{H||r.afterStart(St(e),!1)}catch{}})},Ht=r=>{e!==null&&j&&(b=!0),v={},L=null,S=0;try{m?.removeItem(de(o?.k))}catch{}e!==null&&!r&&Ee(n.dcl.then(()=>C!==null?p:void 0))},an=()=>{U=!0,Ee(Ft().then(()=>C!==null?p:void 0)),Dt()};try{addEventListener("error",()=>{I||C!==null||(I=!0,Z())})}catch{}let ne=-1,et,tt,Se=!0,rt=!1,nt,Ie=null;const ot=r=>{const c=Ie===null;Ie=Se&&r[0]!=="withheld"?r:["withheld",r[1],Ae];let u=r[0];if(Se&&u!=="withheld"){const P={ver:R,handoff:u};et!==void 0&&(P.seq=et),tt!==void 0&&(P.note=tt);try{if(m===null)throw new Error("no storage");m.setItem(Be(M),'{"kv":1,"gen":'+ne+',"from":'+JSON.stringify(P)+(nt!==void 0?',"k":'+JSON.stringify(nt):"")+',"data":'+(u==="ok"?r[2]:Ae)+"}")}catch{u="unavailable"}}else{u="withheld",se(M);try{A?.release?.()}catch{}}const y={__frame_hot_snapshotted:!0,gen:ne,handoff:u,bytes:r[1]};r[3]!==void 0&&(y.errName=r[3]),D(y,W),c&&(u==="snapshot_error"||u==="unclonable"||u==="oversize")&&_("claude.hot: snapshot",u,r[3])},ie=r=>{try{return fr(r?.name)}catch{return"other"}},ce=(r,c,u=0)=>ot(c===void 0?[r,u,Ae]:[r,u,Ae,ie(c)]),ln=r=>{if(r.gen<=ne)return;const c=ne>=0;if(ne=r.gen,et=r.seq,tt=Ce(r.note),typeof r.key=="string"&&dt.test(r.key)&&r.key!==M&&(se(M),M=r.key),Se&&=r.handoff!==!1,c){Ie!==null?ot(Ie):rt&&D({__frame_hot_held:!0,gen:ne},W);return}ve.abort();const u=Object.freeze({handoff:Se,timeoutMs:r.timeoutMs,deadline:r.deadline??dr}),y=ye,P=()=>{if(Se)try{nt=A?.capture()}catch{}if(y===null){ce("empty");return}let E=!1;const q=a(()=>{E||(E=!0,ce("snapshot_timeout"))},Math.max(0,u.timeoutMs));Promise.resolve().then(()=>y(u)).then(ue=>{if(E)return;E=!0,l(q);let Q;try{Q=JSON.stringify(ue)}catch(at){ce("unclonable",at);return}if(typeof Q!="string"){ce("unclonable");return}let ee=Q.length;try{ee=T.encode(Q).length}catch{}if(ee>262144){ce("oversize",void 0,ee);return}ot(["ok",ee,Q])},ue=>{E||(E=!0,l(q),ce("snapshot_error",ue))})};let x=null;try{x=A?.holdForIme()??null}catch{}if(x===null)P();else{rt=!0,D({__frame_hot_held:!0,gen:ne},W);const E=()=>{rt=!1,P()};x.then(E,E)}},sn=r=>{if(!$||N||C===null||r.gen!==S)return;let c=null;try{c=gt(m,o&&{k:o.k,g:r.gen})}catch{}if(c!==null&&c.gen!==r.gen){c=null;try{m?.removeItem(de(o?.k))}catch{}}v=c?.data??{},L=Et(pe(c?.from??r.from),pe(r.from)),c!==null&&(S=c.gen),N=!0,$=!1;const u=St(c);p.then(y=>{try{y&&A?.afterStart(u,!0)}catch{}}),Ne(!0)};let xe=0;const cn=r=>{const c=ge;if(c===null||r.id<=xe)return;xe=r.id;const u=A?.assess;if(r.preflight===void 0||u===void 0){qt(r,c);return}let y=!1;const P=q=>{y||(y=!0,l(E),r.id===xe&&qt(r,c,q))},x=()=>P(u.timeout(r)),E=a(x,br+100);u.run(r,window).then(P,x)},qt=(r,c,u)=>{let y,P=!1,x=!1,E,q,ue=null;const Q=g=>{if(x)return!1;if(E!==void 0&&E!==g)return _(`claude.hot: u.${g}() ignored - u.${E}() was called first`),!1;const Y=E===void 0;return E=g,Y},ee=g=>{E="restart",_(`claude.hot: ${g} - restarting`)},at=()=>{if(!Q("adopt")||r.id!==xe)return;const g=r.to.ver;if(Fe.required!=="none"){ee(`u.adopt() needs required 'none', it is '${Fe.required}'`);return}if(!wt(g)){ee("u.adopt() cannot address this version");return}if(!R||g===R)return;const Y=R,V=h.entry;let De="",st,fe=null,He;try{De=location.href,st=w.state,fe=bt(De,Y,g),fe!==null&&(O(st,"",fe),location.pathname.startsWith("/_f/"+g+"/")?fe=location.href:He="navigate event canceled")}catch(ct){He=ie(ct)}if(He!==void 0){q="adopt_failed",ee(`adopt_failed ${He}; URL not changed`);return}fe===null?(q="adopt_skipped",_(`claude.hot: adopt_skipped - page already left /_f/${Y}/; URL not changed, update still applied`)):q="adopted",R=h.ver=g;try{h.entry=bt(V,Y,g)??V}catch{}const it=fe;ue=()=>{if(R===g){if(it!==null)try{if(location.href!==it)_("claude.hot: adopt_revert_skipped - update not applied; URL left where the page navigated");else{if(O(st,"",De),location.href!==De){_("claude.hot: adopt_revert_failed navigate event canceled - URL still at the new version");return}q="adopt_reverted",_("claude.hot: adopt_reverted - adopt() was called but the handler threw; URL restored")}}catch(ct){_(`claude.hot: adopt_revert_failed ${ie(ct)} - URL still at the new version`);return}R=h.ver=Y,h.entry=V,it===null&&(q=void 0)}}},Fe=Object.freeze({from:{ver:r.from.ver,seq:r.from.seq},to:{ver:r.to.ver,seq:r.to.seq},changed:Lr(r.changed),required:r.required,deadline:r.deadline,adopt:at,defer(){return Q("defer")&&Fe.deadline.now&&ee("u.defer() past the deadline"),yt},restart(g){return Q("restart"),E==="restart"&&!x&&(y??=Ce(g?.note),P||=g?.required==="hard-reload"),yt},...u?.update}),un=(g,Y)=>{x=!0,g==="threw"?(ue?.(),y??=ie(Y).toLowerCase()):E===void 0&&_(g==="timeout"?"claude.hot: accept handler did not answer in time - restarting":"claude.hot: accept handler settled without defer/restart/adopt - restarting");const V={__frame_hot_verdict:!0,id:r.id};V.verdict=g==="threw"||E===void 0||E==="restart"?"restart":E==="adopt"?"applied":"deferred",V.verdict==="restart"&&(P&&(V.required="hard-reload"),y!==void 0&&(V.note=y)),q!==void 0&&(V.verdict==="applied"||q!=="adopted")&&(V.adopt=q),D(Object.assign(V,u?.verdict),W)};let Bt=!1;const lt=(g,Y)=>Bt?!1:(Bt=!0,l(fn),un(g,Y),!0),fn=a(()=>lt("timeout"),r.verdictTimeoutMs);Promise.resolve().then(()=>c(Fe)).then(()=>lt("settled"),g=>{!lt("threw",g)&&E==="adopt"&&Qe({note:ie(g).toLowerCase()}),_("claude.hot: accept",ie(g))})};try{t.hot===void 0&&Object.defineProperty(t,"hot",{value:It,writable:!1,configurable:!1,enumerable:!1})}catch{}return{hot:It,boot:h,afterConnect(){_e=!0,(e!==null||C!==null)&&G()},onInit(r,c){W=c,J=!0;const u=Ar(r)?r:null;u?.phase==="final"&&e!==null&&e.gen===u.gen?(N=!0,L=Et(L,pe(u.from)),an()):($=u?.phase==="pending",Ht($),N=!$,S=u?.gen??0,L=pe(u?.from)),Z(),$&&C!==null&&D({__frame_hot_ready:!0,gen:S},c),B!==void 0&&(Qe(B),B=void 0),Ne()},onNoInit(){J=!0,Ht(!1),N=!0,Ne()},onShell(r){return r?.__frame_revealed===!0?(rn(),!1):Rr(r)?(ln(r),!0):Tr(r)?(sn(r),!0):Pr(r)?(cn(r),!0):!1},attachExtras(r){A=r,Dt(),r.assess&&Z()},inSlot:()=>de(M),hydration(r,c){je??={expect:r,maxMs:c}},hydrated(){xt()},carried(){return N?v:{}},presented:()=>H}}var mn="frame_ldx_runtime",Ir="frame_ldx_build",_n="script#an-form",xr=256;function At(t,e,n){for(const o of t)n(o)&&t.delete(o);t.size>=xr&&!t.has(e)&&t.delete(t.values().next().value),t.add(e)}function ze(t,e,n){try{const o=t[e];if(typeof o!="function")return;t[e]=function(...a){const l=o.apply(this,a);try{n(this)}catch{}return l}}catch{}}var Ke;function Fr(){if(Ke)return Ke;const t={media:new Set,contexts:new Set,onStart:null,onPause:null};Ke=t;const e=window.HTMLMediaElement?.prototype;e&&(ze(e,"play",a=>{At(t.media,a,l=>l.paused),t.onStart?.(a)}),ze(e,"pause",a=>t.onPause?.(a)));const n=window.AudioContext,o=window.AudioNode?.prototype;return n&&o&&ze(o,"connect",a=>{const l=a.context;l instanceof n&&(At(t.contexts,l,i=>i.state==="closed"),t.onStart?.(l))}),t}function Dr(t){let e=window;for(let n=0;e.parent&&e.parent!==e&&n<8;n++)if(e=e.parent,t(e))return!0;return!1}function Hr(){let t=null;const e=()=>t??parent,n=o=>t?o===t:Dr(a=>a===o);return{post(o,a){if(t){e().postMessage(o,a);return}let l=parent;for(let i=0;i<8&&(l.postMessage(o,a),!(!l.parent||l.parent===l));i++)l=l.parent},on(o){const a=l=>{const i=l.source;n(i)&&o(l.data,l.origin,l.isTrusted,()=>{t??=i})};return addEventListener("message",a),()=>removeEventListener("message",a)},port:o=>({post(a,l){if(l?.activation){e().postMessage(a,{targetOrigin:o,includeUserActivation:!0});return}if(l?.transfer){e().postMessage(a,o,l.transfer);return}e().postMessage(a,o)},on(a,l){const i=f=>{n(f.source)&&f.origin===o&&a(f.data,f)};return addEventListener("message",i,l),()=>removeEventListener("message",i,l)}})}}function qr(){const t={post:()=>{},on:()=>()=>{}};return{...t,port:()=>t}}var $e="__frame_scroll",Br=150,Ur=310,zr=160,Kr=3e4;function $r(){let t=0,e=!1,n=!1,o=!1,a=0,l=null;const i=v=>{try{sessionStorage.setItem($e,JSON.stringify({y:v}))}catch{}},f=()=>{if(clearTimeout(t),l===null)return;const v=l;l=null,i(v)},T=()=>{if(e){e=!1;return}n=!0,l=scrollY,clearTimeout(t),t=setTimeout(f,Br)};try{addEventListener("scroll",T,{passive:!0}),addEventListener("pagehide",f)}catch{}const w=()=>{let v;try{v=sessionStorage.getItem($e)}catch{return null}if(v===null)return null;let L;try{L=JSON.parse(v)}catch{L=null}const S=L?.y;if(!(typeof S=="number"&&Number.isFinite(S)&&S>=0)){try{sessionStorage.removeItem($e)}catch{}return null}return S};let O=!1;const _=v=>{try{const L=scrollY;scrollTo({top:v,left:0,behavior:"instant"}),a=v,o=!0,clearTimeout(t),l=null,i(v);const S=scrollY;S!==L&&(e=!0),S!==v&&!O&&(O=!0,addEventListener("load",()=>{try{if(scrollY===S){const N=w();_(N!==null?N:a)}}catch{}},{once:!0}))}catch{}},R=()=>{try{return!!location.hash}catch{return!0}};let m=!1;const h=()=>{try{if(m||innerWidth>Ur||innerHeight>zr)return;m=!0;const v=Date.now(),L=()=>{try{removeEventListener("resize",L)}catch{}if(Date.now()-v>Kr||n||R())return;const S=w();_(S!==null?S:a)};addEventListener("resize",L)}catch{}};let M=!1,K=!1;return{restore(){if(M||(M=!0,R()))return;const v=w();v!==null&&(_(v),h())},promoted(){if(K||(K=!0,R()))return;const v=w();v!==null?(_(v),h()):o&&_(a)}}}function Wr(t,e,n,o){let a=null;try{a=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:T=>T})??null}catch{}const l=window.Worker,i=l?.prototype,f=Object.freeze({Worker:l,workerOn:i?.addEventListener,workerPost:i?.postMessage,workerTerminate:i?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,now:Date.now,policy:a,origins:e});n(t).then(T=>T?.bootTopLevel?T.bootTopLevel(f,o):o.settle()).catch(()=>o.settle())}var vn="modulepreload",yn=function(t){return"/"+t},gn={},Vr=function(e,n,o){let a=Promise.resolve();function l(i){const f=new Event("vite:preloadError",{cancelable:!0});if(f.payload=i,window.dispatchEvent(f),!f.defaultPrevented)throw i}return a.then(i=>{for(const f of i||[])f.status==="rejected"&&l(f.reason);return e().catch(l)})},Xr=window===top,kt=Object.getOwnPropertyDescriptor(window,"claude"),ke=Mr(Xr,window.__FRAME_PREAMBLE?.topLevel,kt?.writable===!1),We=typeof ke=="object"&&ke[0],k=We?qr():Hr();(function(){const t=Object.defineProperty,e=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let o=0;for(let a=0;a<n.length;a++){const l=n[a];try{t(e,l,{value:void 0,writable:!1,configurable:!1})}catch{try{delete e[l]}catch{}try{t(e,l,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof e[l]=="function"&&o++}if(o&&ke==="framed")try{k.post({__frame_rtc_lockdown_failed:o},"*")}catch{}})();var Gr=1e4,Yr=2e3,Ve=2e3,Rt=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function Tt(t){for(const e of Rt)if(e.endsWith(":*"))try{const n=new URL(t);if(`${n.protocol}//${n.hostname}:*`===e)return!0}catch{}else if(t===e)return!0;return!1}var Re=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),Te=window.__FRAME_PREAMBLE?.transforms,Xe=window.__FRAME_PREAMBLE?.comments,Ge=window.__FRAME_PREAMBLE?.translate,me=window.__FRAME_PREAMBLE?.ldx;function Ot(t){return Vr(()=>import("/_runtime/"+t),void 0)}var Oe=new Set,Jr=setTimeout,Zr=800+800*Math.random();function ae(t){return Ot(t).catch(()=>new Promise(e=>Jr(e,Zr)).then(()=>Ot(t+"?r=1")).then(e=>(e!==void 0&&Oe.add(t),e)))}function Lt(t,e,n){return{contract:t.contract,changes:new Set(t.changes??[]),flags:new Set(t.flags??[]),capabilities:t.capabilities??{},capBudgets:t.capBudgets??{},transforms:new Map,shellOrigin:e,shell:n,mount:Ze,hooks:Pe,pipe:()=>({wrap:(o,a)=>(...l)=>{try{return a(...l)}catch(i){return Promise.reject(i)}}})}}var Le=null,F=null;function Pt(t,e,n){try{Object.defineProperty(t,e,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(t,e,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var Ye=!1,Pe={editBefore:null,edit:null};function Qr(t,e,n=!1){const o=[];let a;if(n)try{Pe.editBefore?.(t)}catch{}for(const l of t.elements){const i=document.querySelector(`[data-id="${l.target}"]`);if(!i){a=l.target;break}if([...Object.keys(l.attrsSet??{}),...l.attrsRemoved??[]].some(f=>!Wt(f)||Vt(i,f))){a=l.target;break}if(l.text!==void 0&&(!Jt(i)||tr(i))){a=l.target;break}for(const[f,T]of Object.entries(l.attrsSet??{}))if(!Nt(i,f)){try{i.setAttribute(f,T)}catch{}Mt(i,f,T)}for(const f of l.attrsRemoved??[])Nt(i,f)||(i.removeAttribute(f),Mt(i,f,null));typeof l.text=="string"&&Qt(i,l.text),o.push(l.target)}if(n)try{Pe.edit?.(t.seq,o,a)}catch{}if(a!==void 0){k.post({__frame_patch_miss:{seq:t.seq}},e);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:t.seq,targets:o}}))}catch{}}function Mt(t,e,n){if(!(t instanceof HTMLInputElement))return;const o=e.toLowerCase();o==="checked"?t.checked=n!==null:o==="value"&&t.type!=="file"&&(t.value=n??"")}function Nt(t,e){const n=e.toLowerCase(),o=t;return n==="data-id"||(n==="value"||n==="checked")&&(o.__artifactSecret===!0||/^(password|hidden|file)$/.test(o.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${t.getAttribute("autocomplete")??""} ${o.autocomplete??""}`))}function Ct(t){const e=document.documentElement;t==="light"||t==="dark"?(e.dataset.theme=t,e.style.colorScheme=t,Ye=!0):Ye&&(delete e.dataset.theme,e.style.colorScheme="",Ye=!1)}var Me=new Map;function en(){let t;const e={u:new Promise(n=>{t=n}),r:n=>{e.done=!0,t(n)},done:!1,nulled:!1};return e}function Je(){for(const t of Me.values())t.done||(t.nulled=!0,t.r(null))}var tn=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),Ze=(t,e)=>{const n=Me.get(t);if(!n||n.done){n?.nulled&&F&&k.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:t,phase:"install"}},F);return}const o=typeof e=="function"?Object.setPrototypeOf(e,tn):Object.assign(Object.create(null),e);typeof o.then=="function"&&delete o.then,n.r(Object.freeze(o))};function jt(){const t=kt?.value??{};Pt(window,"claude",t);for(const e of Object.keys(Re)){if(t[e]!==void 0){Pt(t,e,t[e]);continue}Me.set(e,en())}if(t.use===void 0){const e=n=>{if(typeof n!="string"||!Object.hasOwn(Re,n))return Promise.resolve(null);const o=Me.get(n);return o?o.u:Promise.resolve(t[n]??null)};try{Object.defineProperty(t,"use",{value:e,writable:!0,configurable:!0,enumerable:!1})}catch{}}return t}if(ke==="framed"){const t=Te&&oe.test(Te)?ae(Te).catch(()=>{}):Promise.resolve(void 0),e=s=>{if(s.type==="auxclick"&&s.button!==1)return;const p=s.target,b=p&&p.closest?p.closest("a[href],area[href]"):null;if(!b)return;const j=b.getAttribute("href");if(!j)return;let I;try{I=new URL(j,document.baseURI)}catch{return}if((I.protocol==="http:"||I.protocol==="https:")&&I.origin!==location.origin){s.preventDefault();const B=(b.getAttribute("target")??"").toLowerCase(),A=s.type==="auxclick"||s.metaKey||s.ctrlKey||s.shiftKey||s.altKey||!["","_self","_top","_parent"].includes(B);k.post({__frame_nav:!0,url:I.href,newTab:A},"*")}};addEventListener("click",e,!0),addEventListener("auxclick",e,!0);const n={},o=s=>{s.isTrusted&&(n.pointer=!0)},a=s=>{s.isTrusted&&(n.click=!0)};addEventListener("pointermove",o,{capture:!0,passive:!0}),addEventListener("click",a,{capture:!0,passive:!0});const l={cb:null};addEventListener("keydown",s=>l.cb?.(s),!0);const i={cb:null};addEventListener("keydown",s=>i.cb?.(s));const f=Fr();t.then(s=>s?.installEscapeForward?.(l,p=>{F&&k.post(p,F)})),t.then(s=>{try{s?.installFocusKeep?.()}catch{}}),t.then(s=>{if(!s?.wireNav)return;const p=k.port("*");s.wireNav(p),removeEventListener("click",e,!0),removeEventListener("auxclick",e,!0),removeEventListener("pointermove",o,!0),removeEventListener("click",a,!0),s.wireEngagement?.(n,p)});let T=null;try{T=$r()}catch{}const w=document.readyState==="loading"?new Promise(s=>document.addEventListener("DOMContentLoaded",()=>s(),{once:!0})):Promise.resolve();let O=null,_=null;try{_=vr(window.name),O=gt(null,_)}catch{}const R=jt();let m=null;try{m=jr(R,O,{post:(s,p)=>k.post(s,p),dcl:w},_)}catch{}t.then(s=>{try{m&&s?.installHotExtras?.(m)}catch{}});let h=null;const M=()=>Array.isArray(h?.flags)&&h.flags.includes("frame_ldx_runtime")&&!!me&&oe.test(me)&&document.querySelector("script#an-form")!==null;try{m?.hydration(M,yr)}catch{}let K=null,v=0;const L=k.on((s,p,b,j)=>{Tt(p)&&ar(s)&&(j(),h=s.__frame_init,F=p,L(),clearTimeout(v),K?.())});k.post({__frame_connect:!0},"*");try{m?.afterConnect()}catch{}const S=setTimeout,N=clearTimeout;let $=()=>NaN,J=()=>[];try{$=performance.now.bind(performance),J=performance.getEntriesByType.bind(performance)}catch{}let W=0;const _e=()=>{try{k.post({__frame_alive:!0},"*")}catch{}W=S(_e,Yr)},ve=()=>N(W);_e(),addEventListener("load",ve,{once:!0});const ye=new Promise(s=>{K=s,v=setTimeout(()=>{L(),s()},Gr)}),C=new WeakSet;addEventListener("error",s=>{s.target&&C.add(s.target)},!0);const ge=()=>{let s=[];try{s=[...document.querySelectorAll("link[rel~=stylesheet]:not([rel~=alternate])")].filter(b=>!b.sheet&&!b.disabled&&!C.has(b)&&b.getAttribute("href")&&URL.canParse(b.href)&&(!b.media||matchMedia(b.media).matches))}catch{}let p=s.length;return p===0?Promise.resolve():new Promise(b=>{try{const j=Ve-$(),I=S(b,j>0?j<Ve?j:Ve:0),B=()=>{--p===0&&(N(I),b())};for(const A of s)A.addEventListener("load",B,{once:!0}),A.addEventListener("error",B,{once:!0})}catch{b()}})};w.then(()=>{try{T?.restore()}catch{}}),Promise.all([ye,w,t]).then(([,,s])=>{if(h?.hostOverlays!==!0||!F)return;let p=!1;try{p=s?.declaresCover?.()===!0}catch{}k.post({__frame_layout:{cover:p}},F)});const we={cb:null};k.on((s,p)=>{if(Tt(p)&&lr(s)){try{T?.promoted()}catch{}we.cb?.()}}),ye.then(async()=>{if(!h||!F){Je();try{m?.onNoInit()}catch{}return}if(Ct(h.theme),h.hostVisible===!1&&t.then(d=>d?.applyHostVisible?.(!1,f)),h.hostKeys!==void 0){const d=F,H=h.hostKeys;t.then(X=>X?.installHostKeyForward?.(i,H,G=>k.post(G,d)))}try{m?.onInit(h.hot,F)}catch{}const s=F,p=k.port(s);let b=!1,j=!1;k.on((d,H,X)=>{if(H!==s)return;try{if(m?.onShell(d))return}catch{}if(ir(d)&&Ct(d.__frame_theme.theme),sr(d)){const te=d.__frame_host_visible.visible;t.then(Ee=>Ee?.applyHostVisible?.(te,f))}or(d)&&Qr(d.__frame_patch,s,X);const G=d?.__fc_mode;G&&typeof G=="object"&&!b&&Xe&&oe.test(Xe)&&(b=!0,ae(Xe).then(te=>te.install?.(s,G.on===!0,p)).catch(()=>{}));const re=d?.__ft_cmd;re&&typeof re=="object"&&!j&&Ge&&oe.test(Ge)&&(j=!0,ae(Ge).then(te=>te.install?.(s,re,p)).catch(()=>{}))});const I=Object.keys(h.capabilities??{}).filter(d=>Object.hasOwn(Re,d)).map(d=>[d,Re[d]]).filter(d=>typeof d[1]=="string"&&oe.test(d[1])),B=await Promise.allSettled(I.map(([,d])=>ae(d))),A=await t,U=F;if(A?.buildBoot||k.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},U),A?.buildBoot)try{Le=A.buildBoot(h,A.TRANSFORMS??{},{shellOrigin:U,mount:Ze,hooks:Pe,shell:p},d=>k.post({__frame_cap_telemetry:d},U))}catch{k.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms",phase:"install"}},U),Le=Lt(h,U,p)}else Le=Lt(h,U,p);const le=(d,H)=>k.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:d,phase:H}},U),se=d=>k.post({__frame_cap_recovered:{cap:d}},U);A?.buildBoot&&Oe.has(Te??"")&&se("_transforms");const D=Le;B.forEach((d,H)=>{const[X,G]=I[H];if(d.status!=="fulfilled"){le(X);return}Oe.has(G)&&se(X);try{d.value?.install?.(D)}catch{le(X,"install")}}),Je(),await w,await ge(),ve();const Z=Ut(J,$);k.post(Z?{__frame_ready:!0,nav:Z}:{__frame_ready:!0},F),t.then(d=>d?.installSizeReporter?.(U,we,p));let be=!1;try{be=M()}catch{}me&&be?ae(me).then(d=>d?.boot?.({shellOrigin:s,build:D.flags.has(Ir),hot:m?.hot??null,carried:m?.carried(),presented:()=>m?.presented()??!0})).catch(()=>!1).then(d=>{m?.hydrated(),d!==!0?le("_ldx"):Oe.has(me)&&se("_ldx")}):m?.hydrated()})}else We&&(jt(),Wr(We,Rt,ae,{settle:Je,mount:Ze}))})();</script><!-- /frame-runtime -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resolução estruturada de problemas — programa de formação</title>
+<style>
+:root{
+  --ink:#000000;
+  --paper:#FFFFFF;
+  --s1:#F4F4F4;
+  --s2:#EAEAEA;
+  --s3:#DEDEDE;
+  --s4:#CFCFCF;
+  --border:#DFDFDF;
+  --border2:#BDBDBD;
+  --dark:#1A1A1A;
+  --dot:#B8B8B8;
+  --maxw:64rem;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#000000; --paper:#FFFFFF; --s1:#F4F4F4; --s2:#EAEAEA; --s3:#DEDEDE;
+    --s4:#CFCFCF; --border:#DFDFDF; --border2:#BDBDBD; --dark:#1A1A1A; --dot:#B8B8B8;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#000000; --paper:#FFFFFF; --s1:#F4F4F4; --s2:#EAEAEA; --s3:#DEDEDE;
+  --s4:#CFCFCF; --border:#DFDFDF; --border2:#BDBDBD; --dark:#1A1A1A; --dot:#B8B8B8;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size:16px; line-height:1.55;
+}
+h1,h2,h3,h4,p,ul,ol,li,td,th,label,legend,figcaption,small,strong,em,a,button,input,textarea,select{color:var(--ink)}
+
+/* ---------- motivo de pontos ---------- */
+.dots{
+  background-image:radial-gradient(var(--dot) 1.6px, transparent 1.6px);
+  background-size:11px 11px;
+}
+
+/* ---------- topo ---------- */
+header.top{
+  position:sticky; top:0; z-index:50; background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.topin{
+  max-width:var(--maxw); margin:0 auto; padding:.6rem 1.1rem;
+  display:flex; align-items:center; gap:.9rem; flex-wrap:wrap;
+}
+.brand{font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase}
+.topnav{margin-left:auto; display:flex; gap:.45rem; align-items:center; flex-wrap:wrap}
+.btn{
+  font:inherit; font-size:.8rem; font-weight:700; cursor:pointer;
+  background:var(--s1); border:1px solid var(--border2); border-radius:5px;
+  padding:.34rem .7rem;
+}
+.btn:hover{background:var(--s2)}
+.btn[disabled]{opacity:.4; cursor:not-allowed}
+.btn.solid{background:var(--s3)}
+.prog{
+  width:100%; height:5px; background:var(--s2);
+  border-top:1px solid var(--border);
+}
+.prog > i{display:block; height:100%; background:var(--dark); width:0%}
+
+/* ---------- layout ---------- */
+main{max-width:var(--maxw); margin:0 auto; padding:1.6rem 1.1rem 5rem}
+.sec{display:none}
+.sec.on{display:block}
+.kick{
+  font-size:.7rem; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; margin:0 0 .35rem;
+}
+h1{font-size:1.95rem; line-height:1.18; margin:0 0 .6rem; font-weight:700}
+h2{font-size:1.3rem; line-height:1.25; margin:2.2rem 0 .7rem; font-weight:700}
+h3{font-size:1.02rem; margin:1.5rem 0 .5rem; font-weight:700}
+h4{font-size:.86rem; margin:1.1rem 0 .35rem; font-weight:700;
+   letter-spacing:.08em; text-transform:uppercase}
+p{margin:0 0 .85rem}
+.lede{font-size:1.04rem}
+ul,ol{margin:0 0 .95rem; padding-left:1.25rem}
+li{margin-bottom:.42rem}
+hr.rule{border:0; border-top:2px solid var(--dark); margin:2rem 0 1.4rem}
+small{font-size:.8rem}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--s1); border:1px solid var(--border); border-radius:6px;
+  padding:1rem 1.1rem; margin:0 0 1rem;
+  box-shadow:0 1px 3px rgba(0,0,0,.07);
+}
+.card.plain{background:var(--paper)}
+.card.tint{background:var(--s2)}
+.card.strong{background:var(--s3); border-color:var(--border2)}
+.card > :last-child{margin-bottom:0}
+.card h3, .card h4{margin-top:0}
+.grid{display:grid; gap:.85rem}
+@media(min-width:720px){
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ---------- tabelas ---------- */
+.tw{overflow-x:auto; margin:0 0 1.1rem}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:34rem}
+th,td{border:1px solid var(--border); padding:.5rem .6rem; text-align:left; vertical-align:top}
+th{background:var(--s3); font-weight:700}
+tbody tr:nth-child(even) td{background:var(--s1)}
+
+/* ---------- sumário ---------- */
+.toc{list-style:none; padding:0; margin:1.2rem 0 0}
+.toc li{
+  border:1px solid var(--border); border-radius:6px; background:var(--paper);
+  margin-bottom:.55rem; display:flex; align-items:stretch; overflow:hidden;
+}
+.toc .chk{
+  display:flex; align-items:center; padding:0 .85rem; background:var(--s1);
+  border-right:1px solid var(--border);
+}
+.toc .chk input{width:19px; height:19px; accent-color:#1A1A1A; cursor:pointer}
+.toc .go{
+  flex:1; text-align:left; background:none; border:0; padding:.75rem .9rem;
+  font:inherit; cursor:pointer;
+}
+.toc .go:hover{background:var(--s1)}
+.toc .t{font-weight:700; display:block; font-size:.98rem}
+.toc .d{display:block; font-size:.82rem; margin-top:.12rem}
+.toc .meta{
+  display:flex; align-items:center; padding:0 .9rem; font-size:.74rem;
+  font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  border-left:1px solid var(--border); background:var(--s1); white-space:nowrap;
+}
+li.done{background:var(--s2)}
+li.done .go .t::after{content:" ✓"}
+
+/* ---------- ferramentas ---------- */
+.tool{
+  border:2px solid var(--dark); border-radius:7px; background:var(--paper);
+  margin:1.4rem 0 1.6rem; overflow:hidden;
+}
+.tool > header{
+  background:var(--s3); border-bottom:1px solid var(--border2); padding:.8rem 1.05rem;
+}
+.tool .tname{font-weight:700; font-size:1.04rem; display:block}
+.tool .tsrc{font-size:.79rem; display:block; margin-top:.2rem}
+.tool .body{padding:1.05rem}
+.tool .split{display:grid; gap:1rem}
+@media(min-width:760px){ .tool .split{grid-template-columns:1fr 1fr} }
+.pane{border:1px solid var(--border); border-radius:6px; padding:.85rem .9rem; background:var(--s1)}
+.pane.blank{background:var(--paper)}
+.pane > h4{margin-top:0}
+.field{margin-bottom:.7rem}
+.field:last-child{margin-bottom:0}
+label{display:block; font-size:.8rem; font-weight:700; margin-bottom:.22rem}
+input[type=text], input[type=number], input[type=date], textarea, select{
+  width:100%; font:inherit; font-size:.9rem; padding:.42rem .55rem;
+  border:1px solid var(--border2); border-radius:4px; background:var(--paper);
+}
+textarea{min-height:3.2rem; resize:vertical; line-height:1.45}
+input:focus, textarea:focus, select:focus{outline:2px solid var(--dark); outline-offset:0}
+.ex{font-size:.88rem; margin:0 0 .55rem}
+.ex b{display:block; font-size:.76rem; letter-spacing:.06em; text-transform:uppercase}
+.fb{list-style:none; padding:0; margin:.9rem 0 0}
+.fb li{
+  display:flex; gap:.55rem; align-items:flex-start; font-size:.86rem;
+  border:1px solid var(--border); border-left:5px solid var(--border2);
+  background:var(--s1); border-radius:4px; padding:.45rem .6rem; margin-bottom:.4rem;
+}
+.fb li .ic{font-weight:700; line-height:1.3}
+.fb li.ok{border-left-color:var(--dark); background:var(--paper)}
+.fb li.warn{border-left-color:var(--dark); background:var(--s2); border-left-style:dashed}
+.fb li.err{border-left-color:var(--dark); background:var(--s3); border-left-width:8px}
+.fb li.idle{border-left-color:var(--border2); background:var(--s1)}
+.score{
+  font-size:.82rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  border-top:2px solid var(--dark); padding-top:.55rem; margin-top:.9rem;
+}
+.rowset{margin-bottom:.5rem}
+.rowline{display:grid; gap:.4rem; grid-template-columns:1fr; margin-bottom:.45rem}
+@media(min-width:600px){ .rowline{grid-template-columns:2fr .8fr .8fr .8fr auto} }
+.rowline .lbl{font-size:.72rem; font-weight:700}
+.mini{font-size:.78rem}
+.tbtn{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.6rem}
+output{display:block; font-size:.9rem}
+
+/* ---------- CTA footer ---------- */
+.cta-footer{
+  background:var(--s2); border-top:2px solid var(--dark); margin-top:2rem; padding:1.2rem 1.1rem;
+  text-align:center; font-size:.85rem;
+}
+.cta-footer a{color:var(--dark); text-decoration:underline; font-weight:700}
+.cta-footer a:hover{text-decoration:none}
+
+/* ---------- CTA footer ---------- */
+.cta-footer{
+  background:var(--s2); border-top:2px solid var(--dark); margin-top:2rem; padding:1.2rem 1.1rem;
+  text-align:center; font-size:.85rem;
+}
+.cta-footer a{color:var(--dark); text-decoration:underline; font-weight:700}
+.cta-footer a:hover{text-decoration:none}
+
+/* ---------- navegação inferior ---------- */
+.pager{
+  display:flex; gap:.6rem; flex-wrap:wrap; align-items:center;
+  border-top:2px solid var(--dark); margin-top:2.4rem; padding-top:1rem;
+}
+.pager .sp{flex:1}
+.done-wrap{
+  display:flex; align-items:center; gap:.5rem; font-size:.85rem; font-weight:700;
+  background:var(--s1); border:1px solid var(--border); border-radius:6px;
+  padding:.45rem .75rem;
+}
+.done-wrap input{width:18px; height:18px; accent-color:#1A1A1A}
+.srcs{font-size:.85rem}
+.srcs a{color:var(--ink); text-decoration:underline}
+.hero{
+  border:1px solid var(--border); border-radius:8px; padding:1.4rem 1.3rem;
+  background:var(--s1); position:relative; overflow:hidden; margin-bottom:1.4rem;
+}
+.hero .dotpad{
+  position:absolute; right:-10px; top:-10px; width:120px; height:90px; opacity:.55;
+}
+.stat{display:flex; gap:1.6rem; flex-wrap:wrap; margin-top:.9rem}
+.stat div b{display:block; font-size:1.6rem; line-height:1.1}
+.stat div span{font-size:.76rem; letter-spacing:.08em; text-transform:uppercase}
+.badge{
+  display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; border:1px solid var(--border2); background:var(--s2);
+  border-radius:3px; padding:.14rem .45rem;
+}
+.flow{display:grid; gap:.5rem}
+@media(min-width:820px){ .flow{grid-template-columns:repeat(7,1fr)} }
+.flow .st{border:1px solid var(--border); border-radius:5px; background:var(--s1); padding:.6rem .55rem}
+.flow .st b{display:block; font-size:.86rem}
+.flow .st span{display:block; font-size:.74rem; margin-top:.2rem}
+.print-only{display:none}
+@media print{
+  header.top,.pager,.btn{display:none}
+  .sec{display:block !important; page-break-after:always}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <span class="brand">Resolução estruturada de problemas</span>
+    <nav class="topnav">
+      <button class="btn" onclick="go('toc')">Sumário</button>
+      <button class="btn" id="btn-reset" onclick="zerar()">Zerar progresso</button>
+    </nav>
+  </div>
+  <div class="prog"><i id="progbar"></i></div>
+</header>
+
+<main>
+
+<!-- ================= SUMÁRIO ================= -->
+<section class="sec on" id="toc">
+  <div class="hero">
+    <div class="dotpad dots"></div>
+    <p class="kick">Programa de formação · 12 semanas</p>
+    <h1>Resolução estruturada de problemas</h1>
+    <p class="lede" style="max-width:46rem">Formação para analistas de planejamento estratégico que precisam conduzir projetos sozinhos e sustentar recomendações diante de quem decide. Cinco blocos, o ciclo completo de resolução, e onze ferramentas que você preenche com o seu próprio projeto.</p>
+    <div class="stat">
+      <div><b>12</b><span>semanas</span></div>
+      <div><b>5</b><span>blocos</span></div>
+      <div><b>11</b><span>ferramentas</span></div>
+      <div><b>84</b><span>horas</span></div>
+    </div>
+  </div>
+
+  <div class="card tint">
+    <h3 style="margin-top:0">Como esta página funciona</h3>
+    <p style="margin-bottom:.5rem">Marque a caixa de cada seção quando terminar. O progresso e tudo o que você digitar nas ferramentas ficam salvos neste navegador, então você pode fechar e voltar depois.</p>
+    <p style="margin-bottom:0">No lugar de checklists passivos, cada bloco traz ferramentas de trabalho. Você preenche com o seu projeto real, ao lado de um exemplo já preenchido, e recebe crítica escrita em tempo real apontando o erro de percurso antes que ele custe semanas.</p>
+  </div>
+
+  <h2 style="margin-top:1.8rem">Sumário</h2>
+  <ul class="toc" id="toclist"></ul>
+
+  <div class="card plain" style="margin-top:1.4rem">
+    <h4 style="margin-top:0">Trazer respostas de outro computador</h4>
+    <p style="margin-bottom:.7rem">Todo arquivo que você baixa por esta página carrega, no fim, um bloco de restauração com o programa inteiro. Para continuar em outra máquina, abra esta mesma página lá e carregue o arquivo aqui.</p>
+    <button class="btn" onclick="escolherArquivo()">Carregar respostas de um arquivo</button>
+    <input type="file" id="import-file" accept=".txt,text/plain" style="display:none" onchange="arquivoEscolhido(event)">
+
+    <p style="margin:.8rem 0 0;font-size:.9rem"><a href="#" id="import-colar-link" onclick="alternarColar();return false;">Não consegue utilizar o carregador de arquivo? Cole o conteúdo dele</a></p>
+
+    <div id="import-colar" style="display:none;margin-top:.7rem;padding:.9rem;background:#F0F0F0;border-radius:6px">
+      <p style="margin:0 0 .5rem"><small><b>Alternativa ao botão acima.</b> Serve para aparelhos em que o seletor de arquivos não abre, o que é comum no iPhone quando a página está salva no próprio aparelho. O resultado é o mesmo: use um caminho ou o outro, não os dois.</small></p>
+      <p style="margin:0 0 .5rem"><small>Abra o arquivo baixado em qualquer editor de texto, selecione tudo, copie e cole aqui. Pode colar o arquivo inteiro, sem precisar procurar nenhum trecho.</small></p>
+      <textarea id="import-texto" rows="5" placeholder="Cole aqui o conteúdo do arquivo .txt"></textarea>
+      <div style="margin-top:.55rem">
+        <button class="btn" onclick="restaurarDoTexto()">Restaurar a partir do texto colado</button>
+      </div>
+    </div>
+
+    <div id="import-escolha" style="display:none;margin-top:.9rem;padding:.9rem;background:#F0F0F0;border-radius:6px"></div>
+    <p id="import-aviso" style="display:none;margin:.7rem 0 0;font-size:.9rem"></p>
+  </div>
+
+  <div class="card plain" style="margin-top:1.4rem">
+    <h4 style="margin-top:0">Aviso sobre privacidade</h4>
+    <p style="margin-bottom:0"><small>Nada do que você escreve sai deste navegador. Não há servidor, não há envio. Se limpar os dados do navegador ou usar outro aparelho, o conteúdo preenchido se perde. Para guardar, use o botão “Baixar Respostas” no fim de qualquer seção: o arquivo gerado guarda o programa inteiro e pode ser carregado de volta aqui em cima.</small></p>
+  </div>
+</section>
+
+<!-- ================= 1. O CICLO ================= -->
+<section class="sec" id="s1">
+  <p class="kick">Fundamento · leia antes de tudo</p>
+  <h1>O ciclo de resolução orientada por hipóteses</h1>
+  <p class="lede">Todo o programa é este ciclo, repetido em problemas cada vez mais difíceis. Ele não é a invenção de uma firma específica: McKinsey, Bain e BCG descrevem a mesma sequência com nomes diferentes, e o que a torna eficaz não é a ordem, é a regra de que nenhum passo começa antes de o anterior estar validado por escrito.</p>
+
+  <div class="flow" style="margin:1.2rem 0 1.4rem">
+    <div class="st"><b>1. Definir</b><span>Qual é a pergunta que precisa de resposta?</span></div>
+    <div class="st"><b>2. Decompor</b><span>Em que partes MECE isso se divide?</span></div>
+    <div class="st"><b>3. Priorizar</b><span>Qual parte carrega mais valor?</span></div>
+    <div class="st"><b>4. Planejar</b><span>Que evidência responde, e como obtê-la?</span></div>
+    <div class="st"><b>5. Analisar</b><span>O que os dados de fato dizem?</span></div>
+    <div class="st"><b>6. Sintetizar</b><span>Qual é a resposta, em uma frase?</span></div>
+    <div class="st"><b>7. Sustentar</b><span>Como defendo isso sob contestação?</span></div>
+  </div>
+
+  <h2>A regra da resposta provisória</h2>
+  <p>Você trabalha sempre com uma resposta escrita. No primeiro dia ela é um palpite estruturado e quase certamente errado; toda sexta-feira ela é reescrita com o que você descobriu. Guardar a conclusão para o fim é o erro que mais destrói projeto de analista sozinho, porque o problema aparece quando não há mais prazo para corrigir.</p>
+
+  <h2>Onde entram os frameworks</h2>
+  <p>Cinco Forças, SWOT, matriz BCG, Canvas e afins entram no passo 2, como uma opção de eixo para decompor o problema. Escolher o framework antes de ter a pergunta organiza a sua confusão sem resolvê-la. A ferramenta se escolhe depois de saber o que você precisa descobrir.</p>
+
+  <h2>O caso que atravessa o programa</h2>
+  <div class="card">
+    <h3 style="margin-top:0">Nutrimix</h3>
+    <p>Fabricante de ração para animais de estimação. Fatura cerca de R$ 800 milhões por ano e vende para varejo tradicional, grandes redes, e-commerce e, cada vez mais, produz marca de terceiros (private label). A margem EBITDA caiu de 14,0% para 9,5% em 24 meses.</p>
+    <p style="margin-bottom:0">O CEO chama você e diz: “prepara um plano de corte de custos de 10% para o comitê do mês que vem”. Você tem três semanas e trabalha sozinho. Os números são fictícios, mas a aritmética fecha: você pode refazer todas as contas.</p>
+  </div>
+
+  <h2>O mapa das doze semanas</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Etapa</th><th>Quando</th><th>Passos do ciclo</th><th>Carga</th></tr></thead>
+      <tbody>
+        <tr><td>Semana 0 · diagnóstico</td><td>antes do início</td><td>todos, sem instrução</td><td>4 h</td></tr>
+        <tr><td>Bloco I · definir o problema</td><td>semanas 1 e 2</td><td>1 e 2</td><td>10 h</td></tr>
+        <tr><td>Bloco II · priorizar e planejar</td><td>semana 3</td><td>3 e 4</td><td>5 h</td></tr>
+        <tr><td>Bloco III · rigor analítico</td><td>semanas 4 a 6</td><td>5</td><td>15 h</td></tr>
+        <tr><td>Bloco IV · pensamento sistêmico</td><td>semanas 7 e 8</td><td>5, em segunda ordem</td><td>10 h</td></tr>
+        <tr><td>Bloco V · sintetizar e sustentar</td><td>semanas 9 e 10</td><td>6 e 7</td><td>10 h</td></tr>
+        <tr><td>Projeto final</td><td>semanas 11 e 12</td><td>ciclo inteiro</td><td>20 h</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="srcs"><b>Fontes desta seção:</b>
+    <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-master-the-seven-step-problem-solving-process" target="_blank" rel="noopener">McKinsey, “How to master the seven-step problem-solving process” (2019)</a> ·
+    <a href="https://bulletproofproblemsolving.com/" target="_blank" rel="noopener">Charles Conn e Robert McLean, <i>Bulletproof Problem Solving</i> (Wiley, 2019)</a> ·
+    <a href="https://www.mckinsey.com/featured-insights/mckinsey-guide-to-problem-solving/adopting-the-right-problem-solving-approach" target="_blank" rel="noopener">McKinsey, “Adopting the right problem-solving approach”</a>
+  </p>
+</section>
+
+<!-- ================= 2. SEMANA 0 ================= -->
+<section class="sec" id="s2">
+  <p class="kick">Semana 0 · 4 horas</p>
+  <h1>Diagnóstico de linha de base</h1>
+  <p class="lede">Antes de qualquer conteúdo, você responde por escrito a cinco perguntas sem nenhuma instrução prévia. Você vai errar a maior parte, e é assim que foi desenhado: errar antes de saber é o que faz o aprendizado grudar. O resultado não vira nota, vira calibragem do seu próprio percurso.</p>
+
+  <div class="card strong">
+    <h4 style="margin-top:0">A regra que vale o programa inteiro</h4>
+    <p style="margin-bottom:0">Resposta sempre escrita antes da revelação. Nunca “eu teria pensado nisso” depois de ver o gabarito. O autorrelato é a forma mais confiável de não aprender nada, porque o cérebro reescreve o que achava que sabia assim que vê a resposta certa. Por isso as respostas-modelo abaixo só abrem depois que você escreve a sua.</p>
+  </div>
+
+  <div class="tool" id="t0">
+    <header>
+      <span class="tname">Ferramenta 1 · Sonda de linha de base</span>
+      <span class="tsrc">Formato de recuperação ativa com revelação retardada, conforme Peter C. Brown, Henry L. Roediger III e Mark A. McDaniel, <i>Make It Stick</i> (Harvard University Press, 2014), capítulos 2 e 3.</span>
+    </header>
+    <div class="body">
+      <div id="t0-items"></div>
+      <div class="score" id="t0-score">0 de 5 respondidas</div>
+    </div>
+  </div>
+
+  <h2>O que o diagnóstico repesa</h2>
+  <p>Cada pergunta corresponde a um bloco. Se você acerta a estrutura de uma delas sem instrução, aquele bloco encolhe no seu plano e o tempo migra para onde você está fraco. Na prática, quase ninguém acerta a primeira e a terceira, e quase todo mundo se surpreende com a segunda.</p>
+  <p class="srcs"><b>Fontes desta seção:</b>
+    <a href="https://www.retrievalpractice.org/" target="_blank" rel="noopener">Retrieval Practice (Pooja K. Agarwal), material aberto sobre prática de recuperação</a> ·
+    Brown, Roediger e McDaniel, <i>Make It Stick</i> (2014)
+  </p>
+</section>
+
+<!-- ================= 3. BLOCO I ================= -->
+<section class="sec" id="s3">
+  <p class="kick">Bloco I · semanas 1 e 2 · módulos 1 e 2</p>
+  <h1>Definir o problema</h1>
+  <p class="lede">O pedido que chega é quase sempre um sintoma ou uma solução já escolhida por outra pessoa. O problema é a pergunta cuja resposta muda uma decisão específica, tomada por alguém identificável, numa data conhecida. Errar aqui invalida tudo o que vem depois.</p>
+
+  <h2>Pedido não é problema</h2>
+  <p>“Prepara um plano de corte de custos de 10%” já traz a solução embutida. Alguém decidiu que o caminho é cortar custo, e a sua análise vai apenas dimensionar a decisão de outro. A pergunta ainda não foi feita. Quando você a faz, costuma descobrir que a decisão real está em outro lugar.</p>
+
+  <div class="card">
+    <h4 style="margin-top:0">No caso Nutrimix</h4>
+    <p>A conversa com o CFO revelou que o conselho decide em 28 de março se aprova R$ 120 milhões de expansão de capacidade. O corte de custos era o caminho para a projeção fechar. A pergunta reescrita ficou assim:</p>
+    <p style="margin-bottom:0"><b>“A queda de 4,5 pontos de margem EBITDA é estrutural ou conjuntural? Se for estrutural, a expansão de capacidade deve ser aprovada em março?”</b> Critério declarado pelo conselho: retorno acima do custo de capital de 12% ao ano em cenário conservador.</p>
+  </div>
+
+  <h2>Quem tem a decisão</h2>
+  <p>Boa parte da confusão sobre “qual é o problema” é, na verdade, confusão sobre quem decide. Paul Rogers e Marcia Blenko, da Bain, propuseram o modelo RAPID exatamente para isso: separar quem recomenda, quem precisa concordar, quem executa, quem opina e quem decide. Se você não consegue nomear a pessoa que tem o D, ainda não tem um problema definido.</p>
+
+  <div class="tool" id="t1">
+    <header>
+      <span class="tname">Ferramenta 2 · Declaração de problema</span>
+      <span class="tsrc">Adaptada do <i>problem statement worksheet</i> de Charles Conn e Robert McLean, <i>Bulletproof Problem Solving</i> (Wiley, 2019), capítulo 2, combinado com o modelo RAPID de Paul Rogers e Marcia Blenko, “Who Has the D?”, <i>Harvard Business Review</i>, janeiro de 2006.</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <p class="ex"><b>Quem decide</b>Conselho de administração, com recomendação do CFO</p>
+          <p class="ex"><b>O que exatamente</b>Aprovar ou não R$ 120 milhões de expansão de capacidade</p>
+          <p class="ex"><b>Até quando</b>28 de março</p>
+          <p class="ex"><b>Com qual critério</b>Retorno acima de 12% ao ano em cenário conservador</p>
+          <p class="ex" style="margin-bottom:0"><b>A pergunta, em uma frase</b>A queda de 4,5 pontos de margem é estrutural ou conjuntural, e isso muda a decisão de expandir?</p>
+        </div>
+        <div class="pane blank">
+          <h4>O seu projeto</h4>
+          <div class="field"><label for="t1a">Quem decide (nome ou cargo específico)</label><input type="text" id="t1a" data-tool="t1" placeholder="ex.: diretora de operações, Marina"></div>
+          <div class="field"><label for="t1b">O que exatamente será decidido</label><input type="text" id="t1b" data-tool="t1" placeholder="ex.: manter ou encerrar a linha X"></div>
+          <div class="field"><label for="t1c">Até quando</label><input type="text" id="t1c" data-tool="t1" placeholder="ex.: 12 de maio, comitê mensal"></div>
+          <div class="field"><label for="t1d">Com qual critério essa pessoa vai escolher</label><input type="text" id="t1d" data-tool="t1" placeholder="ex.: payback abaixo de 24 meses"></div>
+          <div class="field"><label for="t1e">A pergunta, em uma frase</label><textarea id="t1e" data-tool="t1" placeholder="Escreva a pergunta que, respondida, muda essa decisão."></textarea></div>
+        </div>
+      </div>
+      <ul class="fb" id="t1-fb"></ul>
+      <div class="score" id="t1-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t1')">Copiar tudo</button></div>
+    </div>
+  </div>
+
+  <h2>Decompor: o teste MECE</h2>
+  <p>Decompor é quebrar a pergunta em partes que não se sobrepõem e que, somadas, cobrem o problema inteiro. O termo MECE (mutuamente exclusivo, coletivamente exaustivo) vem da prática da McKinsey e foi sistematizado por Barbara Minto. Uma árvore malfeita contamina tudo depois, porque você passa a investigar caixas que não somam.</p>
+  <ul>
+    <li><b>Escolha o eixo</b> entre componentes de uma fórmula, segmentos, etapas de um processo ou decisores. Prefira o que já tem número associado, porque no passo 3 você vai precisar quantificar.</li>
+    <li><b>Pare no terceiro nível.</b> Além disso a árvore vira inventário e você perde a capacidade de defender o recorte.</li>
+    <li><b>Reescreva cada galho como pergunta testável</b>, não como rótulo de tema.</li>
+    <li><b>Desconfie do organograma.</b> Dividir em “comercial, industrial, administrativo” reflete como a empresa é gerida, não como o problema se forma.</li>
+  </ul>
+
+  <div class="card tint">
+    <h4 style="margin-top:0">A árvore da Nutrimix</h4>
+    <p style="margin-bottom:0">Identidade escolhida: margem EBITDA igual a margem de contribuição ponderada menos despesas fixas sobre receita. Cinco galhos: mix de canal e de produto, preço realizado, custo de insumo, eficiência fabril, despesas fixas. Todos somam exatamente os 4,5 pontos a explicar, e cada um tem dado no ERP.</p>
+  </div>
+
+  <div class="tool" id="t2">
+    <header>
+      <span class="tname">Ferramenta 3 · Verificador de árvore MECE</span>
+      <span class="tsrc">Teste MECE conforme Barbara Minto, <i>The Pyramid Principle</i> (3ª ed., Pearson, 2009), parte I, e Conn e McLean, <i>Bulletproof Problem Solving</i>, capítulos 3 e 4 (tipos de árvore lógica).</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <p class="ex"><b>Total a explicar</b>4,5 pontos de margem EBITDA perdidos</p>
+          <table style="min-width:0; font-size:.84rem">
+            <thead><tr><th>Galho</th><th>Peso</th></tr></thead>
+            <tbody>
+              <tr><td>Mix de canal e de produto</td><td>64%</td></tr>
+              <tr><td>Custo de insumo</td><td>25%</td></tr>
+              <tr><td>Eficiência fabril e fixos</td><td>11%</td></tr>
+            </tbody>
+          </table>
+          <p class="mini" style="margin-bottom:0">Soma 100%. Nenhum galho contém o outro. Cada um tem número no ERP. Três galhos no primeiro nível, o que ainda é defensável.</p>
+        </div>
+        <div class="pane blank">
+          <h4>A sua árvore</h4>
+          <div class="field"><label for="t2total">O que os galhos precisam somar</label><input type="text" id="t2total" data-tool="t2" placeholder="ex.: a queda de 18% no volume"></div>
+          <div id="t2-rows" class="rowset"></div>
+          <div class="tbtn">
+            <button class="btn" onclick="t2Add()">+ galho</button>
+            <button class="btn" onclick="t2Del()">− galho</button>
+          </div>
+        </div>
+      </div>
+      <ul class="fb" id="t2-fb"></ul>
+      <div class="score" id="t2-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t2')">Copiar tudo</button></div>
+    </div>
+  </div>
+  <p class="srcs"><b>Fontes desta seção:</b>
+    <a href="https://www.bain.com/insights/who-has-the-d/" target="_blank" rel="noopener">Bain, “Who has the D?”</a> ·
+    <a href="https://hbr.org/2006/01/who-has-the-d-how-clear-decision-roles-enhance-organizational-performance" target="_blank" rel="noopener">Rogers e Blenko, HBR (2006), versão original</a> ·
+    <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/bias-busters-when-the-question-not-the-answer-is-the-mistake" target="_blank" rel="noopener">McKinsey Bias Busters, “When the question, not the answer, is the mistake”</a> ·
+    <a href="https://www.amazon.com/Minto-Pyramid-Principle-Writing-Thinking/dp/0960191046" target="_blank" rel="noopener">Minto, <i>The Pyramid Principle</i></a>
+  </p>
+</section>
+
+<!-- ================= 4. BLOCO II ================= -->
+<section class="sec" id="s4">
+  <p class="kick">Bloco II · semana 3 · módulo 3</p>
+  <h1>Priorizar e planejar</h1>
+  <p class="lede">Nem todo galho merece três semanas. Priorizar é escolher onde gastar o tempo em função de três coisas: o tamanho do efeito, a influência de quem decide sobre ele, e o custo de descobrir a resposta. Depois, transformar as frentes escolhidas em hipóteses que podem ser refutadas.</p>
+
+  <h2>A conta de guardanapo vem antes da análise</h2>
+  <p>Antes de mergulhar em qualquer galho, estime a ordem de grandeza com dados agregados. Dois dias de estimativa grosseira evitam duas semanas de análise fina no lugar errado. Na Nutrimix, essa conta repartiu os 4,5 pontos em 2,9 de mix, 1,1 de insumo e 0,5 de eficiência e fixos, e isso bastou para decidir onde investir o tempo.</p>
+
+  <div class="card">
+    <h4 style="margin-top:0">O que foi cortado, e por quê</h4>
+    <p style="margin-bottom:0">Custo de insumo é 1,1 ponto, portanto real, mas é preço de mercado e a empresa não decide sobre ele. Eficiência e fixos somam 0,5 ponto e não mudam a decisão de março. Os dois cortes são defensáveis em uma frase cada, que é o critério mínimo.</p>
+  </div>
+
+  <div class="tool" id="t3">
+    <header>
+      <span class="tname">Ferramenta 4 · Matriz de priorização</span>
+      <span class="tsrc">Lógica de “prêmio contra capacidade de influenciar” de Conn e McLean, <i>Bulletproof Problem Solving</i> (Wiley, 2019), capítulo 5, com o custo de descoberta como terceiro eixo.</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <table style="min-width:0; font-size:.82rem">
+            <thead><tr><th>Galho</th><th>Imp.</th><th>Infl.</th><th>Custo</th><th>Índice</th></tr></thead>
+            <tbody>
+              <tr><td>Mix de canal</td><td>9</td><td>8</td><td>3</td><td>24,0</td></tr>
+              <tr><td>Custo de insumo</td><td>6</td><td>2</td><td>4</td><td>3,0</td></tr>
+              <tr><td>Eficiência fabril</td><td>3</td><td>7</td><td>6</td><td>3,5</td></tr>
+            </tbody>
+          </table>
+          <p class="mini" style="margin-bottom:0">Índice igual a impacto vezes influência dividido pelo custo de descobrir. Mix fica sete vezes acima dos outros dois, o que torna a escolha trivial e a defesa curta.</p>
+        </div>
+        <div class="pane blank">
+          <h4>As suas frentes</h4>
+          <div id="t3-rows" class="rowset"></div>
+          <div class="tbtn">
+            <button class="btn" onclick="t3Add()">+ frente</button>
+            <button class="btn" onclick="t3Del()">− frente</button>
+          </div>
+        </div>
+      </div>
+      <ul class="fb" id="t3-fb"></ul>
+      <div class="score" id="t3-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t3')">Copiar tudo</button></div>
+    </div>
+  </div>
+
+  <h2>Hipótese é afirmação, não pergunta</h2>
+  <p>O plano de trabalho parte da evidência de que você precisa, não do dado que você tem. Cada frente priorizada vira uma hipótese escrita como afirmação, com o teste que a confirma e, principalmente, o resultado que a refutaria. Uma hipótese que nada poderia derrubar não é hipótese: é uma opinião com aparência de método, e Karl Popper já dizia isso em 1934.</p>
+
+  <div class="card tint">
+    <h4 style="margin-top:0">As três hipóteses da Nutrimix</h4>
+    <ul style="margin-bottom:0">
+      <li><b>H1 · composição.</b> A queda vem de mudança de mix, com margem por linha estável. Refuta se alguma linha caiu mais de 2 pontos.</li>
+      <li><b>H2 · origem.</b> O crescimento de private label foi decisão interna, não perda de espaço em gôndola. Refuta se houve queda de distribuição da marca própria.</li>
+      <li><b>H3 · efeito.</b> A expansão aprovada em março agrava o efeito. Refuta se o plano de vendas prevê marca própria acima de 85% do volume.</li>
+    </ul>
+  </div>
+
+  <div class="tool" id="t4">
+    <header>
+      <span class="tname">Ferramenta 5 · Ficha de hipótese</span>
+      <span class="tsrc">Critério de falseabilidade de Karl Popper, <i>A Lógica da Pesquisa Científica</i> (1934), aplicado ao formato de plano de trabalho descrito por McKinsey em “How to master the seven-step problem-solving process” (2019).</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix (H1)</h4>
+          <p class="ex"><b>Hipótese</b>A queda de margem vem de mudança de mix, com margem por linha estável</p>
+          <p class="ex"><b>Teste</b>Margem de contribuição por linha, mês a mês, nos 24 meses</p>
+          <p class="ex"><b>Fonte e dono</b>ERP comercial, extraído por Renata (controladoria)</p>
+          <p class="ex"><b>O que refutaria</b>Qualquer linha com queda superior a 2 pontos de margem no período</p>
+          <p class="ex" style="margin-bottom:0"><b>Prazo</b>3 dias úteis</p>
+        </div>
+        <div class="pane blank">
+          <h4>A sua hipótese</h4>
+          <div class="field"><label for="t4a">Hipótese (escreva como afirmação)</label><textarea id="t4a" data-tool="t4" placeholder="ex.: a perda de clientes vem do prazo de entrega, não do preço"></textarea></div>
+          <div class="field"><label for="t4b">Teste: qual número, qual corte, qual comparação</label><input type="text" id="t4b" data-tool="t4" placeholder="ex.: churn por faixa de prazo de entrega"></div>
+          <div class="field"><label for="t4c">Fonte do dado e quem fornece</label><input type="text" id="t4c" data-tool="t4" placeholder="ex.: base de pedidos, time de logística"></div>
+          <div class="field"><label for="t4d">O que refutaria esta hipótese</label><textarea id="t4d" data-tool="t4" placeholder="Seja específico e numérico."></textarea></div>
+          <div class="field"><label for="t4e">Prazo do teste, em dias úteis</label><input type="number" id="t4e" data-tool="t4" min="1" max="30" placeholder="3"></div>
+        </div>
+      </div>
+      <ul class="fb" id="t4-fb"></ul>
+      <div class="score" id="t4-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t4')">Copiar tudo</button></div>
+    </div>
+  </div>
+  <p class="srcs"><b>Fontes desta seção:</b>
+    <a href="https://bulletproofproblemsolving.com/" target="_blank" rel="noopener">Conn e McLean, <i>Bulletproof Problem Solving</i></a> ·
+    <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-take-the-outside-view" target="_blank" rel="noopener">McKinsey Bias Busters, “How to take the outside view”</a>
+  </p>
+</section>
+
+<!-- ================= 5. BLOCO III ================= -->
+<section class="sec" id="s5">
+  <p class="kick">Bloco III · semanas 4 a 6 · módulos 4 a 6</p>
+  <h1>Rigor analítico e pensamento crítico</h1>
+  <p class="lede">Rigor é saber de onde vem cada número e o que ele não diz. A maior parte dos erros graves não é de conta: é de leitura. Confundir a média com o comportamento das partes, comparar denominadores diferentes, ou tomar correlação por causa.</p>
+
+  <h2>O efeito de composição</h2>
+  <p>Quando uma média piora e nenhuma parte piorou, o problema é de composição, e cortar custo não resolve. É o mesmo fenômeno que aparece na estatística como paradoxo de Simpson, descrito por Edward H. Simpson em 1951 e por Udny Yule já em 1903. Na Nutrimix ele explica dois terços da queda.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Linha</th><th>Margem de contribuição</th><th>% do volume, ano 0</th><th>% do volume, ano 2</th></tr></thead>
+      <tbody>
+        <tr><td>Marca própria</td><td>19,0%</td><td>92%</td><td>73%</td></tr>
+        <tr><td>Private label</td><td>4,0%</td><td>8%</td><td>27%</td></tr>
+        <tr><td><b>Média ponderada</b></td><td></td><td><b>17,8%</b></td><td><b>15,0%</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Ano 0: 0,92 × 19 + 0,08 × 4 = 17,8%. Ano 2: 0,73 × 19 + 0,27 × 4 = 15,0%. A composição sozinha explica 2,9 pontos dos 4,5 perdidos. Nenhuma linha piorou.</p>
+
+  <div class="tool" id="t5">
+    <header>
+      <span class="tname">Ferramenta 6 · Decomposição de efeito mix</span>
+      <span class="tsrc">Análise de variação em três efeitos (mix, taxa e interação), técnica padrão de controladoria. O fenômeno subjacente é o paradoxo de Simpson: Edward H. Simpson, “The Interpretation of Interaction in Contingency Tables”, <i>JRSS-B</i>, 1951.</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <p class="ex"><b>Linha A</b>Marca própria · margem 19% · peso 92% → 73%</p>
+          <p class="ex"><b>Linha B</b>Private label · margem 4% · peso 8% → 27%</p>
+          <p class="ex"><b>Resultado</b>Média cai de 17,8% para 15,0%. Efeito de composição: −2,85 pontos. Efeito de margem: zero.</p>
+          <p class="mini" style="margin-bottom:0">Leitura: nenhuma linha piorou, e ainda assim a média caiu quase três pontos. Recomendar corte de custo aqui atacaria o galho errado.</p>
+        </div>
+        <div class="pane blank">
+          <h4>As suas duas linhas</h4>
+          <div class="rowline" style="grid-template-columns:1fr 1fr 1fr 1fr">
+            <div><span class="lbl">Margem A, início</span><input type="number" step="0.1" id="t5ma0" data-tool="t5" placeholder="19"></div>
+            <div><span class="lbl">Margem A, fim</span><input type="number" step="0.1" id="t5ma1" data-tool="t5" placeholder="19"></div>
+            <div><span class="lbl">Peso A, início (%)</span><input type="number" step="0.1" id="t5pa0" data-tool="t5" placeholder="92"></div>
+            <div><span class="lbl">Peso A, fim (%)</span><input type="number" step="0.1" id="t5pa1" data-tool="t5" placeholder="73"></div>
+          </div>
+          <div class="rowline" style="grid-template-columns:1fr 1fr 1fr 1fr">
+            <div><span class="lbl">Margem B, início</span><input type="number" step="0.1" id="t5mb0" data-tool="t5" placeholder="4"></div>
+            <div><span class="lbl">Margem B, fim</span><input type="number" step="0.1" id="t5mb1" data-tool="t5" placeholder="4"></div>
+            <div><span class="lbl">Peso B, início (%)</span><input type="number" step="0.1" id="t5pb0" data-tool="t5" placeholder="8"></div>
+            <div><span class="lbl">Peso B, fim (%)</span><input type="number" step="0.1" id="t5pb1" data-tool="t5" placeholder="27"></div>
+          </div>
+          <output id="t5-out" class="mini"></output>
+        </div>
+      </div>
+      <ul class="fb" id="t5-fb"></ul>
+      <div class="score" id="t5-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t5')">Copiar tudo</button></div>
+    </div>
+  </div>
+
+  <h2>Calibração: o seu intervalo é estreito demais</h2>
+  <p>Quase todo mundo é confiante demais. Em testes clássicos, pessoas pedidas a dar intervalos com 90% de confiança acertam entre 40% e 60% das vezes. J. Edward Russo e Paul Schoemaker documentaram isso com milhares de executivos em <i>Decision Traps</i>, e Philip Tetlock mostrou em <i>Superforecasting</i> que a calibração melhora com treino e aferição imediata. Este é um músculo, não um traço de personalidade.</p>
+
+  <div class="tool" id="t6">
+    <header>
+      <span class="tname">Ferramenta 7 · Teste de calibração</span>
+      <span class="tsrc">Formato de intervalo de confiança subjetivo de J. Edward Russo e Paul J. H. Schoemaker, <i>Decision Traps</i> (Doubleday, 1989), com a lógica de aferição imediata descrita por Philip E. Tetlock e Dan Gardner em <i>Superforecasting</i> (Crown, 2015).</span>
+    </header>
+    <div class="body">
+      <p class="mini">Para cada item, escreva um intervalo em que você tem <b>90% de confiança</b> de que o valor verdadeiro está dentro. Se você acerta 9 em 10, está calibrado. Acertar 5 de 5 também é um problema: seus intervalos ficaram largos demais para serem úteis.</p>
+      <div id="t6-items"></div>
+      <div class="tbtn"><button class="btn solid" onclick="t6Check()">Conferir</button></div>
+      <ul class="fb" id="t6-fb"></ul>
+      <div class="score" id="t6-score"></div>
+    </div>
+  </div>
+
+  <h2>O pré-mortem</h2>
+  <p>Gary Klein propôs em 2007 uma inversão simples: em vez de perguntar “que riscos existem?”, declare que o projeto fracassou e peça as causas. A prospecção retrospectiva libera o time da pressão social de apoiar o plano e faz aparecer risco que a pergunta direta não encontra. A McKinsey incorporou a técnica à série Bias Busters.</p>
+
+  <div class="tool" id="t7">
+    <header>
+      <span class="tname">Ferramenta 8 · Pré-mortem</span>
+      <span class="tsrc">Gary Klein, “Performing a Project Premortem”, <i>Harvard Business Review</i>, setembro de 2007. Ver também McKinsey Bias Busters, “Premortems: Being smart at the start” (2019), escrito com o próprio Klein.</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <p class="ex"><b>Cenário</b>É dezembro. A recomendação de adiar a expansão foi aceita e, mesmo assim, a margem não se recuperou.</p>
+          <p class="ex"><b>Causa 1 (interna)</b>Reduzimos private label mas mantivemos a meta de ocupação, e o comercial compensou com desconto na marca própria</p>
+          <p class="ex"><b>Causa 2 (interna)</b>A margem por linha que usamos era gerencial e não considerava frete por canal</p>
+          <p class="ex" style="margin-bottom:0"><b>Causa 3 (externa)</b>Grandes redes migraram para outro fornecedor de private label e levaram volume de marca própria junto</p>
+        </div>
+        <div class="pane blank">
+          <h4>O seu pré-mortem</h4>
+          <div class="field"><label for="t7cen">Cenário de fracasso (data futura e o que deu errado)</label><textarea id="t7cen" data-tool="t7" placeholder="É [mês/ano]. A recomendação foi aceita e mesmo assim..."></textarea></div>
+          <div class="field"><label for="t7c1">Causa 1</label><input type="text" id="t7c1" data-tool="t7"></div>
+          <div class="field"><label for="t7c2">Causa 2</label><input type="text" id="t7c2" data-tool="t7"></div>
+          <div class="field"><label for="t7c3">Causa 3</label><input type="text" id="t7c3" data-tool="t7"></div>
+          <div class="field"><label for="t7c4">Causa 4 (opcional)</label><input type="text" id="t7c4" data-tool="t7"></div>
+          <div class="field"><label for="t7sin">Sinal precoce: o que você veria primeiro se isso estivesse acontecendo?</label><textarea id="t7sin" data-tool="t7"></textarea></div>
+        </div>
+      </div>
+      <ul class="fb" id="t7-fb"></ul>
+      <div class="score" id="t7-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t7')">Copiar tudo</button></div>
+    </div>
+  </div>
+  <p class="srcs"><b>Fontes desta seção:</b>
+    <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/bias-busters-premortems-being-smart-at-the-start" target="_blank" rel="noopener">Bias Busters, “Premortems”</a> ·
+    <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-take-the-outside-view" target="_blank" rel="noopener">Bias Busters, “The outside view”</a> ·
+    <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/bias-busters-getting-both-sides-of-the-story" target="_blank" rel="noopener">Bias Busters, “Getting both sides of the story”</a> ·
+    Russo e Schoemaker, <i>Decision Traps</i> (1989) · Tetlock e Gardner, <i>Superforecasting</i> (2015)
+  </p>
+</section>
+
+<!-- ================= 6. BLOCO IV ================= -->
+<section class="sec" id="s6">
+  <p class="kick">Bloco IV · semanas 7 e 8 · módulos 7 e 8</p>
+  <h1>Pensamento sistêmico</h1>
+  <p class="lede">Toda recomendação age sobre um sistema que reage. O analista mediano responde a pergunta. O analista acima da média pergunta o que a resposta vai provocar em dois anos e onde está o ponto em que uma mudança pequena move o sistema inteiro.</p>
+
+  <h2>Laços, atrasos e segunda ordem</h2>
+  <p>Donella Meadows resume o problema: intervimos onde é intuitivo e, quase sempre, na direção errada. Três conceitos bastam para começar. <b>Laço de realimentação</b>: o efeito volta e altera a causa. <b>Atraso</b>: a consequência ruim demora a aparecer, e nesse intervalo a decisão errada parece boa. <b>Segunda ordem</b>: o efeito do efeito, que costuma ser maior que o primeiro.</p>
+
+  <div class="card">
+    <h4 style="margin-top:0">O laço da Nutrimix</h4>
+    <ol style="margin-bottom:.6rem">
+      <li>Segunda fábrica entra em operação, com capacidade ociosa</li>
+      <li>Meta interna de ocupação fabril fixada em 85%</li>
+      <li>Comercial aceita private label a 4% de margem para encher a linha</li>
+      <li>Margem consolidada cai, apesar de nenhuma linha piorar</li>
+      <li>Pressão por mais volume para diluir o custo fixo, o que devolve ao passo 3</li>
+    </ol>
+    <p style="margin-bottom:0">Isto é um laço de reforço, não uma cadeia linear. Expandir capacidade em março aumenta o ganho do laço, ou seja, faz o problema crescer mais rápido.</p>
+  </div>
+
+  <h2>Onde fica a alavanca</h2>
+  <p>Meadows ordena doze pontos de intervenção, do mais fraco ao mais forte. Parâmetros numéricos (preços, subsídios, padrões) ficam no fundo da lista: são os mais fáceis de mexer e os que menos mudam o comportamento do sistema. Regras, metas e fluxos de informação estão bem acima. Na Nutrimix, a alavanca não é o preço do private label, é a meta de ocupação de 85%, que é um número escolhido por alguém e pode ser mudado em uma reunião.</p>
+
+  <div class="tool" id="t8">
+    <header>
+      <span class="tname">Ferramenta 9 · Mapa de laço e ponto de alavancagem</span>
+      <span class="tsrc">Donella H. Meadows, “Leverage Points: Places to Intervene in a System” (The Sustainability Institute, 1999) e <i>Thinking in Systems: A Primer</i> (Chelsea Green, 2008). A hierarquia de 12 pontos é do ensaio de 1999.</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <p class="ex"><b>Etapa 1</b>Capacidade ociosa após a segunda fábrica</p>
+          <p class="ex"><b>Etapa 2</b>Meta de ocupação fabril de 85%</p>
+          <p class="ex"><b>Etapa 3</b>Aceitação de private label a 4% de margem</p>
+          <p class="ex"><b>Etapa 4</b>Queda da margem consolidada</p>
+          <p class="ex"><b>Etapa 5</b>Pressão por volume, que volta à etapa 3</p>
+          <p class="ex"><b>Atraso</b>Cerca de 3 trimestres entre aceitar o contrato e ver a margem cair no consolidado</p>
+          <p class="ex" style="margin-bottom:0"><b>Alavanca</b>A meta de ocupação (regra interna), não o preço do produto</p>
+        </div>
+        <div class="pane blank">
+          <h4>O seu laço</h4>
+          <div class="field"><label for="t8e1">Etapa 1</label><input type="text" id="t8e1" data-tool="t8"></div>
+          <div class="field"><label for="t8e2">Etapa 2</label><input type="text" id="t8e2" data-tool="t8"></div>
+          <div class="field"><label for="t8e3">Etapa 3</label><input type="text" id="t8e3" data-tool="t8"></div>
+          <div class="field"><label for="t8e4">Etapa 4</label><input type="text" id="t8e4" data-tool="t8"></div>
+          <div class="field"><label for="t8e5">Etapa 5 (deve voltar a uma etapa anterior)</label><input type="text" id="t8e5" data-tool="t8"></div>
+          <div class="field"><label for="t8volta">A qual etapa a última volta?</label>
+            <select id="t8volta" data-tool="t8">
+              <option value="">selecione</option>
+              <option value="1">volta à etapa 1</option>
+              <option value="2">volta à etapa 2</option>
+              <option value="3">volta à etapa 3</option>
+              <option value="4">volta à etapa 4</option>
+              <option value="0">não volta: é uma cadeia linear</option>
+            </select>
+          </div>
+          <div class="field"><label for="t8atraso">Atraso entre causa e consequência visível</label><input type="text" id="t8atraso" data-tool="t8" placeholder="ex.: 2 trimestres"></div>
+          <div class="field"><label for="t8alav">Onde você pretende intervir</label><input type="text" id="t8alav" data-tool="t8" placeholder="ex.: a meta de ocupação"></div>
+          <div class="field"><label for="t8tipo">Que tipo de coisa é essa intervenção?</label>
+            <select id="t8tipo" data-tool="t8">
+              <option value="">selecione</option>
+              <option value="12">um número: preço, orçamento, subsídio, padrão</option>
+              <option value="10">uma estrutura física: fábrica, rede, estoque</option>
+              <option value="8">um laço de equilíbrio: controle, auditoria, penalidade</option>
+              <option value="6">um fluxo de informação: quem vê o quê, e quando</option>
+              <option value="5">uma regra: incentivo, restrição, meta interna</option>
+              <option value="3">o objetivo do sistema</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <ul class="fb" id="t8-fb"></ul>
+      <div class="score" id="t8-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t8')">Copiar tudo</button></div>
+    </div>
+  </div>
+  <p class="srcs"><b>Fontes desta seção:</b>
+    <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener">Meadows, “Leverage Points” (texto integral, gratuito)</a> ·
+    <a href="https://donellameadows.org/donella-meadows-project/" target="_blank" rel="noopener">The Donella Meadows Project (acervo)</a>
+  </p>
+</section>
+
+<!-- ================= 7. BLOCO V ================= -->
+<section class="sec" id="s7">
+  <p class="kick">Bloco V · semanas 9 e 10 · módulos 9 e 10</p>
+  <h1>Sintetizar e sustentar</h1>
+  <p class="lede">Sintetizar é comprimir semanas de trabalho em uma frase que responde a pergunta do passo 1, sustentada por três ou quatro argumentos que bastam. Sustentar é fazer essa frase sobreviver à contestação sem recuar por medo nem insistir por teimosia.</p>
+
+  <h2>A pirâmide de Minto</h2>
+  <p>Barbara Minto formalizou na McKinsey, nos anos 1970, o princípio que hoje é padrão da indústria: a ideia governante vem primeiro, e tudo abaixo dela existe para sustentá-la. Cada nível responde à pergunta que o nível acima levanta. Títulos afirmam uma conclusão em vez de rotular um tema: “Cortar a linha X libera R$ 10 milhões em seis meses” em lugar de “Cenários de portfólio”.</p>
+
+  <div class="card tint">
+    <h4 style="margin-top:0">A storyline da Nutrimix</h4>
+    <p><b>Ideia governante:</b> a queda de margem é estrutural e vem do mix, não do custo. Aprovar a expansão em março multiplica o problema. Recomendamos adiar a decisão por dois trimestres e recompor o mix.</p>
+    <ul style="margin-bottom:0">
+      <li>64% da queda, ou 2,9 de 4,5 pontos, vem de composição, com margem estável em todas as linhas</li>
+      <li>A mudança de mix nasceu de uma meta interna de ocupação de 85%, não de movimento de mercado</li>
+      <li>O plano da nova capacidade assume 85% de marca própria, patamar que o comercial não entrega há oito trimestres</li>
+    </ul>
+  </div>
+
+  <div class="tool" id="t9">
+    <header>
+      <span class="tname">Ferramenta 10 · Construtor de storyline</span>
+      <span class="tsrc">Barbara Minto, <i>The Pyramid Principle: Logic in Writing and Thinking</i> (3ª ed., Pearson, 2009). A regra de três a quatro sustentações e o teste do “e daí” estão na parte I.</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <p class="ex"><b>Ideia governante</b>A margem caiu por mix, não por custo; expandir agora multiplica o problema; adie dois trimestres e recomponha o mix</p>
+          <p class="ex"><b>Sustentação 1</b>2,9 dos 4,5 pontos vêm de composição</p>
+          <p class="ex"><b>Sustentação 2</b>A mudança nasceu da meta interna de 85% de ocupação</p>
+          <p class="ex" style="margin-bottom:0"><b>Sustentação 3</b>O plano assume mix de 85% de marca própria, não entregue em 8 trimestres</p>
+        </div>
+        <div class="pane blank">
+          <h4>A sua storyline</h4>
+          <div class="field"><label for="t9g">Ideia governante (uma frase que responde a pergunta do Bloco I)</label><textarea id="t9g" data-tool="t9"></textarea></div>
+          <div class="field"><label for="t9s1">Sustentação 1 (com número)</label><input type="text" id="t9s1" data-tool="t9"></div>
+          <div class="field"><label for="t9s2">Sustentação 2 (com número)</label><input type="text" id="t9s2" data-tool="t9"></div>
+          <div class="field"><label for="t9s3">Sustentação 3 (com número)</label><input type="text" id="t9s3" data-tool="t9"></div>
+          <div class="field"><label for="t9s4">Sustentação 4 (opcional)</label><input type="text" id="t9s4" data-tool="t9"></div>
+        </div>
+      </div>
+      <ul class="fb" id="t9-fb"></ul>
+      <div class="score" id="t9-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t9')">Copiar tudo</button></div>
+    </div>
+  </div>
+
+  <h2>Sustentar sob contestação</h2>
+  <p>Apresentar três opções neutras para não se expor devolve o trabalho para quem pediu, e é o comportamento que mais separa analista de conselheiro. Recomendar não é escolher pelo outro: é declarar uma posição, dizer quanta confiança você tem nela e nomear a condição que a mudaria. Quando não souber, diga que não sabe e ofereça prazo.</p>
+
+  <div class="card">
+    <h4 style="margin-top:0">As objeções previsíveis da Nutrimix</h4>
+    <ul style="margin-bottom:0">
+      <li><b>“Private label paga o custo fixo.”</b> Paga 4 pontos de margem. Uma planta 30% menor custaria bem menos que os R$ 120 milhões e não exigiria esse volume.</li>
+      <li><b>“O insumo vai normalizar.”</b> Mesmo com insumo no patamar de dois anos atrás, a margem chegaria a 12,6%, ainda abaixo dos 14,0% de partida.</li>
+      <li><b>“Precisamos crescer volume.”</b> O volume cresceu 18% no período e o EBITDA em reais caiu 9%.</li>
+    </ul>
+  </div>
+
+  <div class="tool" id="t10">
+    <header>
+      <span class="tname">Ferramenta 11 · Preparação de defesa</span>
+      <span class="tsrc">Combina o dissenso estruturado descrito em McKinsey Bias Busters, “Getting both sides of the story” (2019), com a clareza de papéis de decisão do RAPID (Rogers e Blenko, HBR, 2006).</span>
+    </header>
+    <div class="body">
+      <div class="split">
+        <div class="pane">
+          <h4>Exemplo preenchido · Nutrimix</h4>
+          <p class="ex"><b>Objeção 1 e resposta</b>“PL paga o fixo” → paga 4 pontos; planta menor custa menos que R$ 120 mi</p>
+          <p class="ex"><b>Objeção 2 e resposta</b>“Insumo normaliza” → margem chegaria a 12,6%, ainda abaixo de 14,0%</p>
+          <p class="ex"><b>Objeção 3 e resposta</b>“Precisamos de volume” → volume +18%, EBITDA em reais −9%</p>
+          <p class="ex"><b>Confiança</b>70%</p>
+          <p class="ex" style="margin-bottom:0"><b>O que me faria mudar</b>Contrato assinado de marca própria que leve o mix acima de 85% no 2º semestre</p>
+        </div>
+        <div class="pane blank">
+          <h4>A sua preparação</h4>
+          <div class="field"><label for="t10o1">Objeção 1 e a sua resposta</label><textarea id="t10o1" data-tool="t10"></textarea></div>
+          <div class="field"><label for="t10o2">Objeção 2 e a sua resposta</label><textarea id="t10o2" data-tool="t10"></textarea></div>
+          <div class="field"><label for="t10o3">Objeção 3 e a sua resposta</label><textarea id="t10o3" data-tool="t10"></textarea></div>
+          <div class="field"><label for="t10conf">Confiança na recomendação (%)</label><input type="number" id="t10conf" data-tool="t10" min="0" max="100" placeholder="70"></div>
+          <div class="field"><label for="t10mud">O que me faria mudar de ideia</label><textarea id="t10mud" data-tool="t10"></textarea></div>
+        </div>
+      </div>
+      <ul class="fb" id="t10-fb"></ul>
+      <div class="score" id="t10-score"></div>
+      <div class="tbtn"><button class="btn" onclick="copiar('t10')">Copiar tudo</button></div>
+    </div>
+  </div>
+  <p class="srcs"><b>Fontes desta seção:</b>
+    <a href="https://www.amazon.com/Minto-Pyramid-Principle-Writing-Thinking/dp/0960191046" target="_blank" rel="noopener">Minto, <i>The Pyramid Principle</i></a> ·
+    <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/bias-busters-getting-both-sides-of-the-story" target="_blank" rel="noopener">Bias Busters, “Getting both sides of the story”</a> ·
+    <a href="https://www.bain.com/insights/who-has-the-d/" target="_blank" rel="noopener">Bain, “Who has the D?”</a>
+  </p>
+</section>
+
+<!-- ================= 8. PROJETO FINAL ================= -->
+<section class="sec" id="s8">
+  <p class="kick">Semanas 11 e 12 · 20 horas</p>
+  <h1>Projeto final e painel de prontidão</h1>
+  <p class="lede">Você recebe um problema estratégico que uma empresa real enfrentou, com os dados que existiam na época e sem a resposta, e trabalha três semanas como se a decisão ainda estivesse aberta. Três entregas, e só ao final a revelação do que a empresa de fato decidiu.</p>
+
+  <div class="grid g3">
+    <div class="card">
+      <h4 style="margin-top:0">Entrega 1 · definição e árvore</h4>
+      <p style="margin-bottom:0">Validada antes de qualquer análise. É a única etapa com porta de passagem, porque errar aqui invalida tudo o que vem depois.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Entrega 2 · achados</h4>
+      <p style="margin-bottom:0">Três páginas com a evidência encontrada, as premissas testadas e o que continua em aberto. Devolutiva por escrito.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Entrega 3 · recomendação</h4>
+      <p style="margin-bottom:0">Uma página escrita mais cinco minutos gravados defendendo a posição sob contestação.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:1.1rem">A avaliação não é ter acertado a resposta, que depende do problema sorteado. É a qualidade do raciocínio que levou até ela, medida pela rubrica de cinco dimensões: definição, estruturação, evidência, síntese e sistêmica. A dimensão sistêmica só passa a ser avaliada a partir da semana 7.</p>
+
+  <div class="tool" id="t11">
+    <header>
+      <span class="tname">Ferramenta 12 · Painel de prontidão do projeto</span>
+      <span class="tsrc">Lê o que você preencheu nas ferramentas anteriores e aponta as lacunas antes da entrega. Estrutura de porta de passagem por etapa, conforme o plano de trabalho descrito em McKinsey (2019) e Conn e McLean (2019).</span>
+    </header>
+    <div class="body">
+      <p class="mini">Este painel não guarda nada novo: ele apenas verifica o estado das ferramentas 2 a 11 e diz o que ainda falta.</p>
+      <div class="tbtn"><button class="btn solid" onclick="t11Run()">Verificar o meu projeto</button></div>
+      <ul class="fb" id="t11-fb"></ul>
+      <div class="score" id="t11-score"></div>
+    </div>
+  </div>
+
+  <h2>Os cinco erros que mais derrubam quem toca projeto sozinho</h2>
+  <ol>
+    <li>Analisar antes de validar a pergunta com quem decide</li>
+    <li>Coletar dado sem hipótese, e deixar o dado escolher a pergunta</li>
+    <li>Guardar a conclusão para o fim, e descobrir tarde demais que ela não fecha</li>
+    <li>Entregar opções neutras em vez de uma recomendação</li>
+    <li>Não escrever as objeções antes da reunião em que elas vão aparecer</li>
+  </ol>
+</section>
+
+<!-- ================= 9. BIBLIOTECA ================= -->
+<section class="sec" id="s9">
+  <p class="kick">Aprofundamento</p>
+  <h1>Biblioteca</h1>
+  <p class="lede">Links verificados em 12 de setembro de 2026. Os itens marcados como abertos não exigem assinatura nem compra.</p>
+
+  <h3>O processo inteiro</h3>
+  <ul class="srcs">
+    <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-master-the-seven-step-problem-solving-process" target="_blank" rel="noopener">McKinsey, “How to master the seven-step problem-solving process” (2019)</a> <span class="badge">aberto</span></li>
+    <li><a href="https://www.mckinsey.com/featured-insights/mckinsey-guide-to-problem-solving/adopting-the-right-problem-solving-approach" target="_blank" rel="noopener">McKinsey, “Adopting the right problem-solving approach”</a> <span class="badge">aberto</span></li>
+    <li><a href="https://bulletproofproblemsolving.com/" target="_blank" rel="noopener">Charles Conn e Robert McLean, <i>Bulletproof Problem Solving</i> (Wiley, 2019)</a> <span class="badge">livro</span> — o único livro indispensável do programa, sobretudo os capítulos 2 a 5</li>
+  </ul>
+
+  <h3>Definir o problema e papéis de decisão</h3>
+  <ul class="srcs">
+    <li><a href="https://www.bain.com/insights/who-has-the-d/" target="_blank" rel="noopener">Bain, “Who has the D?”</a> <span class="badge">aberto</span></li>
+    <li><a href="https://hbr.org/2006/01/who-has-the-d-how-clear-decision-roles-enhance-organizational-performance" target="_blank" rel="noopener">Rogers e Blenko, HBR (2006), artigo original</a> <span class="badge">pago</span></li>
+    <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/bias-busters-when-the-question-not-the-answer-is-the-mistake" target="_blank" rel="noopener">Bias Busters, “When the question, not the answer, is the mistake”</a> <span class="badge">aberto</span></li>
+  </ul>
+
+  <h3>Rigor, vieses e calibração</h3>
+  <ul class="srcs">
+    <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-take-the-outside-view" target="_blank" rel="noopener">Bias Busters, “How to take the outside view”</a> <span class="badge">aberto</span></li>
+    <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/bias-busters-premortems-being-smart-at-the-start" target="_blank" rel="noopener">Bias Busters, “Premortems: being smart at the start”</a> <span class="badge">aberto</span></li>
+    <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/bias-busters-getting-both-sides-of-the-story" target="_blank" rel="noopener">Bias Busters, “Getting both sides of the story”</a> <span class="badge">aberto</span></li>
+    <li><a href="https://hbr.org/2007/09/performing-a-project-premortem" target="_blank" rel="noopener">Gary Klein, “Performing a Project Premortem”, HBR (2007)</a> <span class="badge">pago</span></li>
+    <li>J. Edward Russo e Paul J. H. Schoemaker, <i>Decision Traps</i> (Doubleday, 1989) <span class="badge">livro</span></li>
+    <li>Philip E. Tetlock e Dan Gardner, <i>Superforecasting</i> (Crown, 2015) <span class="badge">livro</span></li>
+  </ul>
+
+  <h3>Pensamento sistêmico</h3>
+  <ul class="srcs">
+    <li><a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener">Donella Meadows, “Leverage Points: Places to Intervene in a System” (1999)</a> <span class="badge">aberto</span> — leia a lista de doze pontos de trás para frente</li>
+    <li><a href="https://donellameadows.org/donella-meadows-project/" target="_blank" rel="noopener">The Donella Meadows Project, acervo completo</a> <span class="badge">aberto</span></li>
+    <li>Donella Meadows, <i>Thinking in Systems: A Primer</i> (Chelsea Green, 2008) <span class="badge">livro</span></li>
+  </ul>
+
+  <h3>Síntese e comunicação executiva</h3>
+  <ul class="srcs">
+    <li><a href="https://www.amazon.com/Minto-Pyramid-Principle-Writing-Thinking/dp/0960191046" target="_blank" rel="noopener">Barbara Minto, <i>The Pyramid Principle</i></a> <span class="badge">livro</span></li>
+    <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/six-problem-solving-mindsets-for-very-uncertain-times" target="_blank" rel="noopener">Conn e McLean, “Six problem-solving mindsets for very uncertain times”, McKinsey Quarterly (2020)</a> <span class="badge">aberto</span></li>
+  </ul>
+
+  <h3>Aprendizagem e prática deliberada</h3>
+  <ul class="srcs">
+    <li>Brown, Roediger e McDaniel, <i>Make It Stick</i> (Harvard University Press, 2014) <span class="badge">livro</span></li>
+    <li><a href="https://www.retrievalpractice.org/" target="_blank" rel="noopener">Retrieval Practice, material aberto de Pooja K. Agarwal</a> <span class="badge">aberto</span></li>
+  </ul>
+</section>
+
+</main>
+
+<script>
+"use strict";
+
+/* ---------------- estrutura de seções ---------------- */
+const SECS = [
+  {id:"s1", t:"O ciclo de resolução orientada por hipóteses", d:"Os sete passos, a regra da resposta provisória e o caso Nutrimix", m:"fundamento"},
+  {id:"s2", t:"Semana 0 · diagnóstico de linha de base", d:"Cinco perguntas respondidas antes de qualquer instrução", m:"1 ferramenta"},
+  {id:"s3", t:"Bloco I · definir o problema", d:"Pedido não é problema; quem tem a decisão; o teste MECE", m:"2 ferramentas"},
+  {id:"s4", t:"Bloco II · priorizar e planejar", d:"Conta de guardanapo, corte defensável e hipótese falsificável", m:"2 ferramentas"},
+  {id:"s5", t:"Bloco III · rigor analítico e pensamento crítico", d:"Efeito de composição, calibração de intervalos e pré-mortem", m:"3 ferramentas"},
+  {id:"s6", t:"Bloco IV · pensamento sistêmico", d:"Laços, atrasos, segunda ordem e pontos de alavancagem", m:"1 ferramenta"},
+  {id:"s7", t:"Bloco V · sintetizar e sustentar", d:"Pirâmide de Minto e preparação de defesa sob contestação", m:"2 ferramentas"},
+  {id:"s8", t:"Projeto final e painel de prontidão", d:"Três entregas, rubrica e verificação do que ainda falta", m:"1 ferramenta"},
+  {id:"s9", t:"Biblioteca", d:"Todas as fontes citadas, com indicação de aberto ou pago", m:"referência"}
+];
+
+/* ---------------- armazenamento ---------------- */
+const K = "rep_v1_";
+function save(k,v){ try{ localStorage.setItem(K+k, v); }catch(e){} }
+function load(k,d){ try{ const v = localStorage.getItem(K+k); return v===null? d : v; }catch(e){ return d; } }
+
+/* ---------------- backup e restauracao do progresso ---------------- */
+const MARCA_INI = "### INICIO DOS DADOS DE RESTAURACAO ###";
+const MARCA_FIM = "### FIM DOS DADOS DE RESTAURACAO ###";
+
+/* soma de verificacao simples, so para detectar arquivo truncado ou editado */
+function verificacao(s){
+  let h = 2166136261;
+  for(let i=0;i<s.length;i++){
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return (h >>> 0).toString(16);
+}
+
+function estadoAtual(){
+  const o = {};
+  try{
+    for(let i=0;i<localStorage.length;i++){
+      const k = localStorage.key(i);
+      if(k && k.indexOf(K)===0) o[k.slice(K.length)] = localStorage.getItem(k);
+    }
+  }catch(e){}
+  return o;
+}
+
+/* chaves que a propria pagina grava sozinha e que nao sao resposta do aluno */
+function derivada(k){
+  return k === "last" || k.indexOf("done-") === 0 || /_ok$/.test(k);
+}
+
+function temAlgoGravado(){
+  const o = estadoAtual();
+  return Object.keys(o).some(k => !derivada(k) && String(o[k]).trim());
+}
+
+function blocoDados(){
+  const json = JSON.stringify({ v:1, gerado:new Date().toISOString(), dados:estadoAtual() });
+  return [
+    "",
+    "=".repeat(70),
+    MARCA_INI,
+    "Daqui para baixo nao ha nada para ler.",
+    "Esta parte existe para que a propria pagina do curso consiga restaurar",
+    "as suas respostas em outro computador. Para isso, abra a pagina la,",
+    "va ao sumario e use o botao Carregar respostas de um arquivo.",
+    "Nao edite, nao apague e nao reformate as linhas abaixo.",
+    "",
+    "VERIFICACAO: " + verificacao(json),
+    json,
+    MARCA_FIM,
+    "=".repeat(70)
+  ].join("\r\n");
+}
+
+/* le o bloco de dados de um texto exportado por esta pagina */
+function lerBloco(txt){
+  const t = String(txt||"").replace(/\r/g, "");
+  const i = t.indexOf(MARCA_INI);
+  const f = t.indexOf(MARCA_FIM);
+  if(i < 0 || f < 0 || f < i) throw new Error("Este arquivo nao tem a parte de restauracao. Use um arquivo baixado por esta mesma página.");
+
+  const miolo = t.slice(i + MARCA_INI.length, f).split("\n");
+  let esperado = null;
+  const corpo = [];
+  miolo.forEach(l=>{
+    const m = l.match(/^\s*VERIFICACAO:\s*([0-9a-f]+)\s*$/i);
+    if(m){ esperado = m[1].toLowerCase(); return; }
+    corpo.push(l);
+  });
+
+  /* junta as linhas: JSON nunca contem quebra de linha crua, entao isso
+     desfaz quebras que editores de texto tenham inserido */
+  const json = corpo.join("").trim().replace(/^[^{]*/, "").replace(/[^}]*$/, "");
+  if(!json) throw new Error("A parte de restauracao está vazia ou foi apagada.");
+
+  if(esperado && verificacao(json) !== esperado)
+    throw new Error("O arquivo foi alterado ou ficou incompleto. Baixe de novo na máquina de origem e tente sem editar o arquivo.");
+
+  let obj;
+  try{ obj = JSON.parse(json); }
+  catch(e){ throw new Error("A parte de restauracao está corrompida e nao pôde ser lida."); }
+
+  if(!obj || typeof obj!=="object" || !obj.dados || typeof obj.dados!=="object")
+    throw new Error("O arquivo nao tem o formato esperado.");
+  if(obj.v !== 1)
+    throw new Error("Este arquivo foi gerado por outra versão da página.");
+
+  return obj;
+}
+
+function aplicarEstado(dados, modo){
+  let n = 0;
+  Object.keys(dados).forEach(k=>{
+    const novo = String(dados[k]);
+    if(modo === "vazios"){
+      const atual = load(k, null);
+      if(atual !== null && String(atual).trim()) return;
+    }
+    save(k, novo);
+    n++;
+  });
+  return n;
+}
+
+function avisoImport(msg, erro){
+  const el = document.getElementById("import-aviso");
+  if(!el) return;
+  el.textContent = msg;
+  el.style.display = msg ? "block" : "none";
+  el.style.color = erro ? "#B00020" : "";
+}
+
+function escolherArquivo(){
+  const inp = document.getElementById("import-file");
+  if(inp){ inp.value = ""; inp.click(); }
+}
+
+function processarTexto(txt){
+  let obj;
+  try{ obj = lerBloco(txt); }
+  catch(e){ avisoImport(e.message, true); return; }
+
+  const qtd = Object.keys(obj.dados).length;
+  if(!temAlgoGravado()){
+    concluirImport(aplicarEstado(obj.dados, "tudo"));
+    return;
+  }
+  perguntarModo(obj.dados, qtd);
+}
+
+function arquivoEscolhido(ev){
+  const f = ev.target.files && ev.target.files[0];
+  if(!f) return;
+  avisoImport("");
+  const r = new FileReader();
+  r.onerror = ()=> avisoImport("Nao foi possível ler o arquivo.", true);
+  r.onload = ()=> processarTexto(r.result);
+  r.readAsText(f, "utf-8");
+}
+
+/* alternativa para aparelhos em que o seletor de arquivos nao funciona */
+function alternarColar(){
+  const box = document.getElementById("import-colar");
+  const lnk = document.getElementById("import-colar-link");
+  if(!box) return;
+  const abrir = box.style.display === "none";
+  box.style.display = abrir ? "block" : "none";
+  if(lnk) lnk.textContent = abrir
+    ? "Esconder a alternativa de colar texto"
+    : "Não consegue utilizar o carregador de arquivo? Cole o conteúdo dele";
+  if(abrir){
+    avisoImport("");
+    const ta = document.getElementById("import-texto");
+    if(ta) ta.focus();
+  }
+}
+
+function restaurarDoTexto(){
+  const ta = document.getElementById("import-texto");
+  const txt = ta ? ta.value : "";
+  if(!txt.trim()){
+    avisoImport("Cole primeiro o conteúdo do arquivo no campo acima.", true);
+    return;
+  }
+  avisoImport("");
+  processarTexto(txt);
+}
+
+function perguntarModo(dados, qtd){
+  const box = document.getElementById("import-escolha");
+  if(!box) return;
+  box.innerHTML = "";
+  const p = document.createElement("p");
+  p.style.margin = "0 0 .6rem";
+  p.innerHTML = "<b>Já existem respostas gravadas neste navegador.</b> O arquivo traz " +
+    qtd + " registros. O que você quer fazer?";
+  box.appendChild(p);
+
+  const linha = document.createElement("div");
+  linha.style.cssText = "display:flex;gap:.5rem;flex-wrap:wrap";
+
+  const opcoes = [
+    ["Substituir tudo pelo arquivo", "tudo", "solid"],
+    ["Preencher só o que está vazio", "vazios", ""],
+    ["Cancelar", null, ""]
+  ];
+  opcoes.forEach(([rot, modo, cls])=>{
+    const b = document.createElement("button");
+    b.className = "btn " + cls;
+    b.textContent = rot;
+    b.onclick = ()=>{
+      box.style.display = "none";
+      if(!modo){ avisoImport("Importação cancelada. Nada foi alterado."); return; }
+      const n = aplicarEstado(dados, modo);
+      concluirImport(n, modo);
+    };
+    linha.appendChild(b);
+  });
+  box.appendChild(linha);
+  box.style.display = "block";
+}
+
+function concluirImport(n, modo){
+  const extra = modo === "vazios" ? " Os campos que já tinham conteúdo foram mantidos." : "";
+  alert(n + " registros restaurados." + extra + " A página vai recarregar.");
+  location.reload();
+}
+function del(k){ try{ localStorage.removeItem(K+k); }catch(e){} }
+
+/* ---------------- navegação ---------------- */
+function go(id){
+  document.querySelectorAll(".sec").forEach(s=>s.classList.remove("on"));
+  const el = document.getElementById(id);
+  if(el) el.classList.add("on");
+  window.scrollTo({top:0, behavior:"instant"});
+  save("last", id);
+}
+
+function rotuloCampo(el){
+  let rot = "";
+  const prev = el.previousElementSibling;
+  if(prev && (prev.tagName === "LABEL" || prev.classList.contains("lbl"))) rot = prev.textContent.trim();
+  if(!rot){
+    const pai = el.parentElement;
+    const l = pai ? pai.querySelector("label, .lbl") : null;
+    if(l) rot = l.textContent.trim();
+  }
+  if(!rot) rot = (el.getAttribute("aria-label") || el.placeholder || "").trim();
+  if(!rot) rot = "Campo";
+  // em linhas de tabela, o rotulo da linha da o contexto que falta
+  const linha = el.closest(".rowline");
+  if(linha){
+    const primeiro = linha.querySelector(".lbl");
+    if(primeiro){
+      const ctx = primeiro.textContent.trim();
+      if(ctx && ctx !== rot) rot = ctx + " - " + rot;
+    }
+  }
+  return rot;
+}
+
+function valorCampo(el){
+  if(el.type === "checkbox" || el.type === "radio") return el.checked ? "sim" : "";
+  if(el.tagName === "SELECT") return el.selectedIndex >= 0 ? el.options[el.selectedIndex].text.trim() : "";
+  return String(el.value || "").trim();
+}
+
+function visivel(el){
+  return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+}
+
+/* colapsa espacos e separa palavras que ficariam coladas ao juntar blocos */
+function limpar(s){
+  return String(s||"")
+    .replace(/\s+/g, " ")
+    .replace(/([a-z\u00e0-\u00fc0-9)\].,;:!?])([A-Z\u00c0-\u00dc])/g, "$1 $2")
+    .trim();
+}
+
+/* le um card pelos seus blocos de texto, sem grudar titulo e corpo */
+function textoDoCard(card){
+  const blocos = [...card.querySelectorAll("h4, p, li")]
+    .filter(n => !n.closest(".conf"))
+    .map(n => limpar(n.textContent))
+    .filter(Boolean)
+    .filter(t => !/^Resposta-modelo$/i.test(t));
+  if(blocos.length) return blocos.join(" ");
+  return limpar(card.textContent).replace(/^Resposta-modelo\s*/i, "");
+}
+
+const ROT_CONFORTO = { alto:"alto", medio:"medio", baixo:"baixo" };
+function rotuloConforto(c){ return ROT_CONFORTO[c] || c; }
+
+/* cada pergunta da sonda aponta para um bloco do programa */
+const T0TEMA = [
+  "Bloco I - separar o pedido do problema e definir a pergunta",
+  "Bloco II - efeito de composicao e leitura de mix",
+  "Bloco III - calibragem de intervalos e tamanho da propria ignorancia",
+  "Bloco IV - atrasos, estoques e consequencia de segunda ordem",
+  "Bloco V - sintese pela resposta, no formato piramide"
+];
+
+const ACAO = {
+  baixo: "Comece por aqui. Assista a teoria inteira, refaca os dois exercicios resolvidos e leve o primeiro exercicio pratico para a tutoria.",
+  medio: "Voce tem a intuicao, falta o metodo. Pule a teoria introdutoria, va direto aos exercicios resolvidos e compare o seu raciocinio com o gabarito anotado.",
+  alto:  "Confirme antes de acelerar: faca so o exercicio pratico do bloco. Se passar no checklist, reduza o tempo deste bloco e transfira para os de conforto baixo."
+};
+
+function montarTexto(sec){
+  const L = [];
+  const titulo = sec.querySelector("h1");
+  L.push("RESPOSTAS E FEEDBACK - Programa de resolucao estruturada de problemas");
+  L.push("=".repeat(70));
+  L.push("Secao: " + (titulo ? titulo.textContent.trim() : sec.id));
+  L.push("Gerado em: " + new Date().toLocaleString("pt-BR"));
+  L.push("");
+  
+  const tools = sec.querySelectorAll(".tool");
+  if(!tools.length){
+    L.push("Esta secao nao tem ferramenta com campos para preencher.");
+    L.push("");
+  }
+  
+  const diagnostico = [];
+  
+  tools.forEach((tool, toolIdx) => {
+    const nome = tool.querySelector(".tname");
+    const fonte = tool.querySelector(".tsrc");
+    L.push("");
+    L.push("-".repeat(70));
+    L.push(nome ? nome.textContent.trim() : tool.id);
+    L.push("-".repeat(70));
+    if(fonte) L.push("Fonte: " + fonte.textContent.trim());
+    L.push("");
+    
+    // Verificar se eh t0 (sonda com perguntas dinamicas)
+    const eht0 = tool.id === "t0";
+    
+    if(eht0){
+      const itens = tool.querySelectorAll("#t0-items > div.card.plain");
+      itens.forEach((item, idx)=>{
+        const enunciado = item.querySelector("p");
+        L.push("PERGUNTA " + (idx+1));
+        if(enunciado) L.push(limpar(enunciado.textContent));
+        L.push("");
+
+        const ta = item.querySelector("textarea");
+        const resposta = ta ? (ta.value||"").trim() : "";
+        L.push("Sua resposta:");
+        L.push(resposta || "(nao preenchida)");
+        L.push("");
+
+        const modelo = item.querySelector(".card.tint");
+        if(modelo && modelo.style.display !== "none"){
+          L.push("Resposta-modelo:");
+          L.push(textoDoCard(modelo));
+          L.push("");
+        }
+
+        const c = load("t0_conf_"+idx, "");
+        if(c){
+          L.push("Seu nivel de conforto: " + rotuloConforto(c));
+          diagnostico.push({ tema: T0TEMA[idx] || ("pergunta "+(idx+1)), n: idx+1, c: c });
+        }
+        L.push("");
+      });
+    } else {
+      // Outras ferramentas: campos individuais
+      const campos = [...tool.querySelectorAll("input, textarea, select")];
+      const preenchidos = campos.map(el => [rotuloCampo(el), valorCampo(el)]).filter(x => x[1] && x[1] !== "(nao preenchido)");
+      
+      L.push("SUAS RESPOSTAS");
+      if(preenchidos.length) preenchidos.forEach(([r, v]) => L.push("  " + r + ": " + v));
+      else L.push("  (nada preenchido ate agora)");
+      L.push("");
+      
+      // Resposta recomendada
+      const ex = tool.querySelector(".pane:not(.blank)");
+      if(ex){
+        L.push("RESPOSTA RECOMENDADA");
+        const linhas = ex.querySelectorAll("p.ex");
+        if(linhas.length){
+          linhas.forEach(pp => {
+            const b = pp.querySelector("b");
+            if(b){
+              const rot = limpar(b.textContent).replace(/:$/, "");
+              const resto = [...pp.childNodes].filter(n=>n!==b).map(n=>n.textContent).join(" ");
+              L.push("  " + rot + ": " + limpar(resto));
+            } else {
+              L.push("  " + limpar(pp.textContent));
+            }
+          });
+        } else {
+          L.push("  " + limpar(ex.textContent));
+        }
+        L.push("");
+      }
+      
+      // Resposta-modelo revelada
+      tool.querySelectorAll(".card.tint").forEach(c => {
+        if(!visivel(c)) return;
+        L.push("RESPOSTA-MODELO (revelada por voce)");
+        L.push("  " + textoDoCard(c));
+        L.push("");
+      });
+      
+      // Feedback
+      const fb = tool.querySelector(".fb");
+      const itens = fb ? [...fb.querySelectorAll("li")] : [];
+      if(itens.length){
+        L.push("FEEDBACK DE APRENDIZADO");
+        itens.forEach(li => {
+          const ic = li.querySelector(".ic");
+          const marca = ic ? ic.textContent.trim() : "";
+          let t = li.textContent;
+          if(ic) t = t.replace(ic.textContent, "");
+          t = t.replace(/\s+/g, " ").trim();
+          L.push("  " + marca + " " + t);
+        });
+        L.push("");
+      }
+      
+      const score = tool.querySelector(".score");
+      if(score && score.textContent.trim()){
+        L.push("RESULTADO: " + score.textContent.trim());
+        L.push("");
+      }
+    }
+  });
+  
+  if(diagnostico.length){
+    L.push("");
+    L.push("=".repeat(70));
+    L.push("ONDE FOCAR, EM ORDEM DE PRIORIDADE");
+    L.push("=".repeat(70));
+    L.push("");
+    L.push("A ordem abaixo vem do nivel de conforto que voce mesmo declarou.");
+    L.push("Comece pelo topo e so desca quando o item anterior estiver resolvido.");
+    L.push("");
+
+    const ordem = { baixo:0, medio:1, alto:2 };
+    const fila = diagnostico.slice().sort((a,b)=> ordem[a.c]-ordem[b.c] || a.n-b.n);
+
+    fila.forEach((d,i)=>{
+      L.push((i+1) + ". " + d.tema + "  (conforto " + rotuloConforto(d.c) + ")");
+      L.push("   " + ACAO[d.c]);
+      L.push("");
+    });
+
+    const nb = diagnostico.filter(d=>d.c==="baixo").length;
+    const nm = diagnostico.filter(d=>d.c==="medio").length;
+    const na = diagnostico.filter(d=>d.c==="alto").length;
+    L.push("Resumo: " + nb + " baixo, " + nm + " medio, " + na + " alto.");
+    if(nb >= 3) L.push("Com tres ou mais itens de conforto baixo, siga o programa na ordem padrao, sem pular blocos.");
+    else if(nb === 0 && nm <= 1) L.push("Base solida. Acelere a teoria e gaste o tempo nos exercicios praticos.");
+    else L.push("Concentre as primeiras semanas nos itens de conforto baixo e medio acima.");
+    L.push("");
+  }
+  
+  L.push("=".repeat(70));
+  L.push("Feito com Pratica Estrategica - http://tiny.cc/pratica-estrategica");
+  return L.join("\r\n") + blocoDados();
+}
+
+
+async function downloadRespostas(){
+  const sec = document.querySelector("main .sec.on");
+  if(!sec){ alert("Nenhuma secao aberta."); return; }
+
+  const texto = montarTexto(sec);
+  const nomeArquivo = "respostas-" + sec.id + "-" + new Date().toISOString().slice(0,10) + ".txt";
+  const blob = new Blob(["\ufeff" + texto], {type: "text/plain;charset=utf-8"});
+
+  // caminho preferido: o usuario escolhe a pasta e o nome
+  if(typeof window.showSaveFilePicker === "function"){
+    try{
+      const handle = await window.showSaveFilePicker({
+        suggestedName: nomeArquivo,
+        types: [{ description: "Arquivo de texto", accept: {"text/plain": [".txt"]} }]
+      });
+      const w = await handle.createWritable();
+      await w.write(blob);
+      await w.close();
+      return;
+    }catch(e){
+      if(e && e.name === "AbortError") return;   // usuario cancelou, nao baixar escondido
+      // qualquer outro erro cai no metodo classico
+    }
+  }
+  baixarClassico(blob, nomeArquivo);
+}
+
+function baixarClassico(blob, nomeArquivo){
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = nomeArquivo;
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
+}
+
+function pager(sec, i){
+  const p = document.createElement("div");
+  p.className = "pager";
+  const prev = document.createElement("button");
+  prev.className = "btn";
+  prev.textContent = i===0 ? "← Sumário" : "← " + SECS[i-1].t.split(" · ")[0];
+  prev.onclick = () => go(i===0 ? "toc" : SECS[i-1].id);
+  const toc = document.createElement("button");
+  toc.className = "btn"; toc.textContent = "Sumário"; toc.onclick = () => go("toc");
+  const sp = document.createElement("span"); sp.className="sp";
+  const dwnld = document.createElement("button");
+  dwnld.className = "btn";
+  dwnld.textContent = "Baixar Respostas";
+  dwnld.onclick = downloadRespostas;
+
+  const dw = document.createElement("label");
+  dw.className = "done-wrap";
+  const cb = document.createElement("input");
+  cb.type="checkbox"; cb.id = "done-"+sec.id;
+  cb.checked = load("done-"+sec.id,"0")==="1";
+  cb.onchange = () => { save("done-"+sec.id, cb.checked?"1":"0"); renderTOC(); };
+  dw.appendChild(cb);
+  dw.appendChild(document.createTextNode("Marcar esta seção como estudada"));
+  const next = document.createElement("button");
+  next.className = "btn solid";
+  if(i < SECS.length-1){
+    next.textContent = SECS[i+1].t.split(" · ")[0] + " →";
+    next.onclick = () => go(SECS[i+1].id);
+  } else {
+    next.textContent = "Voltar ao sumário →";
+    next.onclick = () => go("toc");
+  }
+  p.appendChild(prev); p.appendChild(toc); p.appendChild(sp); p.appendChild(dwnld); p.appendChild(dw); p.appendChild(next);
+  document.getElementById(sec.id).appendChild(p);
+}
+
+function renderTOC(){
+  const ul = document.getElementById("toclist");
+  ul.innerHTML = "";
+  let done = 0;
+  SECS.forEach((s,i)=>{
+    const ok = load("done-"+s.id,"0")==="1";
+    if(ok) done++;
+    const li = document.createElement("li");
+    if(ok) li.classList.add("done");
+    const chk = document.createElement("span"); chk.className="chk";
+    const cb = document.createElement("input");
+    cb.type="checkbox"; cb.checked=ok;
+    cb.setAttribute("aria-label","marcar "+s.t+" como estudada");
+    cb.onchange = ()=>{
+      save("done-"+s.id, cb.checked?"1":"0");
+      const pc = document.getElementById("done-"+s.id);
+      if(pc) pc.checked = cb.checked;
+      renderTOC();
+    };
+    chk.appendChild(cb);
+    const b = document.createElement("button");
+    b.className="go"; b.onclick=()=>go(s.id);
+    b.innerHTML = '<span class="t">'+(i+1)+". "+s.t+'</span><span class="d">'+s.d+'</span>';
+    li.appendChild(chk); li.appendChild(b);
+    ul.appendChild(li);
+  });
+  const pct = Math.round(done/SECS.length*100);
+  document.getElementById("progbar").style.width = pct+"%";
+}
+
+function zerar(){
+  if(!confirm("Isto apaga o progresso e tudo o que você preencheu nas ferramentas. Continuar?")) return;
+  try{
+    const rm = [];
+    for(let i=0;i<localStorage.length;i++){
+      const k = localStorage.key(i);
+      if(k && k.indexOf(K)===0) rm.push(k);
+    }
+    rm.forEach(k=>localStorage.removeItem(k));
+  }catch(e){}
+  location.reload();
+}
+
+/* ---------------- utilidades de feedback ---------------- */
+function fb(id, items){
+  const ul = document.getElementById(id);
+  ul.innerHTML = "";
+  items.forEach(it=>{
+    const li = document.createElement("li");
+    li.className = it.k;
+    const ic = it.k==="ok" ? "✓" : it.k==="warn" ? "!" : it.k==="err" ? "✕" : "·";
+    li.innerHTML = '<span class="ic">'+ic+'</span><span>'+it.t+'</span>';
+    ul.appendChild(li);
+  });
+}
+function val(id){ const e=document.getElementById(id); return e? (e.value||"").trim() : ""; }
+function words(s){ return s.split(/\s+/).filter(Boolean).length; }
+function temNumero(s){ return /\d/.test(s); }
+function norm(s){
+  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+}
+
+/* campos simples com persistência */
+function bindSimple(tool, cb){
+  document.querySelectorAll('[data-tool="'+tool+'"]').forEach(el=>{
+    const key = tool+"_"+el.id;
+    const v = load(key,null);
+    if(v!==null) el.value = v;
+    const h = ()=>{ save(key, el.value); cb(); };
+    el.addEventListener("input", h);
+    el.addEventListener("change", h);
+  });
+  cb();
+}
+function copiar(tool){
+  const parts=[];
+  const sel = '[data-tool="'+tool+'"]';
+  const extra = tool==="t2" ? ".t2n,.t2p" : tool==="t3" ? ".t3n,.t3i,.t3f,.t3c" : null;
+  const nodes = [...document.querySelectorAll(sel)];
+  if(extra) document.querySelectorAll(extra).forEach(e=>nodes.push(e));
+  nodes.forEach(el=>{
+    let lab = "";
+    const prev = el.previousElementSibling;
+    if(prev && (prev.tagName==="LABEL" || prev.classList.contains("lbl"))) lab = prev.textContent;
+    else if(el.parentElement && el.parentElement.querySelector(".lbl")) lab = el.parentElement.querySelector(".lbl").textContent;
+    else lab = el.id || "campo";
+    if(String(el.value).trim()) parts.push(lab+": "+el.value);
+  });
+  const txt = parts.length? parts.join("\n") : "(nada preenchido ainda)";
+  try{
+    navigator.clipboard.writeText(txt);
+    alert("Copiado para a área de transferência.");
+  }catch(e){
+    prompt("Copie o texto abaixo:", txt);
+  }
+}
+
+/* ---------------- F1: sonda de linha de base ---------------- */
+const T0 = [
+  { q:"Um CEO pede “um plano de corte de custos de 10%”. Antes de começar, o que você precisa descobrir?",
+    a:"Qual decisão esse plano vai alimentar, quem a toma, em que data e com qual critério. Corte de custos é uma solução já escolhida; a pergunta ainda não foi feita." },
+  { q:"A margem média de uma empresa caiu quatro pontos e nenhum produto individual ficou menos rentável. Como isso é possível?",
+    a:"Por efeito de composição: produtos de margem baixa ganharam peso no mix. É o mesmo fenômeno do paradoxo de Simpson. Nenhuma análise de eficiência encontra isso." },
+  { q:"Você precisa estimar quantas pizzas são vendidas por dia na sua cidade. Dê um intervalo em que você tem 90% de confiança e explique como chegou nele.",
+    a:"O valor importa menos que a largura. Quase todo mundo dá intervalos estreitos demais e acerta em torno de metade das vezes quando deveria acertar 90%. Um intervalo honesto costuma ser desconfortavelmente largo." },
+  { q:"Uma fábrica corta manutenção preventiva e a margem melhora por seis meses. O que você diria em uma reunião no sétimo mês?",
+    a:"Que o efeito bom e o efeito ruim têm atrasos diferentes. A economia aparece já; a quebra aparece depois. Julgar a decisão pelo resultado de curto prazo é confundir atraso com ausência de consequência." },
+  { q:"Você tem seis achados relevantes e quarenta segundos com o CFO no elevador. O que você diz?",
+    a:"Uma frase de recomendação e o porquê em números, não a lista de achados. Se a resposta não cabe em quarenta segundos, ela ainda não está pronta." }
+];
+const CONFORTO = [
+  ["alto","Alto"],
+  ["medio","Médio"],
+  ["baixo","Baixo"]
+];
+function conforto(mod, i){
+  if(mod.querySelector(".conf")) return;
+  const box = document.createElement("div");
+  box.className = "conf";
+  const p = document.createElement("p");
+  p.className = "lbl";
+  p.style.marginTop = ".9rem";
+  p.textContent = "Qual é o seu nível de conforto em relação à sua resposta?";
+  box.appendChild(p);
+  const linha = document.createElement("div");
+  linha.style.cssText = "display:flex;gap:1.1rem;flex-wrap:wrap;margin-top:.35rem";
+  const salvo = load("t0_conf_"+i, "");
+  CONFORTO.forEach(([v,rot])=>{
+    const lab = document.createElement("label");
+    lab.style.cssText = "display:flex;align-items:center;gap:.35rem;cursor:pointer";
+    const r = document.createElement("input");
+    r.type="radio"; r.name="t0conf"+i; r.value=v; r.checked = (salvo===v);
+    r.addEventListener("change", ()=>{ save("t0_conf_"+i, v); });
+    lab.appendChild(r);
+    lab.appendChild(document.createTextNode(rot));
+    linha.appendChild(lab);
+  });
+  box.appendChild(linha);
+  mod.appendChild(box);
+}
+
+function t0Render(){
+  const box = document.getElementById("t0-items");
+  box.innerHTML="";
+  T0.forEach((item,i)=>{
+    const wrap = document.createElement("div");
+    wrap.className="card plain";
+    wrap.innerHTML = '<h4 style="margin-top:0">Pergunta '+(i+1)+'</h4><p>'+item.q+'</p>';
+    const ta = document.createElement("textarea");
+    ta.id = "t0q"+i;
+    ta.placeholder = "Escreva a sua resposta. A resposta-modelo só abre depois de 50 caracteres.";
+    ta.value = load("t0_"+i,"");
+    const rev = document.createElement("div");
+    rev.style.marginTop=".55rem";
+    const btn = document.createElement("button");
+    btn.className="btn";
+    const mod = document.createElement("div");
+    mod.className="card tint";
+    mod.style.display="none";
+    mod.style.marginTop=".55rem";
+    mod.innerHTML = '<h4 style="margin-top:0">Resposta-modelo</h4><p style="margin-bottom:0">'+item.a+'</p>';
+    function upd(){
+      const n = ta.value.trim().length;
+      if(n>=50){
+        btn.disabled=false;
+        btn.textContent="Ver a resposta-modelo";
+      } else {
+        btn.disabled=true;
+        btn.textContent="Escreva mais "+(50-n)+" caracteres para liberar";
+        mod.style.display="none";
+      }
+      t0Score();
+    }
+    btn.onclick=()=>{
+      const abrir = mod.style.display==="none";
+      mod.style.display = abrir ? "block":"none";
+      if(abrir) conforto(mod, i);
+    };
+    ta.addEventListener("input", ()=>{ save("t0_"+i, ta.value); upd(); });
+    wrap.appendChild(ta);
+    rev.appendChild(btn);
+    wrap.appendChild(rev);
+    wrap.appendChild(mod);
+    box.appendChild(wrap);
+    upd();
+  });
+}
+function t0Score(){
+  let n=0;
+  for(let i=0;i<T0.length;i++){ if((load("t0_"+i,"")).trim().length>=50) n++; }
+  document.getElementById("t0-score").textContent = n+" de 5 respondidas";
+}
+
+/* ---------------- F2: declaração de problema ---------------- */
+const GENERICOS = ["a empresa","a diretoria","a gestao","o time","todos","a area","a companhia","a organizacao","o board","a lideranca"];
+const SOLUCAO = ["plano de corte","cortar","reduzir custo","implementar","implantar","contratar","comprar","criar um","fazer um","roadmap","projeto de"];
+function t1Check(){
+  const a=val("t1a"), b=val("t1b"), c=val("t1c"), d=val("t1d"), e=val("t1e");
+  const F=[];
+  if(!a) F.push({k:"idle", t:"Quem decide está em branco. Sem um nome ou cargo específico, não há problema definido, e sim um tema."});
+  else if(GENERICOS.some(g=>norm(a).includes(g))) F.push({k:"err", t:"“"+a+"” é um coletivo, não um decisor. No modelo RAPID (Rogers e Blenko, HBR 2006), o D pertence a uma pessoa. Pergunte quem assina."});
+  else F.push({k:"ok", t:"Decisor nomeado. Confirme com ele por escrito antes de analisar qualquer coisa."});
+
+  if(!b) F.push({k:"idle", t:"Falta dizer o que exatamente será decidido."});
+  else if(words(b)<3) F.push({k:"warn", t:"A decisão está curta demais para ser verificável. Escreva no formato “aprovar ou não X” ou “escolher entre A e B”."});
+  else F.push({k:"ok", t:"Decisão descrita de forma verificável."});
+
+  if(!c) F.push({k:"idle", t:"Falta a data. Sem prazo de decisão, o projeto não tem critério de suficiência."});
+  else if(!temNumero(c)) F.push({k:"warn", t:"A data não tem número. “Em breve” ou “no próximo comitê” não permite planejar o trabalho para trás."});
+  else F.push({k:"ok", t:"Prazo datado."});
+
+  if(!d) F.push({k:"idle", t:"Falta o critério de escolha de quem decide."});
+  else if(!temNumero(d)) F.push({k:"warn", t:"O critério não tem número nem limiar. “Ser rentável” não distingue as alternativas; “payback abaixo de 24 meses” distingue."});
+  else F.push({k:"ok", t:"Critério com limiar explícito. Isso define o que a sua análise precisa provar."});
+
+  if(!e) F.push({k:"idle", t:"Falta a pergunta em uma frase."});
+  else {
+    const w = words(e);
+    if(w>35) F.push({k:"warn", t:"A pergunta tem "+w+" palavras. Acima de 35 ela costuma estar carregando duas perguntas. Conn e McLean recomendam uma pergunta por projeto."});
+    else F.push({k:"ok", t:"Pergunta com "+w+" palavras, dentro do que se sustenta em uma conversa."});
+    if(!/\?/.test(e)) F.push({k:"warn", t:"A frase não termina em interrogação. Se não é pergunta, provavelmente já é uma conclusão ou uma tarefa."});
+    const s = SOLUCAO.find(x=>norm(e).includes(x));
+    if(s) F.push({k:"err", t:"A pergunta contém “"+s+"”, que é uma solução, não um problema. Isso é exatamente o erro de enquadramento tratado em McKinsey Bias Busters, “When the question, not the answer, is the mistake”."});
+  }
+  fb("t1-fb", F);
+  const ok = F.filter(x=>x.k==="ok").length;
+  document.getElementById("t1-score").textContent = ok+" de 5 campos com qualidade suficiente para seguir ao passo 2";
+  save("t1_ok", String(ok));
+}
+
+/* ---------------- F3: árvore MECE ---------------- */
+const ORG = ["comercial","marketing","operacoes","rh","financeiro","ti","juridico","administrativo","industrial"];
+function t2RowHTML(i,n,p){
+  return '<div class="rowline" style="grid-template-columns:1fr 5.5rem">'+
+    '<div><span class="lbl">Galho '+(i+1)+'</span><input type="text" class="t2n" value="'+n.replace(/"/g,"&quot;")+'"></div>'+
+    '<div><span class="lbl">Peso %</span><input type="number" class="t2p" value="'+p+'"></div>'+
+  '</div>';
+}
+function t2Render(){
+  const box = document.getElementById("t2-rows");
+  const data = JSON.parse(load("t2_rows", JSON.stringify([["",""],["",""],["",""]])));
+  box.innerHTML = data.map((r,i)=>t2RowHTML(i,r[0],r[1])).join("");
+  box.querySelectorAll("input").forEach(el=>el.addEventListener("input", t2Save));
+  t2Check();
+}
+function t2Save(){
+  const ns=[...document.querySelectorAll(".t2n")].map(e=>e.value);
+  const ps=[...document.querySelectorAll(".t2p")].map(e=>e.value);
+  save("t2_rows", JSON.stringify(ns.map((n,i)=>[n, ps[i]||""])));
+  t2Check();
+}
+function t2Add(){
+  const d = JSON.parse(load("t2_rows","[]")); d.push(["",""]);
+  save("t2_rows", JSON.stringify(d)); t2Render();
+}
+function t2Del(){
+  const d = JSON.parse(load("t2_rows","[]"));
+  if(d.length>2){ d.pop(); save("t2_rows", JSON.stringify(d)); t2Render(); }
+}
+function t2Check(){
+  const d = JSON.parse(load("t2_rows","[]")).filter(r=>r[0].trim());
+  const total = val("t2total");
+  const F=[];
+  if(!total) F.push({k:"idle", t:"Escreva primeiro o que os galhos precisam somar. Sem isso não há teste de exaustividade."});
+  if(d.length===0){ F.push({k:"idle", t:"Nenhum galho preenchido ainda."}); fb("t2-fb",F); document.getElementById("t2-score").textContent=""; return; }
+
+  const soma = d.reduce((s,r)=>s + (parseFloat(r[1])||0), 0);
+  if(soma===0) F.push({k:"idle", t:"Sem pesos, dá para testar exclusividade mas não exaustividade."});
+  else if(Math.abs(soma-100)<=2) F.push({k:"ok", t:"Os pesos somam "+soma.toFixed(0)+"%. Coletivamente exaustivo: o conjunto cobre o total declarado."});
+  else if(soma<98) F.push({k:"err", t:"Os pesos somam apenas "+soma.toFixed(0)+"%. Faltam "+(100-soma).toFixed(0)+" pontos, ou seja, existe causa fora da sua árvore. O “CE” do MECE não está satisfeito."});
+  else F.push({k:"err", t:"Os pesos somam "+soma.toFixed(0)+"%, acima de 100%. Isso quase sempre indica que dois galhos estão contando o mesmo efeito: o “ME” do MECE não está satisfeito."});
+
+  if(d.length<3) F.push({k:"warn", t:"Apenas "+d.length+" galho(s). Decomposições com menos de três ramos costumam esconder um nível que você ainda não abriu."});
+  else if(d.length>6) F.push({k:"warn", t:d.length+" galhos no primeiro nível. Acima de seis a árvore vira inventário e você perde a capacidade de defender o recorte."});
+  else F.push({k:"ok", t:d.length+" galhos no primeiro nível, quantidade que ainda se sustenta em uma página."});
+
+  const stop = ["de","da","do","e","a","o","em","por","para","com","dos","das","no","na"];
+  const mapa = {};
+  let sobrep = null;
+  d.forEach((r,i)=>{
+    norm(r[0]).split(/[^a-z0-9]+/).filter(w=>w.length>3 && !stop.includes(w)).forEach(w=>{
+      if(mapa[w]!==undefined && mapa[w]!==i && !sobrep) sobrep=[w, d[mapa[w]][0], r[0]];
+      mapa[w]=i;
+    });
+  });
+  if(sobrep) F.push({k:"warn", t:"“"+sobrep[1]+"” e “"+sobrep[2]+"” compartilham o termo “"+sobrep[0]+"”. Verifique se os dois galhos não estão medindo o mesmo efeito por nomes diferentes."});
+
+  const org = d.filter(r=>ORG.some(o=>norm(r[0]).includes(o)));
+  if(org.length>=2) F.push({k:"err", t:"Pelo menos dois galhos têm nome de área da empresa. Você está decompondo pelo organograma, que reflete como a empresa é gerida e não como o problema se forma. Reescreva por componentes do resultado, segmentos ou etapas do processo."});
+
+  const semNum = d.filter(r=>!r[1]);
+  if(semNum.length && soma>0) F.push({k:"warn", t:semNum.length+" galho(s) sem peso. No passo 3 você vai precisar priorizar, e sem ordem de grandeza a priorização vira opinião."});
+
+  fb("t2-fb",F);
+  const ok = F.filter(x=>x.k==="ok").length;
+  const err = F.filter(x=>x.k==="err").length;
+  document.getElementById("t2-score").textContent = err ? "Árvore reprovada no teste MECE: "+err+" problema(s) estrutural(is)" : (ok>=2 ? "Árvore aprovada no teste MECE" : "Árvore incompleta");
+  save("t2_ok", err? "0":"1");
+}
+
+/* ---------------- F4: priorização ---------------- */
+function t3Render(){
+  const box = document.getElementById("t3-rows");
+  const d = JSON.parse(load("t3_rows", JSON.stringify([["","","",""],["","","",""],["","","",""]])));
+  box.innerHTML = d.map((r,i)=>
+    '<div class="rowline">'+
+      '<div><span class="lbl">Frente '+(i+1)+'</span><input type="text" class="t3n" value="'+String(r[0]).replace(/"/g,"&quot;")+'"></div>'+
+      '<div><span class="lbl">Impacto 0-10</span><input type="number" min="0" max="10" class="t3i" value="'+r[1]+'"></div>'+
+      '<div><span class="lbl">Influência 0-10</span><input type="number" min="0" max="10" class="t3f" value="'+r[2]+'"></div>'+
+      '<div><span class="lbl">Custo 1-10</span><input type="number" min="1" max="10" class="t3c" value="'+r[3]+'"></div>'+
+      '<div><span class="lbl">Índice</span><div class="t3o mini" style="padding-top:.45rem;font-weight:700">—</div></div>'+
+    '</div>').join("");
+  box.querySelectorAll("input").forEach(el=>el.addEventListener("input", t3Save));
+  t3Check();
+}
+function t3Save(){
+  const n=[...document.querySelectorAll(".t3n")].map(e=>e.value);
+  const i=[...document.querySelectorAll(".t3i")].map(e=>e.value);
+  const f=[...document.querySelectorAll(".t3f")].map(e=>e.value);
+  const c=[...document.querySelectorAll(".t3c")].map(e=>e.value);
+  save("t3_rows", JSON.stringify(n.map((x,k)=>[x, i[k]||"", f[k]||"", c[k]||""])));
+  t3Check();
+}
+function t3Add(){ const d=JSON.parse(load("t3_rows","[]")); d.push(["","","",""]); save("t3_rows",JSON.stringify(d)); t3Render(); }
+function t3Del(){ const d=JSON.parse(load("t3_rows","[]")); if(d.length>2){ d.pop(); save("t3_rows",JSON.stringify(d)); t3Render(); } }
+function t3Check(){
+  const d = JSON.parse(load("t3_rows","[]"));
+  const outs = document.querySelectorAll(".t3o");
+  const idx=[];
+  d.forEach((r,k)=>{
+    const i=parseFloat(r[1]), f=parseFloat(r[2]), c=parseFloat(r[3]);
+    if(r[0].trim() && !isNaN(i) && !isNaN(f) && !isNaN(c) && c>0){
+      const v = i*f/c;
+      idx.push({n:r[0], v:v, i:i, f:f});
+      if(outs[k]) outs[k].textContent = v.toFixed(1);
+    } else if(outs[k]) outs[k].textContent = "—";
+  });
+  const F=[];
+  if(idx.length<2){ F.push({k:"idle", t:"Preencha ao menos duas frentes com impacto, influência e custo para comparar."}); fb("t3-fb",F); document.getElementById("t3-score").textContent=""; return; }
+  idx.sort((a,b)=>b.v-a.v);
+  F.push({k:"ok", t:"Ordem atual: "+idx.map(x=>x.n+" ("+x.v.toFixed(1)+")").join(" · ")});
+  const corte = idx[0].v*0.4;
+  const acima = idx.filter(x=>x.v>=corte);
+  if(acima.length>3) F.push({k:"warn", t:acima.length+" frentes ficaram próximas no índice. Ou os seus scores estão pouco discriminantes, ou você ainda não fez a conta de guardanapo que separa o grande do pequeno. Conn e McLean recomendam sair do passo 3 com duas ou três frentes, não mais."});
+  else F.push({k:"ok", t:"Você sai do passo 3 com "+acima.length+" frente(s), que é o número que cabe em três semanas de trabalho individual."});
+
+  const alto = idx.filter(x=>x.i>=7 && x.f<=3);
+  if(alto.length) F.push({k:"warn", t:"“"+alto[0].n+"” tem impacto alto e influência baixa. É real, mas está fora do alcance de quem decide. Mencione no relatório como contexto e não gaste semana analisando: foi o caso do custo de insumo na Nutrimix."});
+
+  const baixo = idx.filter(x=>x.i<=3 && x.f>=7);
+  if(baixo.length) F.push({k:"warn", t:"“"+baixo[0].n+"” é fácil de mexer e move pouco. É a armadilha do galho confortável: aparece muito trabalho e muda pouco o resultado."});
+
+  const semCusto = d.filter(r=>r[0].trim() && !r[3]);
+  if(semCusto.length) F.push({k:"idle", t:semCusto.length+" frente(s) sem custo de descoberta preenchido. O custo é o que impede priorizar só pelo que é interessante."});
+
+  fb("t3-fb",F);
+  document.getElementById("t3-score").textContent = "Frente prioritária: "+idx[0].n;
+  save("t3_ok", acima.length<=3 ? "1":"0");
+}
+
+/* ---------------- F5: hipótese ---------------- */
+function t4Check(){
+  const h=val("t4a"), t=val("t4b"), f=val("t4c"), r=val("t4d"), p=val("t4e");
+  const F=[];
+  if(!h) F.push({k:"idle", t:"Escreva a hipótese como afirmação."});
+  else {
+    if(/\?\s*$/.test(h)) F.push({k:"err", t:"A hipótese termina em interrogação. Pergunta não pode ser testada nem refutada: reescreva como afirmação (“a queda vem de X”)."});
+    else F.push({k:"ok", t:"Hipótese em forma de afirmação."});
+    if(/(talvez|possivelmente|pode ser|acredito|acho que)/.test(norm(h))) F.push({k:"warn", t:"A hipótese está hedgeada (“talvez”, “pode ser”). Um enunciado que já se protege não gera teste claro. Afirme e deixe o dado derrubar."});
+  }
+  if(!t) F.push({k:"idle", t:"Falta o teste: qual número, qual corte, qual comparação."});
+  else if(!temNumero(t) && words(t)<5) F.push({k:"warn", t:"O teste está vago. Nomeie a métrica, o recorte e o período: “margem por linha, mês a mês, 24 meses”."});
+  else F.push({k:"ok", t:"Teste descrito de forma executável."});
+
+  if(!f) F.push({k:"idle", t:"Falta fonte e dono do dado."});
+  else if(words(f)<3) F.push({k:"warn", t:"Sem alguém nomeado, o dado costuma atrasar. Escreva a base e a pessoa que extrai."});
+  else F.push({k:"ok", t:"Fonte e responsável definidos."});
+
+  if(!r) F.push({k:"err", t:"O campo de refutação está vazio. Uma hipótese que nada poderia derrubar não é hipótese: é opinião com aparência de método. O critério é de Karl Popper (1934)."});
+  else if(/(nada|nenhum|impossivel|nao tem)/.test(norm(r))) F.push({k:"err", t:"Você escreveu que nada a refutaria. Isso é o sinal mais claro de viés de confirmação em um plano de trabalho. Volte e defina um limiar numérico."});
+  else if(!temNumero(r)) F.push({k:"warn", t:"A condição de refutação não tem número. Sem limiar, na hora do resultado você vai negociar com você mesmo."});
+  else F.push({k:"ok", t:"Condição de refutação com limiar numérico. Esta é a linha que separa análise de defesa de tese."});
+
+  const dias = parseFloat(p);
+  if(!p) F.push({k:"idle", t:"Falta o prazo do teste."});
+  else if(dias>5) F.push({k:"warn", t:"Bloco de "+dias+" dias. Acima de cinco dias o teste normalmente ainda não está claro; quebre em partes que rendem resultado parcial."});
+  else F.push({k:"ok", t:"Bloco de "+dias+" dia(s), dentro do ritmo que permite corrigir rota na sexta-feira."});
+
+  fb("t4-fb",F);
+  const err = F.filter(x=>x.k==="err").length;
+  document.getElementById("t4-score").textContent = err ? "Hipótese não está pronta para virar trabalho" : "Hipótese pronta para execução";
+  save("t4_ok", err?"0":"1");
+}
+
+/* ---------------- F6: efeito mix ---------------- */
+function t5Check(){
+  const g = id => parseFloat(val(id));
+  const ma0=g("t5ma0"), ma1=g("t5ma1"), pa0=g("t5pa0"), pa1=g("t5pa1");
+  const mb0=g("t5mb0"), mb1=g("t5mb1"), pb0=g("t5pb0"), pb1=g("t5pb1");
+  const out = document.getElementById("t5-out");
+  const F=[];
+  const vals=[ma0,ma1,pa0,pa1,mb0,mb1,pb0,pb1];
+  if(vals.some(isNaN)){
+    out.textContent="";
+    F.push({k:"idle", t:"Preencha os oito campos para calcular a decomposição."});
+    fb("t5-fb",F); document.getElementById("t5-score").textContent=""; return;
+  }
+  const s0=pa0+pb0, s1=pa1+pb1;
+  if(Math.abs(s0-100)>1 || Math.abs(s1-100)>1){
+    F.push({k:"err", t:"Os pesos precisam somar 100% em cada período. Hoje somam "+s0.toFixed(0)+"% no início e "+s1.toFixed(0)+"% no fim."});
+  }
+  const w=x=>x/100;
+  const m0 = w(pa0)*ma0 + w(pb0)*mb0;
+  const m1 = w(pa1)*ma1 + w(pb1)*mb1;
+  const totv = m1-m0;
+  const mix = (w(pa1)-w(pa0))*ma0 + (w(pb1)-w(pb0))*mb0;
+  const taxa = w(pa0)*(ma1-ma0) + w(pb0)*(mb1-mb0);
+  const inter = totv - mix - taxa;
+  out.innerHTML = "<b>Média ponderada:</b> "+m0.toFixed(2)+"% → "+m1.toFixed(2)+"% ("+(totv>=0?"+":"")+totv.toFixed(2)+" p.p.)<br>"+
+    "<b>Efeito composição (mix):</b> "+mix.toFixed(2)+" p.p.<br>"+
+    "<b>Efeito margem (taxa):</b> "+taxa.toFixed(2)+" p.p.<br>"+
+    "<b>Interação:</b> "+inter.toFixed(2)+" p.p.";
+  if(Math.abs(totv)<0.01){
+    F.push({k:"ok", t:"A média não mudou no período. Nada a explicar por aqui."});
+  } else {
+    const share = Math.abs(mix)/Math.abs(totv)*100;
+    if(share>=60) F.push({k:"ok", t:"Composição explica "+share.toFixed(0)+"% da variação. Este é um problema de mix, não de eficiência. Recomendar corte de custo aqui atacaria o galho errado."});
+    else if(share>=30) F.push({k:"warn", t:"Composição explica "+share.toFixed(0)+"% da variação, e a margem por linha explica o resto. Trate os dois efeitos separadamente no relatório, porque exigem recomendações diferentes."});
+    else F.push({k:"ok", t:"Composição explica apenas "+share.toFixed(0)+"% da variação. A causa dominante é a margem dentro de cada linha."});
+  }
+  if(Math.abs(ma1-ma0)<0.01 && Math.abs(mb1-mb0)<0.01 && Math.abs(totv)>0.01){
+    F.push({k:"warn", t:"Nenhuma das duas linhas piorou e ainda assim a média mudou "+totv.toFixed(2)+" ponto(s). É o paradoxo de Simpson (1951) no seu P&L: qualquer leitura pela média vai apontar para a causa errada."});
+  }
+  if(Math.abs(inter)>Math.abs(totv)*0.25){
+    F.push({k:"warn", t:"O termo de interação está grande ("+inter.toFixed(2)+" p.p.). Isso acontece quando peso e margem mudam muito ao mesmo tempo; declare o método de decomposição que você usou, porque a repartição deixa de ser única."});
+  }
+  fb("t5-fb",F);
+  document.getElementById("t5-score").textContent = "Variação total: "+totv.toFixed(2)+" p.p. · mix "+mix.toFixed(2)+" · taxa "+taxa.toFixed(2);
+  save("t5_ok","1");
+}
+
+/* ---------------- F7: calibração ---------------- */
+const T6 = [
+  {q:"Comprimento do rio Nilo, em quilômetros", v:6650, u:"km"},
+  {q:"Ano de fundação da Universidade de Coimbra", v:1290, u:""},
+  {q:"Distância média entre a Terra e a Lua, em quilômetros", v:384400, u:"km"},
+  {q:"Número de espécies de aves descritas no mundo", v:11000, u:"espécies"},
+  {q:"Ano em que a Coca-Cola foi criada", v:1886, u:""}
+];
+function t6Render(){
+  const box=document.getElementById("t6-items");
+  box.innerHTML = T6.map((it,i)=>
+    '<div class="rowline" style="grid-template-columns:1fr 7rem 7rem">'+
+      '<div><span class="lbl">'+(i+1)+". "+it.q+'</span></div>'+
+      '<div><span class="lbl">mínimo</span><input type="number" id="t6lo'+i+'" value="'+load("t6lo"+i,"")+'"></div>'+
+      '<div><span class="lbl">máximo</span><input type="number" id="t6hi'+i+'" value="'+load("t6hi"+i,"")+'"></div>'+
+    '</div>').join("");
+  T6.forEach((it,i)=>{
+    ["lo","hi"].forEach(k=>{
+      const el=document.getElementById("t6"+k+i);
+      el.addEventListener("input", ()=>save("t6"+k+i, el.value));
+    });
+  });
+}
+function t6Check(){
+  const F=[]; let acertos=0, respondidas=0, largura=0;
+  T6.forEach((it,i)=>{
+    const lo=parseFloat(val("t6lo"+i)), hi=parseFloat(val("t6hi"+i));
+    if(isNaN(lo)||isNaN(hi)) return;
+    respondidas++;
+    const dentro = it.v>=Math.min(lo,hi) && it.v<=Math.max(lo,hi);
+    if(dentro) acertos++;
+    const amp = Math.abs(hi-lo)/it.v;
+    largura += amp;
+    F.push({k: dentro?"ok":"err",
+      t:(i+1)+". Valor real: "+it.v.toLocaleString("pt-BR")+" "+it.u+". Seu intervalo: "+Math.min(lo,hi).toLocaleString("pt-BR")+" a "+Math.max(lo,hi).toLocaleString("pt-BR")+(dentro?" — contém o valor.":" — não contém o valor.")});
+  });
+  if(respondidas<T6.length){
+    F.unshift({k:"idle", t:"Você respondeu "+respondidas+" de "+T6.length+". Preencha todos para o resultado fazer sentido."});
+  } else {
+    const pct = acertos/T6.length*100;
+    if(acertos<=3) F.unshift({k:"err", t:"Você acertou "+acertos+" de 5, ou "+pct.toFixed(0)+"%, quando deveria acertar 90%. Isso é excesso de confiança, o padrão documentado por Russo e Schoemaker em <i>Decision Traps</i>: intervalos de 90% costumam conter o valor em 40% a 60% dos casos. A correção prática é alargar deliberadamente todo intervalo que você der nos próximos três meses."});
+    else if(acertos===5 && largura/T6.length>3) F.unshift({k:"warn", t:"Você acertou 5 de 5, mas com intervalos muito largos. Calibração perfeita e inútil: um intervalo que vai de zero a infinito sempre acerta e não informa decisão nenhuma. Tetlock chama isso de perder resolução."});
+    else F.unshift({k:"ok", t:"Você acertou "+acertos+" de 5. Está dentro da faixa esperada para quem já pratica calibração. Repita o exercício com perguntas do seu próprio setor."});
+  }
+  fb("t6-fb",F);
+  document.getElementById("t6-score").textContent = respondidas? acertos+" de "+respondidas+" intervalos continham o valor verdadeiro" : "";
+  save("t6_ok", respondidas===T6.length? "1":"0");
+}
+
+/* ---------------- F8: pré-mortem ---------------- */
+const EXTERNAS = ["mercado","concorrente","concorrencia","crise","cambio","governo","economia","cliente nao","pandemia","juros","inflacao"];
+function t7Check(){
+  const cen=val("t7cen");
+  const cs=["t7c1","t7c2","t7c3","t7c4"].map(val).filter(Boolean);
+  const sin=val("t7sin");
+  const F=[];
+  if(!cen) F.push({k:"idle", t:"Escreva o cenário de fracasso em data futura. O formato importa: Klein mostrou que declarar o fracasso como fato consumado gera mais causas do que perguntar “que riscos existem?”."});
+  else if(!/(20\d\d|janeiro|fevereiro|marco|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro|mes|trimestre)/.test(norm(cen)))
+    F.push({k:"warn", t:"O cenário não tem data. Sem ancorar no tempo, o exercício vira lista de riscos genéricos."});
+  else F.push({k:"ok", t:"Cenário ancorado no futuro, que é o que faz a técnica funcionar."});
+
+  if(cs.length<3) F.push({k:"err", t:"Apenas "+cs.length+" causa(s). O pré-mortem só rende a partir da terceira ou quarta, porque as primeiras são sempre as óbvias. Force pelo menos três."});
+  else F.push({k:"ok", t:cs.length+" causas listadas. As duas últimas costumam ser as úteis."});
+
+  if(cs.length){
+    const ext = cs.filter(c=>EXTERNAS.some(e=>norm(c).includes(e)));
+    if(ext.length===cs.length) F.push({k:"err", t:"Todas as causas são externas (mercado, concorrência, câmbio). Nenhuma decisão sua aparece na lista. Isso é viés de autoatribuição, e um pré-mortem sem causa interna não muda nada no plano."});
+    else if(ext.length>cs.length/2) F.push({k:"warn", t:ext.length+" de "+cs.length+" causas são externas. Vale forçar mais uma que dependa de uma escolha do time."});
+    else F.push({k:"ok", t:"Há causas internas na lista, que são as únicas sobre as quais você pode agir."});
+  }
+  if(!sin) F.push({k:"idle", t:"Falta o sinal precoce. Sem ele, o pré-mortem identifica o risco mas não cria vigilância."});
+  else F.push({k:"ok", t:"Sinal precoce definido. Coloque-o como item de acompanhamento na sua resposta provisória semanal."});
+  fb("t7-fb",F);
+  const err=F.filter(x=>x.k==="err").length;
+  document.getElementById("t7-score").textContent = err? "Pré-mortem incompleto" : "Pré-mortem utilizável";
+  save("t7_ok", err?"0":"1");
+}
+
+/* ---------------- F9: laço e alavanca ---------------- */
+const LEV = {
+  "12":{n:"12 · parâmetros numéricos", m:"É o ponto mais fraco da lista de Meadows. Mexer em preço, orçamento ou padrão quase nunca muda o comportamento do sistema, porque a estrutura que gera o comportamento continua intacta."},
+  "10":{n:"10 · estrutura física", m:"Ponto fraco e caro. Estruturas físicas raramente são a alavanca certa porque demoram a mudar; quando já estão construídas, o jogo passa a ser como você as usa."},
+  "8":{n:"8 · laço de equilíbrio", m:"Ponto intermediário. Fortalecer controle ou penalidade funciona, mas só enquanto alguém sustenta o controle."},
+  "6":{n:"6 · fluxo de informação", m:"Ponto forte. Mudar quem vê o quê, e quando, costuma alterar comportamento sem custo de capital. Meadows dá o exemplo clássico do medidor de energia visível."},
+  "5":{n:"5 · regras do sistema", m:"Ponto forte. Metas internas, incentivos e restrições são regras: foi exatamente aqui que estava a alavanca da Nutrimix (a meta de ocupação de 85%)."},
+  "3":{n:"3 · objetivo do sistema", m:"Ponto muito forte e politicamente caro. Mudar o objetivo redefine tudo abaixo dele, e raramente está ao alcance de um analista sozinho."}
+};
+function t8Check(){
+  const es=["t8e1","t8e2","t8e3","t8e4","t8e5"].map(val);
+  const volta=val("t8volta"), atraso=val("t8atraso"), alav=val("t8alav"), tipo=val("t8tipo");
+  const F=[];
+  const preench = es.filter(Boolean).length;
+  if(preench<4) F.push({k:"idle", t:"Preencha ao menos quatro etapas. Laços com menos de quatro elos geralmente escondem um passo intermediário."});
+  else F.push({k:"ok", t:preench+" etapas descritas."});
+
+  if(!volta) F.push({k:"idle", t:"Indique a qual etapa a última volta. É isso que distingue laço de cadeia."});
+  else if(volta==="0") F.push({k:"err", t:"Você marcou que não volta. Então isto é uma cadeia causal linear, não um laço, e a intervenção pode ser pontual. Vale insistir: pergunte o que o resultado da etapa final torna mais provável no começo."});
+  else F.push({k:"ok", t:"Laço fechado na etapa "+volta+". Como o efeito realimenta a causa, qualquer intervenção pontual tende a ser absorvida pelo sistema."});
+
+  if(!atraso) F.push({k:"idle", t:"Falta o atraso entre causa e consequência visível."});
+  else if(!temNumero(atraso)) F.push({k:"warn", t:"O atraso não tem número. Meadows insiste que a duração do atraso define se o sistema oscila, estabiliza ou colapsa: estime em meses ou trimestres."});
+  else F.push({k:"ok", t:"Atraso estimado. Inclua isso na recomendação, porque é o que explica por que a decisão errada parecia boa."});
+
+  if(!alav) F.push({k:"idle", t:"Falta dizer onde você pretende intervir."});
+  if(tipo && LEV[tipo]){
+    const L = LEV[tipo];
+    const fraco = (tipo==="12"||tipo==="10");
+    F.push({k: fraco?"warn":"ok", t:"<b>"+L.n+" na hierarquia de Meadows.</b> "+L.m+(fraco?" Antes de fechar a recomendação, procure uma regra, uma meta ou um fluxo de informação que produza o mesmo efeito.":"")});
+  } else if(alav){
+    F.push({k:"idle", t:"Classifique o tipo de intervenção para receber a leitura pela hierarquia de doze pontos."});
+  }
+  fb("t8-fb",F);
+  document.getElementById("t8-score").textContent = (volta && volta!=="0") ? "Laço identificado" : "Ainda não há laço fechado";
+  save("t8_ok", (volta && volta!=="0" && alav)? "1":"0");
+}
+
+/* ---------------- F10: storyline ---------------- */
+const JORNADA = ["analisamos","fizemos","coletamos","levantamos","realizamos","conduzimos","mapeamos","entrevistamos"];
+function t9Check(){
+  const g=val("t9g");
+  const ss=["t9s1","t9s2","t9s3","t9s4"].map(val).filter(Boolean);
+  const F=[];
+  if(!g) F.push({k:"idle", t:"Escreva a ideia governante: uma frase que responde a pergunta que você definiu no Bloco I."});
+  else {
+    const w=words(g);
+    if(w>45) F.push({k:"warn", t:"A ideia governante tem "+w+" palavras. Falada, isso passa de trinta segundos antes de chegar ao verbo principal. Corte até caber em quarenta."});
+    else if(w<8) F.push({k:"warn", t:"Com "+w+" palavras a frase provavelmente é um tema, não uma conclusão. Minto pede uma afirmação que alguém poderia contestar."});
+    else F.push({k:"ok", t:"Ideia governante com "+w+" palavras, dentro dos quarenta segundos de elevador."});
+    const j = JORNADA.find(x=>norm(g).includes(x));
+    if(j) F.push({k:"err", t:"A frase começa contando o caminho (“"+j+"”). Quem decide não quer a jornada da análise, quer o destino. Reescreva começando pela conclusão."});
+    if(!temNumero(g)) F.push({k:"warn", t:"A ideia governante não tem número. Uma recomendação sem magnitude é difícil de contestar e, por isso mesmo, difícil de aprovar."});
+    const q = load("t1_t1e","");
+    if(q && q.trim()) F.push({k:"idle", t:"A pergunta que você registrou no Bloco I foi: “"+q.trim()+"”. Leia as duas em sequência: a frase acima responde exatamente a isso, ou responde a uma pergunta vizinha?"});
+  }
+  if(ss.length<3) F.push({k:"err", t:"Apenas "+ss.length+" sustentação(ões). A pirâmide precisa de três a quatro: com menos, a conclusão fica pendurada; com mais, o ouvinte perde o fio."});
+  else if(ss.length>4) F.push({k:"warn", t:ss.length+" sustentações. Acima de quatro, escolha as que bastam e mande o resto para o anexo."});
+  else F.push({k:"ok", t:ss.length+" sustentações, dentro do que a memória de trabalho do ouvinte aguenta."});
+
+  const semNum = ss.filter(s=>!temNumero(s));
+  if(semNum.length) F.push({k:"warn", t:semNum.length+" sustentação(ões) sem número. Sustentação sem magnitude vira adjetivo, e adjetivo não sobrevive a contestação."});
+  else if(ss.length) F.push({k:"ok", t:"Todas as sustentações trazem número."});
+
+  fb("t9-fb",F);
+  const err=F.filter(x=>x.k==="err").length;
+  document.getElementById("t9-score").textContent = err? "Storyline ainda não está de pé" : (ss.length>=3? "Storyline pronta para o teste dos 40 segundos":"");
+  save("t9_ok", err?"0":"1");
+}
+
+/* ---------------- F11: defesa ---------------- */
+function t10Check(){
+  const os=["t10o1","t10o2","t10o3"].map(val).filter(Boolean);
+  const conf=parseFloat(val("t10conf"));
+  const mud=val("t10mud");
+  const F=[];
+  if(os.length<3) F.push({k:"err", t:"Apenas "+os.length+" objeção(ões) preparada(s). As três primeiras aparecem em qualquer reunião; escrevê-las antes é o que impede a resposta improvisada que enfraquece a recomendação."});
+  else F.push({k:"ok", t:"Três objeções preparadas por escrito."});
+  const curtas = os.filter(o=>words(o)<8);
+  if(curtas.length) F.push({k:"warn", t:curtas.length+" objeção(ões) com resposta muito curta. Cada resposta precisa carregar o número que a sustenta, não só a contestação."});
+
+  if(isNaN(conf)) F.push({k:"idle", t:"Declare a sua confiança na recomendação."});
+  else if(conf>=95) F.push({k:"err", t:"Confiança de "+conf+"%. Em problema estratégico com três semanas de análise, isso é excesso de confiança e soa mal na sala. Uma faixa de 60% a 80% é honesta e, paradoxalmente, mais persuasiva."});
+  else if(conf<50) F.push({k:"warn", t:"Confiança de "+conf+"%. Abaixo de 50% você está apostando contra a própria recomendação: ou falta evidência, ou a recomendação deveria ser outra."});
+  else F.push({k:"ok", t:"Confiança de "+conf+"%, faixa que permite recomendar sem fingir certeza."});
+
+  if(!mud) F.push({k:"err", t:"Falta dizer o que mudaria a sua posição. Sem isso, a recomendação não é falsificável e a conversa vira disputa de opinião."});
+  else if(!temNumero(mud)) F.push({k:"warn", t:"A condição de mudança não tem número nem evento verificável. “Se o cenário piorar” não serve; “se o contrato X for assinado até junho” serve."});
+  else F.push({k:"ok", t:"Condição de mudança verificável. É este item que transforma posição em conselho, e não em teimosia."});
+
+  fb("t10-fb",F);
+  const err=F.filter(x=>x.k==="err").length;
+  document.getElementById("t10-score").textContent = err? "Defesa incompleta" : "Pronto para a sala";
+  save("t10_ok", err?"0":"1");
+}
+
+/* ---------------- F12: painel de prontidão ---------------- */
+function t11Run(){
+  const itens = [
+    {k:"t1_ok", n:"Declaração de problema (F2)", ok:()=>parseInt(load("t1_ok","0"))>=4,
+      m:"Volte ao Bloco I: pelo menos um dos cinco campos ainda não passa. Sem decisor nomeado e critério com limiar, a Entrega 1 não tem como ser aprovada."},
+    {k:"t2_ok", n:"Árvore MECE (F3)", ok:()=>load("t2_ok","0")==="1",
+      m:"A árvore ainda falha no teste MECE. Esta é a única porta de passagem do projeto: errar aqui invalida tudo o que vem depois."},
+    {k:"t3_ok", n:"Priorização (F4)", ok:()=>load("t3_ok","0")==="1",
+      m:"Você ainda está saindo do passo 3 com frentes demais. Em três semanas trabalhando sozinho, isso resulta em entrega rasa em todos os pontos."},
+    {k:"t4_ok", n:"Ficha de hipótese (F5)", ok:()=>load("t4_ok","0")==="1",
+      m:"A hipótese ainda não tem condição de refutação com limiar. Sem isso você vai negociar com você mesmo na hora do resultado."},
+    {k:"t5_ok", n:"Decomposição de efeito (F6)", ok:()=>load("t5_ok","0")==="1",
+      m:"Você ainda não separou efeito de composição de efeito de margem. Se a sua métrica é uma média, essa separação vem antes de qualquer conclusão."},
+    {k:"t6_ok", n:"Calibração (F7)", ok:()=>load("t6_ok","0")==="1",
+      m:"O teste de calibração não foi concluído. Ele não entra no relatório, mas define a largura dos intervalos que você vai declarar nele."},
+    {k:"t7_ok", n:"Pré-mortem (F8)", ok:()=>load("t7_ok","0")==="1",
+      m:"O pré-mortem ainda está incompleto ou só tem causas externas. Faça antes de fechar a recomendação, não depois."},
+    {k:"t8_ok", n:"Laço e alavanca (F9)", ok:()=>load("t8_ok","0")==="1",
+      m:"Você ainda não fechou o laço nem classificou a intervenção. Recomendar sem isso costuma produzir solução que o sistema absorve em dois trimestres."},
+    {k:"t9_ok", n:"Storyline (F10)", ok:()=>load("t9_ok","0")==="1",
+      m:"A storyline ainda não está de pé. Escreva a ideia governante antes de montar qualquer slide."},
+    {k:"t10_ok", n:"Preparação de defesa (F11)", ok:()=>load("t10_ok","0")==="1",
+      m:"As objeções e a condição de mudança ainda não estão escritas. Isso se prepara antes da reunião, nunca durante."}
+  ];
+  const F=[];
+  let n=0;
+  itens.forEach(it=>{
+    if(it.ok()){ n++; F.push({k:"ok", t:"<b>"+it.n+"</b> — completo."}); }
+    else F.push({k:"err", t:"<b>"+it.n+"</b> — "+it.m});
+  });
+  const secs = SECS.filter(s=>load("done-"+s.id,"0")==="1").length;
+  F.push({k: secs===SECS.length?"ok":"idle", t:"Seções estudadas: "+secs+" de "+SECS.length+"."});
+  fb("t11-fb",F);
+  document.getElementById("t11-score").textContent = n+" de 10 artefatos prontos" + (n===10 ? " · projeto pronto para a banca" : " · há lacunas antes da Entrega 3");
+}
+
+/* ---------------- inicialização ---------------- */
+(function init(){
+  SECS.forEach((s,i)=>pager(s,i));
+  renderTOC();
+  t0Render(); t0Score();
+  bindSimple("t1", t1Check);
+  (function(){
+    const tt = document.getElementById("t2total");
+    const v = load("t2_t2total", null);
+    if(v!==null) tt.value = v;
+    tt.addEventListener("input", ()=>{ save("t2_t2total", tt.value); t2Check(); });
+  })();
+  t2Render();
+  t3Render();
+  bindSimple("t4", t4Check);
+  bindSimple("t5", t5Check);
+  t6Render();
+  bindSimple("t7", t7Check);
+  bindSimple("t8", t8Check);
+  bindSimple("t9", t9Check);
+  bindSimple("t10", t10Check);
+  const last = load("last","toc");
+  if(document.getElementById(last)) go(last);
+})();
+</script>
+<footer class="cta-footer">
+  Feito com <a href="http://tiny.cc/pratica-estrategica" target="_blank" rel="noopener">Prática Estratégica</a>
+</footer>
+
+</body>
+</html>
