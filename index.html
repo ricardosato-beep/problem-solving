@@ -155,6 +155,26 @@ li.done .go .t::after{content:" ✓"}
 .tool .split{display:grid; gap:1rem}
 @media(min-width:760px){ .tool .split{grid-template-columns:1fr 1fr} }
 .pane{border:1px solid var(--border); border-radius:6px; padding:.85rem .9rem; background:var(--s1)}
+
+/* painel sobreposto com os dados do caso */
+#dados-fundo{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45); display:none; padding:1.2rem}
+#dados-fundo.on{display:block}
+#dados-caixa{max-width:52rem; margin:0 auto; background:var(--paper); border-radius:8px;
+  max-height:calc(100vh - 2.4rem); display:flex; flex-direction:column; box-shadow:0 10px 40px rgba(0,0,0,.3)}
+#dados-topo{display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding:.9rem 1.1rem; border-bottom:1px solid var(--border); flex:0 0 auto}
+#dados-corpo{padding:1.1rem 1.3rem 1.6rem; overflow-y:auto}
+#dados-corpo h3{margin:1.5rem 0 .5rem}
+#dados-corpo h3:first-of-type{margin-top:.6rem}
+@media(max-width:640px){
+  #dados-fundo{padding:0}
+  #dados-caixa{max-height:100vh; border-radius:0}
+}
+
+/* sugestao que so abre sob demanda */
+.sug{margin-top:.75rem}
+.sug .pane{display:none; margin-top:.6rem}
+.sug.on .pane{display:block}
 .pane.blank{background:var(--paper)}
 .pane > h4{margin-top:0}
 .field{margin-bottom:.7rem}
@@ -255,11 +275,97 @@ output{display:block; font-size:.9rem}
     <span class="brand">Resolução estruturada de problemas</span>
     <nav class="topnav">
       <button class="btn" onclick="go('toc')">Sumário</button>
+      <button class="btn solid" onclick="abrirDados()">Dados Nutrimix</button>
       <button class="btn" id="btn-reset" onclick="zerar()">Zerar progresso</button>
     </nav>
   </div>
   <div class="prog"><i id="progbar"></i></div>
 </header>
+
+<div id="dados-fundo" onclick="fecharDados(event)">
+  <div id="dados-caixa" role="dialog" aria-modal="true" aria-label="Dados do caso Nutrimix">
+    <div id="dados-topo">
+      <span class="brand">Dados do caso · Nutrimix</span>
+      <button class="btn" onclick="fecharDados()">Fechar</button>
+    </div>
+    <div id="dados-corpo">
+
+      <p class="lede" style="margin-top:0">Tudo o que você precisa para preencher as ferramentas do programa está aqui. Os números são fictícios, mas a aritmética fecha: você pode refazer todas as contas. Este painel abre a qualquer momento pelo botão “Dados Nutrimix”.</p>
+
+      <h3>A empresa</h3>
+      <p>Fabricante de ração para animais de estimação. Fatura cerca de R$ 800 milhões por ano. Vende por quatro canais: varejo tradicional, grandes redes, e-commerce e produção de marca de terceiros (private label), este último em crescimento acelerado.</p>
+
+      <h3>O pedido que chegou até você</h3>
+      <p>O CEO chama você e diz: <i>“prepara um plano de corte de custos de 10% para o comitê do mês que vem”</i>. Você trabalha sozinho e tem pouco tempo.</p>
+
+      <h3>O que a conversa com o CFO revelou</h3>
+      <ul>
+        <li>O conselho de administração decide em <b>28 de março</b> se aprova <b>R$ 120 milhões</b> de expansão de capacidade.</li>
+        <li>A recomendação ao conselho parte do CFO.</li>
+        <li>O critério declarado de aprovação é <b>retorno acima de 12% ao ano em cenário conservador</b>.</li>
+        <li>O corte de custos era o caminho para a projeção de retorno fechar.</li>
+      </ul>
+
+      <h3>O problema financeiro</h3>
+      <p>A margem EBITDA caiu de <b>14,0% para 9,5%</b> em 24 meses. São <b>4,5 pontos</b> a explicar.</p>
+
+      <h3>Decomposição dos 4,5 pontos</h3>
+      <p>Identidade usada: margem EBITDA igual a margem de contribuição ponderada menos despesas fixas sobre receita. Os cinco galhos somam exatamente os 4,5 pontos.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Galho</th><th>Pontos de margem</th><th>Participação</th></tr></thead>
+          <tbody>
+            <tr><td>Mix de canal e de produto</td><td>2,9</td><td>64%</td></tr>
+            <tr><td>Custo de insumo</td><td>1,1</td><td>24%</td></tr>
+            <tr><td>Preço realizado</td><td>0,3</td><td>7%</td></tr>
+            <tr><td>Eficiência fabril</td><td>0,2</td><td>4%</td></tr>
+            <tr><td>Despesas fixas</td><td>0,0</td><td>0%</td></tr>
+            <tr><td><b>Total</b></td><td><b>4,5</b></td><td><b>100%</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Composição de volume por linha</h3>
+      <p>Duas linhas de produto, com margens de contribuição muito diferentes e peso que mudou bastante em dois anos.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Linha</th><th>Margem de contribuição</th><th>% do volume, ano 0</th><th>% do volume, ano 2</th></tr></thead>
+          <tbody>
+            <tr><td>Marca própria</td><td>19,0%</td><td>92%</td><td>73%</td></tr>
+            <tr><td>Private label</td><td>4,0%</td><td>8%</td><td>27%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><b>Fato importante:</b> a margem de cada linha ficou estável nos 24 meses. Nenhuma das duas piorou. A média ponderada, no entanto, caiu de 17,8% para 15,0%.</p>
+
+      <h3>Como a situação se formou</h3>
+      <ol>
+        <li>A segunda fábrica entrou em operação e sobrou capacidade ociosa.</li>
+        <li>Foi fixada uma <b>meta interna de ocupação fabril de 85%</b>.</li>
+        <li>Para cumprir a meta, o comercial passou a aceitar private label a 4% de margem, que enche a linha de produção.</li>
+        <li>A margem consolidada caiu, apesar de nenhuma linha individual ter piorado.</li>
+      </ol>
+
+      <h3>Dados de contexto que podem ser usados</h3>
+      <ul>
+        <li>O crescimento de private label foi decisão interna de ocupação, não perda de espaço em gôndola no varejo.</li>
+        <li>O custo de insumo subiu no período. Se voltasse ao patamar de dois anos atrás, a margem chegaria a <b>12,6%</b>, ainda abaixo dos 14,0% de origem.</li>
+        <li>Uma planta cerca de 30% menor custaria bem menos que os R$ 120 milhões e não exigiria o volume de private label para se sustentar.</li>
+        <li>Sistemas disponíveis: ERP comercial, com margem de contribuição por linha mês a mês nos 24 meses. Contato de extração: Renata, controladoria.</li>
+      </ul>
+
+      <h3>Objeções que você vai ouvir</h3>
+      <ul>
+        <li><i>“Private label paga o custo fixo.”</i></li>
+        <li><i>“O insumo vai normalizar.”</i></li>
+        <li><i>“Se recusarmos private label, perdemos o cliente para sempre.”</i></li>
+      </ul>
+
+      <p class="srcs" style="margin-bottom:0"><b>Como usar:</b> volte a este painel sempre que uma ferramenta pedir um número ou um fato. Preencha primeiro com o seu raciocínio, e só depois use o botão de sugestão da ferramenta para comparar.</p>
+
+    </div>
+  </div>
+</div>
 
 <main>
 
@@ -267,21 +373,26 @@ output{display:block; font-size:.9rem}
 <section class="sec on" id="toc">
   <div class="hero">
     <div class="dotpad dots"></div>
-    <p class="kick">Programa de formação · 12 semanas</p>
+    <p class="kick">Programa de formação em resolução estruturada de problemas</p>
     <h1>Resolução estruturada de problemas</h1>
-    <p class="lede" style="max-width:46rem">Formação para analistas de planejamento estratégico que precisam conduzir projetos sozinhos e sustentar recomendações diante de quem decide. Cinco blocos, o ciclo completo de resolução, e onze ferramentas que você preenche com o seu próprio projeto.</p>
+    <p class="lede" style="max-width:46rem">Formação para analistas de planejamento estratégico que precisam conduzir projetos sozinhos e sustentar recomendações diante de quem decide. Cinco blocos, o ciclo completo de resolução, e onze ferramentas que você preenche trabalhando um caso real de ponta a ponta.</p>
     <div class="stat">
-      <div><b>12</b><span>semanas</span></div>
       <div><b>5</b><span>blocos</span></div>
       <div><b>11</b><span>ferramentas</span></div>
-      <div><b>84</b><span>horas</span></div>
     </div>
   </div>
 
   <div class="card tint">
     <h3 style="margin-top:0">Como esta página funciona</h3>
     <p style="margin-bottom:.5rem">Marque a caixa de cada seção quando terminar. O progresso e tudo o que você digitar nas ferramentas ficam salvos neste navegador, então você pode fechar e voltar depois.</p>
-    <p style="margin-bottom:0">No lugar de checklists passivos, cada bloco traz ferramentas de trabalho. Você preenche com o seu projeto real, ao lado de um exemplo já preenchido, e recebe crítica escrita em tempo real apontando o erro de percurso antes que ele custe semanas.</p>
+    <p style="margin-bottom:0">No lugar de checklists passivos, cada bloco traz ferramentas de trabalho. Você preenche com os dados do caso, recebe crítica escrita em tempo real apontando o erro de percurso, e só então compara com a sugestão de preenchimento.</p>
+  </div>
+
+  <div class="card plain" style="margin-top:1rem;border-left:4px solid #D9A500">
+    <h4 style="margin-top:0">Como você vai trabalhar</h4>
+    <p style="margin-bottom:.5rem">Todas as ferramentas do programa são preenchidas com um caso único, a <b>Nutrimix</b>, que atravessa os cinco blocos do começo ao fim. Você assume o papel do analista encarregado.</p>
+    <p style="margin-bottom:.5rem">O botão <b>Dados Nutrimix</b>, no alto da tela, abre a qualquer momento a ficha completa do caso: números, decisões em jogo, tabelas e contexto. Não é preciso decorar nada nem voltar em seções anteriores para procurar um dado.</p>
+    <p style="margin-bottom:0">Cada ferramenta traz um botão de <b>sugestão de preenchimento</b>, que começa fechado de propósito. Escreva a sua resposta primeiro e só depois abra a sugestão para comparar. Ver a resposta antes de tentar é a forma mais rápida de sair do programa achando que aprendeu.</p>
   </div>
 
   <h2 style="margin-top:1.8rem">Sumário</h2>
@@ -340,24 +451,10 @@ output{display:block; font-size:.9rem}
   <div class="card">
     <h3 style="margin-top:0">Nutrimix</h3>
     <p>Fabricante de ração para animais de estimação. Fatura cerca de R$ 800 milhões por ano e vende para varejo tradicional, grandes redes, e-commerce e, cada vez mais, produz marca de terceiros (private label). A margem EBITDA caiu de 14,0% para 9,5% em 24 meses.</p>
-    <p style="margin-bottom:0">O CEO chama você e diz: “prepara um plano de corte de custos de 10% para o comitê do mês que vem”. Você tem três semanas e trabalha sozinho. Os números são fictícios, mas a aritmética fecha: você pode refazer todas as contas.</p>
+    <p>O CEO chama você e diz: “prepara um plano de corte de custos de 10% para o comitê do mês que vem”. Você trabalha sozinho. Os números são fictícios, mas a aritmética fecha: você pode refazer todas as contas.</p>
+    <p style="margin-bottom:0">Este é o caso que você vai trabalhar em todas as ferramentas do programa. <button class="btn solid" onclick="abrirDados()">Abrir a ficha completa de dados</button></p>
   </div>
 
-  <h2>O mapa das doze semanas</h2>
-  <div class="tw">
-    <table>
-      <thead><tr><th>Etapa</th><th>Quando</th><th>Passos do ciclo</th><th>Carga</th></tr></thead>
-      <tbody>
-        <tr><td>Semana 0 · diagnóstico</td><td>antes do início</td><td>todos, sem instrução</td><td>4 h</td></tr>
-        <tr><td>Bloco I · definir o problema</td><td>semanas 1 e 2</td><td>1 e 2</td><td>10 h</td></tr>
-        <tr><td>Bloco II · priorizar e planejar</td><td>semana 3</td><td>3 e 4</td><td>5 h</td></tr>
-        <tr><td>Bloco III · rigor analítico</td><td>semanas 4 a 6</td><td>5</td><td>15 h</td></tr>
-        <tr><td>Bloco IV · pensamento sistêmico</td><td>semanas 7 e 8</td><td>5, em segunda ordem</td><td>10 h</td></tr>
-        <tr><td>Bloco V · sintetizar e sustentar</td><td>semanas 9 e 10</td><td>6 e 7</td><td>10 h</td></tr>
-        <tr><td>Projeto final</td><td>semanas 11 e 12</td><td>ciclo inteiro</td><td>20 h</td></tr>
-      </tbody>
-    </table>
-  </div>
   <p class="srcs"><b>Fontes desta seção:</b>
     <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-master-the-seven-step-problem-solving-process" target="_blank" rel="noopener">McKinsey, “How to master the seven-step problem-solving process” (2019)</a> ·
     <a href="https://bulletproofproblemsolving.com/" target="_blank" rel="noopener">Charles Conn e Robert McLean, <i>Bulletproof Problem Solving</i> (Wiley, 2019)</a> ·
@@ -367,7 +464,7 @@ output{display:block; font-size:.9rem}
 
 <!-- ================= 2. SEMANA 0 ================= -->
 <section class="sec" id="s2">
-  <p class="kick">Semana 0 · 4 horas</p>
+  <p class="kick">Diagnóstico de linha de base</p>
   <h1>Diagnóstico de linha de base</h1>
   <p class="lede">Antes de qualquer conteúdo, você responde por escrito a cinco perguntas sem nenhuma instrução prévia. Você vai errar a maior parte, e é assim que foi desenhado: errar antes de saber é o que faz o aprendizado grudar. O resultado não vira nota, vira calibragem do seu próprio percurso.</p>
 
@@ -397,7 +494,7 @@ output{display:block; font-size:.9rem}
 
 <!-- ================= 3. BLOCO I ================= -->
 <section class="sec" id="s3">
-  <p class="kick">Bloco I · semanas 1 e 2 · módulos 1 e 2</p>
+  <p class="kick">Bloco I · módulos 1 e 2</p>
   <h1>Definir o problema</h1>
   <p class="lede">O pedido que chega é quase sempre um sintoma ou uma solução já escolhida por outra pessoa. O problema é a pergunta cuja resposta muda uma decisão específica, tomada por alguém identificável, numa data conhecida. Errar aqui invalida tudo o que vem depois.</p>
 
@@ -419,22 +516,24 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Adaptada do <i>problem statement worksheet</i> de Charles Conn e Robert McLean, <i>Bulletproof Problem Solving</i> (Wiley, 2019), capítulo 2, combinado com o modelo RAPID de Paul Rogers e Marcia Blenko, “Who Has the D?”, <i>Harvard Business Review</i>, janeiro de 2006.</span>
     </header>
     <div class="body">
-      <div class="split">
+      <div class="pane blank">
+        <h4>A sua resposta</h4>
+        <div class="field"><label for="t1a">Quem decide (nome ou cargo específico)</label><input type="text" id="t1a" data-tool="t1" placeholder="cargo ou órgão que assina a decisão"></div>
+          <div class="field"><label for="t1b">O que exatamente será decidido</label><input type="text" id="t1b" data-tool="t1" placeholder="a decisão concreta que está na mesa"></div>
+          <div class="field"><label for="t1c">Até quando</label><input type="text" id="t1c" data-tool="t1" placeholder="data ou reunião em que a decisão ocorre"></div>
+          <div class="field"><label for="t1d">Com qual critério essa pessoa vai escolher</label><input type="text" id="t1d" data-tool="t1" placeholder="o número ou regra que define a escolha"></div>
+          <div class="field"><label for="t1e">A pergunta, em uma frase</label><textarea id="t1e" data-tool="t1" placeholder="Escreva a pergunta que, respondida, muda essa decisão."></textarea>
+        </div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
         <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
+          <h4>Sugestão de preenchimento</h4>
           <p class="ex"><b>Quem decide</b>Conselho de administração, com recomendação do CFO</p>
           <p class="ex"><b>O que exatamente</b>Aprovar ou não R$ 120 milhões de expansão de capacidade</p>
           <p class="ex"><b>Até quando</b>28 de março</p>
           <p class="ex"><b>Com qual critério</b>Retorno acima de 12% ao ano em cenário conservador</p>
           <p class="ex" style="margin-bottom:0"><b>A pergunta, em uma frase</b>A queda de 4,5 pontos de margem é estrutural ou conjuntural, e isso muda a decisão de expandir?</p>
-        </div>
-        <div class="pane blank">
-          <h4>O seu projeto</h4>
-          <div class="field"><label for="t1a">Quem decide (nome ou cargo específico)</label><input type="text" id="t1a" data-tool="t1" placeholder="ex.: diretora de operações, Marina"></div>
-          <div class="field"><label for="t1b">O que exatamente será decidido</label><input type="text" id="t1b" data-tool="t1" placeholder="ex.: manter ou encerrar a linha X"></div>
-          <div class="field"><label for="t1c">Até quando</label><input type="text" id="t1c" data-tool="t1" placeholder="ex.: 12 de maio, comitê mensal"></div>
-          <div class="field"><label for="t1d">Com qual critério essa pessoa vai escolher</label><input type="text" id="t1d" data-tool="t1" placeholder="ex.: payback abaixo de 24 meses"></div>
-          <div class="field"><label for="t1e">A pergunta, em uma frase</label><textarea id="t1e" data-tool="t1" placeholder="Escreva a pergunta que, respondida, muda essa decisão."></textarea></div>
         </div>
       </div>
       <ul class="fb" id="t1-fb"></ul>
@@ -463,9 +562,19 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Teste MECE conforme Barbara Minto, <i>The Pyramid Principle</i> (3ª ed., Pearson, 2009), parte I, e Conn e McLean, <i>Bulletproof Problem Solving</i>, capítulos 3 e 4 (tipos de árvore lógica).</span>
     </header>
     <div class="body">
-      <div class="split">
+      <div class="pane blank">
+        <h4>A sua árvore</h4>
+        <div class="field"><label for="t2total">O que os galhos precisam somar</label><input type="text" id="t2total" data-tool="t2" placeholder="o total que a decomposição precisa fechar"></div>
+          <div id="t2-rows" class="rowset"></div>
+          <div class="tbtn">
+            <button class="btn" onclick="t2Add()">+ galho</button>
+            <button class="btn" onclick="t2Del()">− galho</button>
+        </div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
         <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
+          <h4>Sugestão de preenchimento</h4>
           <p class="ex"><b>Total a explicar</b>4,5 pontos de margem EBITDA perdidos</p>
           <table style="min-width:0; font-size:.84rem">
             <thead><tr><th>Galho</th><th>Peso</th></tr></thead>
@@ -476,15 +585,6 @@ output{display:block; font-size:.9rem}
             </tbody>
           </table>
           <p class="mini" style="margin-bottom:0">Soma 100%. Nenhum galho contém o outro. Cada um tem número no ERP. Três galhos no primeiro nível, o que ainda é defensável.</p>
-        </div>
-        <div class="pane blank">
-          <h4>A sua árvore</h4>
-          <div class="field"><label for="t2total">O que os galhos precisam somar</label><input type="text" id="t2total" data-tool="t2" placeholder="ex.: a queda de 18% no volume"></div>
-          <div id="t2-rows" class="rowset"></div>
-          <div class="tbtn">
-            <button class="btn" onclick="t2Add()">+ galho</button>
-            <button class="btn" onclick="t2Del()">− galho</button>
-          </div>
         </div>
       </div>
       <ul class="fb" id="t2-fb"></ul>
@@ -502,7 +602,7 @@ output{display:block; font-size:.9rem}
 
 <!-- ================= 4. BLOCO II ================= -->
 <section class="sec" id="s4">
-  <p class="kick">Bloco II · semana 3 · módulo 3</p>
+  <p class="kick">Bloco II · módulo 3</p>
   <h1>Priorizar e planejar</h1>
   <p class="lede">Nem todo galho merece três semanas. Priorizar é escolher onde gastar o tempo em função de três coisas: o tamanho do efeito, a influência de quem decide sobre ele, e o custo de descobrir a resposta. Depois, transformar as frentes escolhidas em hipóteses que podem ser refutadas.</p>
 
@@ -520,9 +620,18 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Lógica de “prêmio contra capacidade de influenciar” de Conn e McLean, <i>Bulletproof Problem Solving</i> (Wiley, 2019), capítulo 5, com o custo de descoberta como terceiro eixo.</span>
     </header>
     <div class="body">
-      <div class="split">
+      <div class="pane blank">
+        <h4>As suas frentes</h4>
+        <div id="t3-rows" class="rowset"></div>
+          <div class="tbtn">
+            <button class="btn" onclick="t3Add()">+ frente</button>
+            <button class="btn" onclick="t3Del()">− frente</button>
+        </div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
         <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
+          <h4>Sugestão de preenchimento</h4>
           <table style="min-width:0; font-size:.82rem">
             <thead><tr><th>Galho</th><th>Imp.</th><th>Infl.</th><th>Custo</th><th>Índice</th></tr></thead>
             <tbody>
@@ -532,14 +641,6 @@ output{display:block; font-size:.9rem}
             </tbody>
           </table>
           <p class="mini" style="margin-bottom:0">Índice igual a impacto vezes influência dividido pelo custo de descobrir. Mix fica sete vezes acima dos outros dois, o que torna a escolha trivial e a defesa curta.</p>
-        </div>
-        <div class="pane blank">
-          <h4>As suas frentes</h4>
-          <div id="t3-rows" class="rowset"></div>
-          <div class="tbtn">
-            <button class="btn" onclick="t3Add()">+ frente</button>
-            <button class="btn" onclick="t3Del()">− frente</button>
-          </div>
         </div>
       </div>
       <ul class="fb" id="t3-fb"></ul>
@@ -566,22 +667,24 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Critério de falseabilidade de Karl Popper, <i>A Lógica da Pesquisa Científica</i> (1934), aplicado ao formato de plano de trabalho descrito por McKinsey em “How to master the seven-step problem-solving process” (2019).</span>
     </header>
     <div class="body">
-      <div class="split">
+      <div class="pane blank">
+        <h4>A sua hipótese</h4>
+        <div class="field"><label for="t4a">Hipótese (escreva como afirmação)</label><textarea id="t4a" data-tool="t4" placeholder="Uma afirmação que pode ser refutada, não um tema."></textarea></div>
+          <div class="field"><label for="t4b">Teste: qual número, qual corte, qual comparação</label><input type="text" id="t4b" data-tool="t4" placeholder="qual número, com qual corte, comparado a quê"></div>
+          <div class="field"><label for="t4c">Fonte do dado e quem fornece</label><input type="text" id="t4c" data-tool="t4" placeholder="sistema de origem e quem extrai"></div>
+          <div class="field"><label for="t4d">O que refutaria esta hipótese</label><textarea id="t4d" data-tool="t4" placeholder="Seja específico e numérico."></textarea></div>
+          <div class="field"><label for="t4e">Prazo do teste, em dias úteis</label><input type="number" id="t4e" data-tool="t4" min="1" max="30" placeholder="3">
+        </div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
         <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix (H1)</h4>
+          <h4>Sugestão de preenchimento (H1)</h4>
           <p class="ex"><b>Hipótese</b>A queda de margem vem de mudança de mix, com margem por linha estável</p>
           <p class="ex"><b>Teste</b>Margem de contribuição por linha, mês a mês, nos 24 meses</p>
           <p class="ex"><b>Fonte e dono</b>ERP comercial, extraído por Renata (controladoria)</p>
           <p class="ex"><b>O que refutaria</b>Qualquer linha com queda superior a 2 pontos de margem no período</p>
           <p class="ex" style="margin-bottom:0"><b>Prazo</b>3 dias úteis</p>
-        </div>
-        <div class="pane blank">
-          <h4>A sua hipótese</h4>
-          <div class="field"><label for="t4a">Hipótese (escreva como afirmação)</label><textarea id="t4a" data-tool="t4" placeholder="ex.: a perda de clientes vem do prazo de entrega, não do preço"></textarea></div>
-          <div class="field"><label for="t4b">Teste: qual número, qual corte, qual comparação</label><input type="text" id="t4b" data-tool="t4" placeholder="ex.: churn por faixa de prazo de entrega"></div>
-          <div class="field"><label for="t4c">Fonte do dado e quem fornece</label><input type="text" id="t4c" data-tool="t4" placeholder="ex.: base de pedidos, time de logística"></div>
-          <div class="field"><label for="t4d">O que refutaria esta hipótese</label><textarea id="t4d" data-tool="t4" placeholder="Seja específico e numérico."></textarea></div>
-          <div class="field"><label for="t4e">Prazo do teste, em dias úteis</label><input type="number" id="t4e" data-tool="t4" min="1" max="30" placeholder="3"></div>
         </div>
       </div>
       <ul class="fb" id="t4-fb"></ul>
@@ -597,7 +700,7 @@ output{display:block; font-size:.9rem}
 
 <!-- ================= 5. BLOCO III ================= -->
 <section class="sec" id="s5">
-  <p class="kick">Bloco III · semanas 4 a 6 · módulos 4 a 6</p>
+  <p class="kick">Bloco III · módulos 4 a 6</p>
   <h1>Rigor analítico e pensamento crítico</h1>
   <p class="lede">Rigor é saber de onde vem cada número e o que ele não diz. A maior parte dos erros graves não é de conta: é de leitura. Confundir a média com o comportamento das partes, comparar denominadores diferentes, ou tomar correlação por causa.</p>
 
@@ -622,29 +725,30 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Análise de variação em três efeitos (mix, taxa e interação), técnica padrão de controladoria. O fenômeno subjacente é o paradoxo de Simpson: Edward H. Simpson, “The Interpretation of Interaction in Contingency Tables”, <i>JRSS-B</i>, 1951.</span>
     </header>
     <div class="body">
-      <div class="split">
+      <div class="pane blank">
+        <h4>As suas duas linhas</h4>
+        <div class="rowline" style="grid-template-columns:1fr 1fr 1fr 1fr">
+          <div><span class="lbl">Margem A, início</span><input type="number" step="0.1" id="t5ma0" data-tool="t5"></div>
+          <div><span class="lbl">Margem A, fim</span><input type="number" step="0.1" id="t5ma1" data-tool="t5"></div>
+          <div><span class="lbl">Peso A, início (%)</span><input type="number" step="0.1" id="t5pa0" data-tool="t5"></div>
+          <div><span class="lbl">Peso A, fim (%)</span><input type="number" step="0.1" id="t5pa1" data-tool="t5"></div>
+        </div>
+        <div class="rowline" style="grid-template-columns:1fr 1fr 1fr 1fr">
+          <div><span class="lbl">Margem B, início</span><input type="number" step="0.1" id="t5mb0" data-tool="t5"></div>
+          <div><span class="lbl">Margem B, fim</span><input type="number" step="0.1" id="t5mb1" data-tool="t5"></div>
+          <div><span class="lbl">Peso B, início (%)</span><input type="number" step="0.1" id="t5pb0" data-tool="t5"></div>
+          <div><span class="lbl">Peso B, fim (%)</span><input type="number" step="0.1" id="t5pb1" data-tool="t5"></div>
+        </div>
+        <output id="t5-out" class="mini"></output>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
         <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
+          <h4>Sugestão de preenchimento</h4>
           <p class="ex"><b>Linha A</b>Marca própria · margem 19% · peso 92% → 73%</p>
           <p class="ex"><b>Linha B</b>Private label · margem 4% · peso 8% → 27%</p>
           <p class="ex"><b>Resultado</b>Média cai de 17,8% para 15,0%. Efeito de composição: −2,85 pontos. Efeito de margem: zero.</p>
           <p class="mini" style="margin-bottom:0">Leitura: nenhuma linha piorou, e ainda assim a média caiu quase três pontos. Recomendar corte de custo aqui atacaria o galho errado.</p>
-        </div>
-        <div class="pane blank">
-          <h4>As suas duas linhas</h4>
-          <div class="rowline" style="grid-template-columns:1fr 1fr 1fr 1fr">
-            <div><span class="lbl">Margem A, início</span><input type="number" step="0.1" id="t5ma0" data-tool="t5" placeholder="19"></div>
-            <div><span class="lbl">Margem A, fim</span><input type="number" step="0.1" id="t5ma1" data-tool="t5" placeholder="19"></div>
-            <div><span class="lbl">Peso A, início (%)</span><input type="number" step="0.1" id="t5pa0" data-tool="t5" placeholder="92"></div>
-            <div><span class="lbl">Peso A, fim (%)</span><input type="number" step="0.1" id="t5pa1" data-tool="t5" placeholder="73"></div>
-          </div>
-          <div class="rowline" style="grid-template-columns:1fr 1fr 1fr 1fr">
-            <div><span class="lbl">Margem B, início</span><input type="number" step="0.1" id="t5mb0" data-tool="t5" placeholder="4"></div>
-            <div><span class="lbl">Margem B, fim</span><input type="number" step="0.1" id="t5mb1" data-tool="t5" placeholder="4"></div>
-            <div><span class="lbl">Peso B, início (%)</span><input type="number" step="0.1" id="t5pb0" data-tool="t5" placeholder="8"></div>
-            <div><span class="lbl">Peso B, fim (%)</span><input type="number" step="0.1" id="t5pb1" data-tool="t5" placeholder="27"></div>
-          </div>
-          <output id="t5-out" class="mini"></output>
         </div>
       </div>
       <ul class="fb" id="t5-fb"></ul>
@@ -679,22 +783,23 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Gary Klein, “Performing a Project Premortem”, <i>Harvard Business Review</i>, setembro de 2007. Ver também McKinsey Bias Busters, “Premortems: Being smart at the start” (2019), escrito com o próprio Klein.</span>
     </header>
     <div class="body">
-      <div class="split">
-        <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
-          <p class="ex"><b>Cenário</b>É dezembro. A recomendação de adiar a expansão foi aceita e, mesmo assim, a margem não se recuperou.</p>
-          <p class="ex"><b>Causa 1 (interna)</b>Reduzimos private label mas mantivemos a meta de ocupação, e o comercial compensou com desconto na marca própria</p>
-          <p class="ex"><b>Causa 2 (interna)</b>A margem por linha que usamos era gerencial e não considerava frete por canal</p>
-          <p class="ex" style="margin-bottom:0"><b>Causa 3 (externa)</b>Grandes redes migraram para outro fornecedor de private label e levaram volume de marca própria junto</p>
-        </div>
-        <div class="pane blank">
-          <h4>O seu pré-mortem</h4>
-          <div class="field"><label for="t7cen">Cenário de fracasso (data futura e o que deu errado)</label><textarea id="t7cen" data-tool="t7" placeholder="É [mês/ano]. A recomendação foi aceita e mesmo assim..."></textarea></div>
+      <div class="pane blank">
+        <h4>O seu pré-mortem</h4>
+        <div class="field"><label for="t7cen">Cenário de fracasso (data futura e o que deu errado)</label><textarea id="t7cen" data-tool="t7" placeholder="É [mês/ano]. A recomendação foi aceita e mesmo assim..."></textarea></div>
           <div class="field"><label for="t7c1">Causa 1</label><input type="text" id="t7c1" data-tool="t7"></div>
           <div class="field"><label for="t7c2">Causa 2</label><input type="text" id="t7c2" data-tool="t7"></div>
           <div class="field"><label for="t7c3">Causa 3</label><input type="text" id="t7c3" data-tool="t7"></div>
           <div class="field"><label for="t7c4">Causa 4 (opcional)</label><input type="text" id="t7c4" data-tool="t7"></div>
           <div class="field"><label for="t7sin">Sinal precoce: o que você veria primeiro se isso estivesse acontecendo?</label><textarea id="t7sin" data-tool="t7"></textarea></div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
+        <div class="pane">
+          <h4>Sugestão de preenchimento</h4>
+          <p class="ex"><b>Cenário</b>É dezembro. A recomendação de adiar a expansão foi aceita e, mesmo assim, a margem não se recuperou.</p>
+          <p class="ex"><b>Causa 1 (interna)</b>Reduzimos private label mas mantivemos a meta de ocupação, e o comercial compensou com desconto na marca própria</p>
+          <p class="ex"><b>Causa 2 (interna)</b>A margem por linha que usamos era gerencial e não considerava frete por canal</p>
+          <p class="ex" style="margin-bottom:0"><b>Causa 3 (externa)</b>Grandes redes migraram para outro fornecedor de private label e levaram volume de marca própria junto</p>
         </div>
       </div>
       <ul class="fb" id="t7-fb"></ul>
@@ -712,7 +817,7 @@ output{display:block; font-size:.9rem}
 
 <!-- ================= 6. BLOCO IV ================= -->
 <section class="sec" id="s6">
-  <p class="kick">Bloco IV · semanas 7 e 8 · módulos 7 e 8</p>
+  <p class="kick">Bloco IV · módulos 7 e 8</p>
   <h1>Pensamento sistêmico</h1>
   <p class="lede">Toda recomendação age sobre um sistema que reage. O analista mediano responde a pergunta. O analista acima da média pergunta o que a resposta vai provocar em dois anos e onde está o ponto em que uma mudança pequena move o sistema inteiro.</p>
 
@@ -740,20 +845,9 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Donella H. Meadows, “Leverage Points: Places to Intervene in a System” (The Sustainability Institute, 1999) e <i>Thinking in Systems: A Primer</i> (Chelsea Green, 2008). A hierarquia de 12 pontos é do ensaio de 1999.</span>
     </header>
     <div class="body">
-      <div class="split">
-        <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
-          <p class="ex"><b>Etapa 1</b>Capacidade ociosa após a segunda fábrica</p>
-          <p class="ex"><b>Etapa 2</b>Meta de ocupação fabril de 85%</p>
-          <p class="ex"><b>Etapa 3</b>Aceitação de private label a 4% de margem</p>
-          <p class="ex"><b>Etapa 4</b>Queda da margem consolidada</p>
-          <p class="ex"><b>Etapa 5</b>Pressão por volume, que volta à etapa 3</p>
-          <p class="ex"><b>Atraso</b>Cerca de 3 trimestres entre aceitar o contrato e ver a margem cair no consolidado</p>
-          <p class="ex" style="margin-bottom:0"><b>Alavanca</b>A meta de ocupação (regra interna), não o preço do produto</p>
-        </div>
-        <div class="pane blank">
-          <h4>O seu laço</h4>
-          <div class="field"><label for="t8e1">Etapa 1</label><input type="text" id="t8e1" data-tool="t8"></div>
+      <div class="pane blank">
+        <h4>O seu laço</h4>
+        <div class="field"><label for="t8e1">Etapa 1</label><input type="text" id="t8e1" data-tool="t8"></div>
           <div class="field"><label for="t8e2">Etapa 2</label><input type="text" id="t8e2" data-tool="t8"></div>
           <div class="field"><label for="t8e3">Etapa 3</label><input type="text" id="t8e3" data-tool="t8"></div>
           <div class="field"><label for="t8e4">Etapa 4</label><input type="text" id="t8e4" data-tool="t8"></div>
@@ -768,8 +862,8 @@ output{display:block; font-size:.9rem}
               <option value="0">não volta: é uma cadeia linear</option>
             </select>
           </div>
-          <div class="field"><label for="t8atraso">Atraso entre causa e consequência visível</label><input type="text" id="t8atraso" data-tool="t8" placeholder="ex.: 2 trimestres"></div>
-          <div class="field"><label for="t8alav">Onde você pretende intervir</label><input type="text" id="t8alav" data-tool="t8" placeholder="ex.: a meta de ocupação"></div>
+          <div class="field"><label for="t8atraso">Atraso entre causa e consequência visível</label><input type="text" id="t8atraso" data-tool="t8" placeholder="quanto tempo até a consequência aparecer"></div>
+          <div class="field"><label for="t8alav">Onde você pretende intervir</label><input type="text" id="t8alav" data-tool="t8" placeholder="o elemento do sistema que você mudaria"></div>
           <div class="field"><label for="t8tipo">Que tipo de coisa é essa intervenção?</label>
             <select id="t8tipo" data-tool="t8">
               <option value="">selecione</option>
@@ -780,7 +874,19 @@ output{display:block; font-size:.9rem}
               <option value="5">uma regra: incentivo, restrição, meta interna</option>
               <option value="3">o objetivo do sistema</option>
             </select>
-          </div>
+        </div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
+        <div class="pane">
+          <h4>Sugestão de preenchimento</h4>
+          <p class="ex"><b>Etapa 1</b>Capacidade ociosa após a segunda fábrica</p>
+          <p class="ex"><b>Etapa 2</b>Meta de ocupação fabril de 85%</p>
+          <p class="ex"><b>Etapa 3</b>Aceitação de private label a 4% de margem</p>
+          <p class="ex"><b>Etapa 4</b>Queda da margem consolidada</p>
+          <p class="ex"><b>Etapa 5</b>Pressão por volume, que volta à etapa 3</p>
+          <p class="ex"><b>Atraso</b>Cerca de 3 trimestres entre aceitar o contrato e ver a margem cair no consolidado</p>
+          <p class="ex" style="margin-bottom:0"><b>Alavanca</b>A meta de ocupação (regra interna), não o preço do produto</p>
         </div>
       </div>
       <ul class="fb" id="t8-fb"></ul>
@@ -796,7 +902,7 @@ output{display:block; font-size:.9rem}
 
 <!-- ================= 7. BLOCO V ================= -->
 <section class="sec" id="s7">
-  <p class="kick">Bloco V · semanas 9 e 10 · módulos 9 e 10</p>
+  <p class="kick">Bloco V · módulos 9 e 10</p>
   <h1>Sintetizar e sustentar</h1>
   <p class="lede">Sintetizar é comprimir semanas de trabalho em uma frase que responde a pergunta do passo 1, sustentada por três ou quatro argumentos que bastam. Sustentar é fazer essa frase sobreviver à contestação sem recuar por medo nem insistir por teimosia.</p>
 
@@ -819,21 +925,23 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Barbara Minto, <i>The Pyramid Principle: Logic in Writing and Thinking</i> (3ª ed., Pearson, 2009). A regra de três a quatro sustentações e o teste do “e daí” estão na parte I.</span>
     </header>
     <div class="body">
-      <div class="split">
+      <div class="pane blank">
+        <h4>A sua storyline</h4>
+        <div class="field"><label for="t9g">Ideia governante (uma frase que responde a pergunta do Bloco I)</label><textarea id="t9g" data-tool="t9"></textarea></div>
+          <div class="field"><label for="t9s1">Sustentação 1 (com número)</label><input type="text" id="t9s1" data-tool="t9"></div>
+          <div class="field"><label for="t9s2">Sustentação 2 (com número)</label><input type="text" id="t9s2" data-tool="t9"></div>
+          <div class="field"><label for="t9s3">Sustentação 3 (com número)</label><input type="text" id="t9s3" data-tool="t9"></div>
+          <div class="field"><label for="t9s4">Sustentação 4 (opcional)</label><input type="text" id="t9s4" data-tool="t9">
+        </div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
         <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
+          <h4>Sugestão de preenchimento</h4>
           <p class="ex"><b>Ideia governante</b>A margem caiu por mix, não por custo; expandir agora multiplica o problema; adie dois trimestres e recomponha o mix</p>
           <p class="ex"><b>Sustentação 1</b>2,9 dos 4,5 pontos vêm de composição</p>
           <p class="ex"><b>Sustentação 2</b>A mudança nasceu da meta interna de 85% de ocupação</p>
           <p class="ex" style="margin-bottom:0"><b>Sustentação 3</b>O plano assume mix de 85% de marca própria, não entregue em 8 trimestres</p>
-        </div>
-        <div class="pane blank">
-          <h4>A sua storyline</h4>
-          <div class="field"><label for="t9g">Ideia governante (uma frase que responde a pergunta do Bloco I)</label><textarea id="t9g" data-tool="t9"></textarea></div>
-          <div class="field"><label for="t9s1">Sustentação 1 (com número)</label><input type="text" id="t9s1" data-tool="t9"></div>
-          <div class="field"><label for="t9s2">Sustentação 2 (com número)</label><input type="text" id="t9s2" data-tool="t9"></div>
-          <div class="field"><label for="t9s3">Sustentação 3 (com número)</label><input type="text" id="t9s3" data-tool="t9"></div>
-          <div class="field"><label for="t9s4">Sustentação 4 (opcional)</label><input type="text" id="t9s4" data-tool="t9"></div>
         </div>
       </div>
       <ul class="fb" id="t9-fb"></ul>
@@ -860,22 +968,24 @@ output{display:block; font-size:.9rem}
       <span class="tsrc">Combina o dissenso estruturado descrito em McKinsey Bias Busters, “Getting both sides of the story” (2019), com a clareza de papéis de decisão do RAPID (Rogers e Blenko, HBR, 2006).</span>
     </header>
     <div class="body">
-      <div class="split">
+      <div class="pane blank">
+        <h4>A sua preparação</h4>
+        <div class="field"><label for="t10o1">Objeção 1 e a sua resposta</label><textarea id="t10o1" data-tool="t10"></textarea></div>
+          <div class="field"><label for="t10o2">Objeção 2 e a sua resposta</label><textarea id="t10o2" data-tool="t10"></textarea></div>
+          <div class="field"><label for="t10o3">Objeção 3 e a sua resposta</label><textarea id="t10o3" data-tool="t10"></textarea></div>
+          <div class="field"><label for="t10conf">Confiança na recomendação (%)</label><input type="number" id="t10conf" data-tool="t10" min="0" max="100" placeholder="70"></div>
+          <div class="field"><label for="t10mud">O que me faria mudar de ideia</label><textarea id="t10mud" data-tool="t10"></textarea>
+        </div>
+      </div>
+      <div class="sug">
+        <button class="btn" onclick="verSugestao(this)">Ver sugestão de preenchimento</button>
         <div class="pane">
-          <h4>Exemplo preenchido · Nutrimix</h4>
+          <h4>Sugestão de preenchimento</h4>
           <p class="ex"><b>Objeção 1 e resposta</b>“PL paga o fixo” → paga 4 pontos; planta menor custa menos que R$ 120 mi</p>
           <p class="ex"><b>Objeção 2 e resposta</b>“Insumo normaliza” → margem chegaria a 12,6%, ainda abaixo de 14,0%</p>
           <p class="ex"><b>Objeção 3 e resposta</b>“Precisamos de volume” → volume +18%, EBITDA em reais −9%</p>
           <p class="ex"><b>Confiança</b>70%</p>
           <p class="ex" style="margin-bottom:0"><b>O que me faria mudar</b>Contrato assinado de marca própria que leve o mix acima de 85% no 2º semestre</p>
-        </div>
-        <div class="pane blank">
-          <h4>A sua preparação</h4>
-          <div class="field"><label for="t10o1">Objeção 1 e a sua resposta</label><textarea id="t10o1" data-tool="t10"></textarea></div>
-          <div class="field"><label for="t10o2">Objeção 2 e a sua resposta</label><textarea id="t10o2" data-tool="t10"></textarea></div>
-          <div class="field"><label for="t10o3">Objeção 3 e a sua resposta</label><textarea id="t10o3" data-tool="t10"></textarea></div>
-          <div class="field"><label for="t10conf">Confiança na recomendação (%)</label><input type="number" id="t10conf" data-tool="t10" min="0" max="100" placeholder="70"></div>
-          <div class="field"><label for="t10mud">O que me faria mudar de ideia</label><textarea id="t10mud" data-tool="t10"></textarea></div>
         </div>
       </div>
       <ul class="fb" id="t10-fb"></ul>
@@ -892,7 +1002,7 @@ output{display:block; font-size:.9rem}
 
 <!-- ================= 8. PROJETO FINAL ================= -->
 <section class="sec" id="s8">
-  <p class="kick">Semanas 11 e 12 · 20 horas</p>
+  <p class="kick">Projeto final</p>
   <h1>Projeto final e painel de prontidão</h1>
   <p class="lede">Você recebe um problema estratégico que uma empresa real enfrentou, com os dados que existiam na época e sem a resposta, e trabalha três semanas como se a decisão ainda estivesse aberta. Três entregas, e só ao final a revelação do que a empresa de fato decidiu.</p>
 
@@ -994,7 +1104,7 @@ output{display:block; font-size:.9rem}
 /* ---------------- estrutura de seções ---------------- */
 const SECS = [
   {id:"s1", t:"O ciclo de resolução orientada por hipóteses", d:"Os sete passos, a regra da resposta provisória e o caso Nutrimix", m:"fundamento"},
-  {id:"s2", t:"Semana 0 · diagnóstico de linha de base", d:"Cinco perguntas respondidas antes de qualquer instrução", m:"1 ferramenta"},
+  {id:"s2", t:"Diagnóstico de linha de base", d:"Cinco perguntas respondidas antes de qualquer instrução", m:"1 ferramenta"},
   {id:"s3", t:"Bloco I · definir o problema", d:"Pedido não é problema; quem tem a decisão; o teste MECE", m:"2 ferramentas"},
   {id:"s4", t:"Bloco II · priorizar e planejar", d:"Conta de guardanapo, corte defensável e hipótese falsificável", m:"2 ferramentas"},
   {id:"s5", t:"Bloco III · rigor analítico e pensamento crítico", d:"Efeito de composição, calibração de intervalos e pré-mortem", m:"3 ferramentas"},
@@ -1003,6 +1113,37 @@ const SECS = [
   {id:"s8", t:"Projeto final e painel de prontidão", d:"Três entregas, rubrica e verificação do que ainda falta", m:"1 ferramenta"},
   {id:"s9", t:"Biblioteca", d:"Todas as fontes citadas, com indicação de aberto ou pago", m:"referência"}
 ];
+
+/* ---------------- painel de dados do caso ---------------- */
+function abrirDados(){
+  const f = document.getElementById("dados-fundo");
+  if(!f) return;
+  f.classList.add("on");
+  document.body.style.overflow = "hidden";
+  const c = document.getElementById("dados-corpo");
+  if(c) c.scrollTop = 0;
+}
+
+function fecharDados(ev){
+  if(ev && ev.target && ev.target.id !== "dados-fundo") return;
+  const f = document.getElementById("dados-fundo");
+  if(!f) return;
+  f.classList.remove("on");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape") fecharDados();
+});
+
+/* ---------------- sugestao sob demanda ---------------- */
+function verSugestao(btn){
+  const bloco = btn.closest(".sug");
+  if(!bloco) return;
+  const abrir = !bloco.classList.contains("on");
+  bloco.classList.toggle("on", abrir);
+  btn.textContent = abrir ? "Esconder a sugestão" : "Ver sugestão de preenchimento";
+}
 
 /* ---------------- armazenamento ---------------- */
 const K = "rep_v1_";
@@ -1365,10 +1506,12 @@ function montarTexto(sec){
       else L.push("  (nada preenchido ate agora)");
       L.push("");
       
-      // Resposta recomendada
+      // Sugestao de preenchimento
       const ex = tool.querySelector(".pane:not(.blank)");
       if(ex){
-        L.push("RESPOSTA RECOMENDADA");
+        const bloco = ex.closest(".sug");
+        const aberta = bloco ? bloco.classList.contains("on") : true;
+        L.push("SUGESTAO DE PREENCHIMENTO" + (aberta ? "" : " (voce ainda nao abriu)"));
         const linhas = ex.querySelectorAll("p.ex");
         if(linhas.length){
           linhas.forEach(pp => {
@@ -1678,7 +1821,7 @@ function t0Render(){
     wrap.innerHTML = '<h4 style="margin-top:0">Pergunta '+(i+1)+'</h4><p>'+item.q+'</p>';
     const ta = document.createElement("textarea");
     ta.id = "t0q"+i;
-    ta.placeholder = "Escreva a sua resposta. A resposta-modelo só abre depois de 50 caracteres.";
+    ta.placeholder = "Escreva a sua resposta. A resposta-modelo só abre depois de 30 caracteres.";
     ta.value = load("t0_"+i,"");
     const rev = document.createElement("div");
     rev.style.marginTop=".55rem";
@@ -1691,12 +1834,13 @@ function t0Render(){
     mod.innerHTML = '<h4 style="margin-top:0">Resposta-modelo</h4><p style="margin-bottom:0">'+item.a+'</p>';
     function upd(){
       const n = ta.value.trim().length;
-      if(n>=50){
+      if(n>=30){
         btn.disabled=false;
         btn.textContent="Ver a resposta-modelo";
       } else {
         btn.disabled=true;
-        btn.textContent="Escreva mais "+(50-n)+" caracteres para liberar";
+        const falta = 30-n;
+        btn.textContent="Escreva mais "+falta+(falta===1?" caractere":" caracteres")+" para liberar";
         mod.style.display="none";
       }
       t0Score();
@@ -1717,7 +1861,7 @@ function t0Render(){
 }
 function t0Score(){
   let n=0;
-  for(let i=0;i<T0.length;i++){ if((load("t0_"+i,"")).trim().length>=50) n++; }
+  for(let i=0;i<T0.length;i++){ if((load("t0_"+i,"")).trim().length>=30) n++; }
   document.getElementById("t0-score").textContent = n+" de 5 respondidas";
 }
 
